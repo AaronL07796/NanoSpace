@@ -1,0 +1,1 @@
+puts ARGV[0].split('#level=').last.gsub('%22', "'").gsub('%3A', ':').gsub('%2C', ',')

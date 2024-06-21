@@ -1,0 +1,225 @@
+* {
+  margin:             0;
+  padding:            0;
+  }
+
+body {
+  background-color:   #000;
+  color:              #00FFFF;
+  width:              100%;
+  font-family:        "myriad-pro-1","myriad-pro-2", "Myriad Pro", "Myriad", san-serif;
+  }
+
+a {
+  text-decoration:    none;
+  }
+a:hover {
+  text-decoration:    underline;
+  }
+
+#container {
+  position:           absolute;
+  width:              900px;
+  height:             600px;
+  left:               50%;
+  top:                50%;
+  margin:             -325px 0 0 -450px;
+  border-top:         2px solid #208DF3;
+  border-left:        2px solid #208DF3;
+  border-right:       2px solid #208DF3;
+  }
+
+#canvas {
+  z-index:            2;
+  position:           absolute;
+  width:              100%;
+  height:             100%;
+  background-color:   #000;
+  }
+
+#message {
+  z-index:            4;
+  position:           absolute;
+  color:              #FFF;
+  font-size:          64px;
+  height:             72px;
+  margin-top:         -36px;
+  top:                50%;
+  left:               0;
+  width:              100%;
+  text-align:         center;
+  }
+
+#player {
+  position:           absolute;
+  width:              20px;
+  height:             20px;
+  -webkit-border-radius: 20px;
+  background-color:   rgba(30, 255, 255, 1);
+  }
+
+.molecule {
+  position:           absolute;
+  }
+
+.molecule.H {
+  width:              20px;
+  height:             20px;
+  -webkit-border-radius: 20px;
+  background-color:   rgba(255, 50, 255, 0.95);
+  }
+
+.molecule.H20 {
+  width:              30px;
+  height:             30px;
+  -webkit-border-radius: 30px;
+  background-color:   rgba(255, 255, 50, 0.95);
+  }
+
+#info {
+  z-index:            1;
+  position:           absolute;
+  width:              100%;
+  left:               -2px;
+  bottom:             -2px;
+  height:             50px;
+  background-color:   #001066;
+  border-top:         1px solid #208DF3;
+  border-left:        2px solid #208DF3;
+  border-right:       2px solid #208DF3;
+  border-bottom:      2px solid #208DF3;
+  font-family:        "atrament-web-1","atrament-web-2",sans-serif;
+  font-weight:        400;
+  letter-spacing:     .1em;
+  }
+
+#info div {
+  float:              right;
+  font-size:          36px;
+  text-transform:     uppercase;
+  white-space:        nowrap;
+  line-height:        50px;
+  }
+#info div#lives_left {width: 200px;}
+#info div#score {width: 190px;}
+
+#info .label {
+  margin:             0 8px 0 15px;
+  }
+#info .value {
+  color:              #FFF;
+  font-weight:        300;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  }
+
+#info #target_img {
+  margin-left:        5px;
+  float:              left;
+  height:             100%;
+  line-height:        0px;
+  }
+
+#info #target_img img,
+#info #target_img span{
+  vertical-align:     middle;
+  }
+
+#info #target_img img.empty {
+  opacity:            0.45;
+  }
+
+#level_indicator {
+  z-index:            3;
+  position:           absolute;
+  font-size:          42px;
+  top:                10px;
+  left:               10px;
+  color:              #20C1DE;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  }
+
+#level_indicator span {
+  color:              #FFF;
+  margin-left:        8px;
+  }
+
+
+#high_scores {
+  height:             650px;
+  margin:             -325px 0 0 -450px;
+  background:         #000 url(../images/high_scores.png) 0 0 no-repeat;
+  }
+
+#high_scores .inner {
+  margin-left:        200px;
+  }
+
+
+/* MESSAGES */
+
+._message span {
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  }
+
+.message > .inner {
+  background-color:   rgba(0, 0, 0, 0.5);
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  }
+
+#start_level_message .mission_accomplished {
+  display:            block;
+  color:              #20C1DE;
+  font-size:          52px;
+  margin-bottom:      30px;
+  }
+#start_level_message .level {
+  display:            block;
+  color:              #FFF;
+  font-size:          47px;
+  margin-bottom:      10px;
+  }
+#start_level_message .create {
+  display:            block;
+  color:              #20C1DE;
+  font-size:          82px;
+  margin-bottom:      50px;
+  }
+#start_level_message .create .num {
+  color:              #FF3E3B;
+  }
+
+#to_go_message {
+  font-size:          116px;
+  color:              #20C1DE;
+  margin-bottom:      50px;
+  }
+#to_go_message > .inner {
+  background-color:   transparent;
+  }
+#to_go_message span {
+  color:              #FF3E3B;
+  }
+
+#wrong_bond_message {
+  font-size:          92px;
+  color:              #FFF;
+  }
+#wrong_bond_message .tries_left {
+  display:            block;
+  margin:             10px 0 30px;
+  font-size:          42px;
+  color:              #20C1DE;
+  }
+#wrong_bond_message .tries_left .num {
+  color:              #FF3E3B;
+  }
+
+#game_over_message {
+  font-size:          172px;
+  color:              #20C1DE;
+  cursor:             pointer;
+  }

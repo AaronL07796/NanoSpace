@@ -1,0 +1,206 @@
+* {
+    margin:             0;
+    padding:            0;
+    }
+
+html {
+    overflow:           hidden;
+    }
+
+body {
+    position:           absolute;
+    width:              100%;
+    height:             100%;
+    background-color:   #050708;
+    font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+    -webkit-text-stroke: 1px transparent;
+    }
+
+#container {
+    position:           absolute;
+    width:              970px;
+    height:             599px;
+    left:               50%;
+    top:                50%;
+    margin:             -300px 0 0 -485px;
+    overflow:           hidden;
+    background:         transparent url(images/stars.jpg) 0 0 repeat;
+    }
+
+#sky {
+    z-index:            1;
+    position:           absolute;
+    width:              100%;
+    height:             100%;
+    background:         transparent url(images/sky_gradient.png) 0 0 repeat-x;
+    }
+
+#tube {
+    z-index:            2;
+    position:           absolute;
+    width:              100%;
+    height:             100%;
+    background:         transparent url(images/background.png) 0 0 repeat-y;
+    }
+
+#door_left,
+#door_right {
+    z-index:            5;
+    position:           absolute;
+    width:              100%;
+    height:             100%;
+    }
+#door_left {
+    background:         transparent url(images/door_left.png) 0 0 repeat-y;
+    }
+#door_right {
+    background:         transparent url(images/door_right.png) 0 0 repeat-y;
+    }
+
+#floor {
+    z-index:            3;
+    position:           absolute;
+    width:              970px;
+    height:             599px;
+    }
+
+#floor .molecule {
+    z-index:            4;
+    position:           absolute;
+    width:              640px;
+    height:             420px;
+    top:                138px;
+    left:               165px;
+    }
+
+#floor .slideshow {
+    display:            none;
+    z-index:            5;
+    position:           absolute;
+    width:              640px;
+    height:             420px;
+    top:                138px;
+    left:               165px;
+    overflow:           hidden;
+    }
+#floor .slideshow img {
+    position:           absolute;
+    top:                0;
+    left:               0;
+    }
+
+#floor .mask {
+    z-index:            6;
+    position:           absolute;
+    width:              100%;
+    height:             100%;
+    background:         transparent url(images/floor.png) 0 0 no-repeat;
+    }
+
+#floor .screen_cover {
+    z-index:            3;
+    position:           absolute;
+    width:              571px;
+    height:             387px;
+    background:         transparent url(images/screen_cover.png) 0 0 no-repeat;
+    top:                154px;
+    left:               200px;
+    }
+
+#floor .screen_cover .loading {
+    line-height:        387px;
+    font-size:          58px;
+    color:              #FFF;
+    text-align:         center;
+    }
+
+#floor .drag {
+    z-index:            8;
+    position:           absolute;
+    top:                470px;
+    left:               354px;
+    }
+
+#floor .text {
+    z-index:            7;
+    position:           absolute;
+    font-family:        "atrament-web-1","atrament-web-2",sans-serif;
+    font-weight:        400;
+    font-size:          37px;
+    color:              #FFF;
+    top:                60px;
+    left:               20px;
+    width:              100%;
+    white-space:        nowrap;
+    }
+
+#floor .text span {
+    display:            inline-block;
+    text-align:         center;
+    width:              100%;
+    }
+
+#floor .lobby {
+    z-index:            4;
+    position:           absolute;
+    font-size:          30px;
+    line-height:        36px;
+    top:                190px;
+    left:               403px;
+    }
+
+#floor .lobby .floor {
+    display:            inline-block;
+    width:              70px;
+    margin-right:       15px;
+    text-align:         right;
+    }
+
+#movie {
+    position:           absolute;
+    width:              970px;
+    height:             600px;
+    left:               50%;
+    top:                50%;
+    margin:             -300px 0 0 -485px;
+    overflow:           visible;
+    background:         transparent url(images/stars.jpg) 0 0 repeat;
+    }
+#movie a.close {
+    display:            block;
+    position:           absolute;
+    top:                -18px;
+    left:               -18px;
+    width:              44px;
+    height:             44px;
+    background:         transparent url(../../images/viewbox/viewbox_close.png) 0 0 no-repeat;
+    }
+
+#button_panel {
+    z-index:            6;
+    position:           absolute;
+    width:              148px;
+    height:             282px;
+    bottom:             40px;
+    right:              35px;
+    background:         transparent url(images/button_panel.png) 0 0 no-repeat;
+    }
+
+#button_panel .button {
+    position:           absolute;
+    width:              36px;
+    height:             36px;
+    line-height:        39px;
+    text-align:         center;
+    color:              #000;
+    font-size:          22px;
+    font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+    -webkit-text-stroke: 1px transparent;
+    cursor:             pointer;
+    }
+#button_panel .button:hover {
+    background:         transparent url(images/button_highlight.png) 0 0 no-repeat;
+    }
+#button_panel .button.selected {
+    background:         transparent url(images/button_glow.png) 0 0 no-repeat;
+    }

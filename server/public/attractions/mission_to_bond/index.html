@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="../../favicon_32.ico">
+  <title>Mission to Bond - NanoSpace</title>
+  
+  <meta name="viewport" content="width=1140, maximum-scale=.9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <script type="text/javascript" src="http://use.typekit.com/nzt5rde.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <link rel="stylesheet" href="../../css/games.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  
+  <script src="../../js/jquery.js"></script>
+  <!--[if lt IE 9]><script src="../../js/ie.js"></script><![endif]-->
+  <script src="../../js/global.js"></script>
+  <script src="../../js/soundmanager2.js"></script>
+  <script src="../../js/jquery.store.js"></script>
+  <script src="../../js/user.js"></script>
+  <script src="../../js/game.js"></script>
+  <script src="../../js/canvas_to_image.js"></script>
+  <script src="../../js/message.js"></script>
+  <script src="../../js/periodic_table.js"></script>
+  <script src="js/global.js"></script>
+</head>
+<body>
+  
+  <div id="header">
+    <a class="back_to_nav" href="../../#arcade">
+      <img src="../../images/back_to_nav_arrow.png" align="left" />
+      NanoSpace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+    <a class="open_instructions" href="javascript:;">?</a>
+    <a class="pause_button" href="javascript:;"></a>
+  </div>
+  
+  
+  <div id="splash">
+    <img src="images/splash.png" width="900" height="600" />
+  </div>
+  
+  
+  <div id="loading">
+    <span>Loading...</span>
+    <div class="progress_container"><div class="progress"></div></div>
+  </div>
+  
+  
+  <div id="high_scores" class="hidden_from_splash" style="display:none">
+    <div class="inner"></div>
+    <div class="log_in_message">
+      You must be <a id="go_to_login" href="../../#arcade">logged in</a> for your high scores to be submitted.
+    </div>
+  </div>
+  
+  
+  <div id="container" class="hidden_from_splash">
+    <canvas id="canvas"></canvas>
+    
+    <div id="level_indicator">
+      LEVEL
+      <span>1</span>
+    </div>
+    
+    <div id="to_go_message" class="message" style="display:none">
+      <div class="inner">
+        <span></span> to go!
+      </div>
+    </div>
+    
+    <div id="start_level_message" class="message" style="display:none">
+      <div class="inner">
+        <span class="mission_accomplished">Mission Accomplished!</span>
+        <span class="level">
+          Level <span class="num"></span>
+        </span>
+        <span class="create">
+          Create <span class="num"></span> <span class="target"></span> Molecules!
+        </span>
+      </div>
+    </div>
+    
+    <div id="wrong_bond_message" class="message" style="display:none">
+      <div class="inner">
+        WRONG BOND!
+        <span class="tries_left">
+          <span class="num"></span> tries left
+        </span>
+      </div>
+    </div>
+    
+    <div id="game_over_message" class="message" style="display:none">
+      <div class="inner">
+        GAME OVER!
+      </div>
+    </div>
+    
+    <div id="info">
+      <div id="target_img"></div>
+      
+      <div id="score">
+        <span class="label">Score</span>
+        <span class="value">99999</span>
+      </div>
+      
+      <div id="lives_left">
+        <span class="label">Lives</span>
+        <span class="value">00</span>
+      </div>
+    </div>
+    
+  </div>
+  
+  <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

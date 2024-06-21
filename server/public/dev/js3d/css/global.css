@@ -1,0 +1,57 @@
+* {
+  margin:             0;
+  padding:            0;
+  }
+
+vml\:* { behavior: url(#default#VML) }
+
+body{
+  background-color:   rgb(30, 30, 30);
+  overflow:           hidden;
+  }
+
+#instructions, h1{
+  font-family:        "HelveticaNeue-Light", "Helvetica Neue Light", "Arial Narrow", "Helvetica Neue", sans-serif;
+  font-weight:        300;
+  letter-spacing:     .1em;
+  }
+
+h1{
+  font-size:          24px;
+  }
+
+#instructions{
+  position:           absolute;
+  z-index:            999;
+  top:                5px;
+  left:               5px;
+  color:              #FFF;
+  font-size:          14px;
+  }
+
+#content {
+  position:           relative;
+  overflow:           hidden;
+  }
+
+#canvas {
+  z-index:            1;
+  position:           absolute;
+  }
+
+#stand {
+  z-index:            2;
+  position:           absolute;
+  top:                180px;
+  left:               345px;
+  width:              585px;
+  height:             546px;
+  background:         transparent url('../images/stand.png');
+  }
+
+.obj {
+  position:           absolute;
+  background-color:   red;
+  width:              10px;
+  height:             10px;
+  }

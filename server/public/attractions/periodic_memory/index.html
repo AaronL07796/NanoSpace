@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="../../favicon_32.ico">
+  <title>Periodic Memory - NanoSpace</title>
+  <script src="http://use.typekit.com/nzt5rde.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <link rel="stylesheet" href="../../css/games.css">
+  <link rel="stylesheet" href="periodic.css">
+</head>
+<body>
+
+  <div id="header">
+    <a class="back_to_nav" href="../../#materials">
+      <img src="../../images/back_to_nav_arrow.png" />
+      NanoSpace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+    <a class="open_instructions" href="javascript:;">?</a>
+    <a class="pause_button" href="javascript:;"></a>
+  </div>
+
+  <div id="splash">
+    <img src="images/peripherals.png" width="900" height="600" />
+    <div id="category_play_mode" data-play-mode="category" class="play_mode_button active"></div>
+    <div id="period_play_mode" data-play-mode="period" class="play_mode_button"></div>
+  </div>
+
+  <div id="loading">
+    <span>Loading...</span>
+    <div class="progress_container"><div class="progress"></div></div>
+  </div>
+
+  <div id="high_scores" class="hidden_from_splash" style="display:none">
+    <div class="inner"></div>
+    <div class="log_in_message">
+      You must be <a id="go_to_login" href="../../#sizes">logged in</a> for your high scores to be submitted.
+    </div>
+  </div>
+
+  <div id="stage" class="hidden_from_splash">
+
+    <div id="game_over_message" class="message" style="display:none">
+      <div class="inner">
+        <span class="game_over">Game Over!</span>
+        <span class="alert">Alert Message</span>
+      </div>
+    </div>
+
+    <div id="level_completed_message" class="message" style="display:none">
+      <div class="inner">
+        <span class="congrats">Nice work!</span>
+        <span class="alert">Alert Message</span>
+      </div>
+    </div>
+      
+    <div id="info">
+      <div id="group_name"></div>
+      <div id="time">Time<span class="value"><span id="minutes">00</span>:<span id="seconds">00</span></span></div>
+      <div id="level">Level<span class="value">01</span></div>
+      <div id="score">Score<span class="value">01</span></div>
+    </div>
+    
+    <div id="play_field"></div>
+  
+  </div>
+  
+  <script src="../../js/jquery.js"></script>
+  <!--[if lt IE 9]><script src="../../js/ie.js"></script><![endif]-->
+  <script src="../../js/global.js"></script>
+  <script src="../../js/jquery-ui.js"></script>
+  <script src="../../js/soundmanager2.js"></script>
+  <script src="../../js/jquery-cssHooks/transform.js"></script>
+  <script src="../../js/jquery.store.js"></script>
+  <script src="../../js/user.js"></script>
+  <script src="../../js/game.js"></script>
+  <script src="../../js/message.js"></script>
+  <script src="../../js/periodic_table.js"></script>
+  <script src="periodic.js"></script>
+  <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

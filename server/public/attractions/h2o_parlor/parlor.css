@@ -1,0 +1,395 @@
+#stage{
+    border:             1px solid #00ADEE;
+    background:         #133EB1 url(images/background.jpg) 0 0 no-repeat;
+    }
+
+#stage a{
+    color:              #FB0;
+    font-size:          28px;
+    position:           relative;
+    z-index:            99999;
+    text-shadow:        0 0 3px rgba(0,0,0, 1);
+    font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+    }
+
+#more_info {
+  z-index:            999;
+  position:           absolute;
+  width:              900px;
+  height:             600px;
+  left:               50%;
+  top:                50%;
+  margin:             -300px 0 0 -450px;
+  border:             1px solid transparent;
+  }
+
+#people{
+    position:           absolute;
+    top:                100px;
+    left:               0;
+    width:              642px;
+    height:             280px;
+    }
+
+.person{
+    position:           absolute;
+    margin:             0 -110px;
+    width:              110px;
+    height:             200px;
+    background-position:50% 0;
+    background-repeat:  no-repeat;
+    }
+
+.person.enter_position{ bottom: -100px; left: 100%;}
+
+.person.position_1,
+.person.position_2,
+.person.position_3{ z-index: 2; }
+
+.person.position_4,
+.person.position_5{ z-index: 1; }
+
+.person.exit_position{ left: 0%;  }
+
+#person_type_1.person_state_1{ background-image:   url(images/characters/1/1.png); }
+#person_type_1.person_state_2{ background-image:   url(images/characters/1/2.png); }
+#person_type_1.person_state_3{ background-image:   url(images/characters/1/3.png); }
+
+#person_type_2.person_state_1{ background-image:   url(images/characters/2/1.png); }
+#person_type_2.person_state_2{ background-image:   url(images/characters/2/2.png); }
+#person_type_2.person_state_3{ background-image:   url(images/characters/2/3.png); }
+
+#person_type_3.person_state_1{ background-image:   url(images/characters/3/1.png); }
+#person_type_3.person_state_2{ background-image:   url(images/characters/3/2.png); }
+#person_type_3.person_state_3{ background-image:   url(images/characters/3/3.png); }
+
+#person_type_4.person_state_1{ background-image:   url(images/characters/4/1.png); }
+#person_type_4.person_state_2{ background-image:   url(images/characters/4/2.png); }
+#person_type_4.person_state_3{ background-image:   url(images/characters/4/3.png); }
+
+#person_type_5.person_state_1{ background-image:   url(images/characters/5/1.png); }
+#person_type_5.person_state_2{ background-image:   url(images/characters/5/2.png); }
+#person_type_5.person_state_3{ background-image:   url(images/characters/5/3.png); }
+
+#person_type_6.person_state_1{ background-image:   url(images/characters/6/1.png); }
+#person_type_6.person_state_2{ background-image:   url(images/characters/6/2.png); }
+#person_type_6.person_state_3{ background-image:   url(images/characters/6/3.png); }
+
+
+
+.order{
+    position:           absolute;
+    top:                -84px;
+    left:               -68px;
+    width:              142px;
+    height:             92px;
+    background:         transparent url(images/speech_bubble.png) 0 0 no-repeat;
+    opacity:            0;
+    text-align:         center;
+    }
+#people.dragging .order{
+    background:         transparent url(images/speech_bubble_highlighted.png) 0 0 no-repeat;
+    }
+
+.order.visible{
+    opacity:            1;
+    }
+
+.order .item{
+    display:            inline-block;
+    margin:             14px 2px;
+    width:              30px;
+    height:             52px;
+    background-position:50% 50%;
+    background-repeat:  no-repeat;
+    }
+
+.order .snow_cone{
+    background-image:   url(images/snowcone_small.png);
+    }
+
+.order .water{
+    background-image:   url(images/water_small.png);
+    }
+
+.order .balloon{
+    background-image:   url(images/balloon_small.png);
+    }
+
+.order .speech{
+    width:              100%;
+    height:             70px;
+    line-height:        70px;
+    color:              #000;
+    font-size:          26px;
+    text-align:         center;
+    }
+
+
+
+#overlay{
+    position:           absolute;
+    z-index:            3;
+    width:              100%;
+    height:             100%;
+    background:         transparent url(images/overlay.png) 0 0 no-repeat;
+    }
+
+
+
+#prepared_items{
+    position:           absolute;
+    z-index:            4;
+    top:                0;
+    left:               0;
+    width:              607px;
+    height:             559px;
+    overflow:           hidden;
+    }
+
+#prepared_items .item{
+    position:           absolute;
+    z-index:            110;
+    width:              44px;
+    height:             74px;
+    background-position:50% 100%;
+    background-repeat:  no-repeat;
+    }
+#prepared_items .item.ui-draggable-dragging{
+    z-index:            130;
+    }
+
+#prepared_items .enter_position{          bottom: 143px; left: 608px; }
+#prepared_items .just_finished_position{  bottom: 143px; left: 561px; }
+
+#prepared_items .snow_cone{ background-image: url(images/snowcone.png); }
+#prepared_items .water{    background-image: url(images/water.png);    }
+#prepared_items .balloon{  background-image: url(images/balloon.png);  }
+
+
+
+#snowcone_holder{
+    position:           absolute;
+    z-index:            120;
+    right:              -57px;
+    bottom:             155px;
+    }
+
+#snowcone_holder.visible{
+    right:              -10px;
+    }
+
+
+#trash{
+    position:           absolute;
+    bottom:             0;
+    left:               29px;
+    width:              76px;
+    height:             43px;
+    }
+
+#trash_lid{
+    position:           absolute;
+    width:              100%;
+    height:             100%
+    }
+
+
+
+#holder_front{
+    position:           absolute;
+    z-index:            100;
+    top:                380px;
+    left:               40px;
+    }
+
+
+#target_temp_slider{
+    position:           absolute;
+    z-index:            7;
+    top:                517px;
+    left:               163px;
+    width:              315px;
+    height:             42px;
+    cursor:             pointer;
+    }
+
+#target_temp_slider .ui-slider-handle{
+    display:            block;
+    width:              36px;
+    height:             33px;
+    margin-left:        -0.6em;
+    top:                -0.3em;
+    cursor:             pointer;
+    background:         transparent url(images/target_temp_arrow.png) 0 0 no-repeat;
+    }
+
+#target_temp_arrow{
+    position:           absolute;
+    bottom:             100%;
+    left:               50%;
+    margin:             0 -18px -33px;
+    cursor:             pointer;
+    }
+
+#target_temp{
+    position:           absolute;
+    z-index:            8;
+    top:                553px;
+    left:               182px;
+    width:              274px;
+    color:              #2E3191;
+    text-shadow:        0 1px 0 rgba(255,255,255, 0.3);
+    text-align:         center;
+    font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+    font-size:          38px;
+    word-spacing:       -0.3em;
+    }
+
+#target_temp .sep{
+    padding:            0 5px;
+    }
+
+
+
+#button{
+    position:           absolute;
+    z-index:            9;
+    top:                514px;
+    left:               545px;
+    width:              50px;
+    height:             50px;
+    background:         transparent url(images/button.png) 0 0 no-repeat;
+    cursor:             pointer;
+    }
+
+#button:active{
+    background-position:0 -50px;
+    }
+
+
+
+#current_temp{
+    position:           absolute;
+    z-index:            8;
+    bottom:             0;
+    left:               630px;
+    width:              8px;
+    height:             0;
+    background-color:   #EC1C24;
+    }
+
+
+
+#status_message{
+    position:           absolute;
+    z-index:            8;
+    top:                430px;
+    left:               50px;
+    width:              460px;
+    font-size:          26px;
+    text-align:         center;
+    }
+
+#status{
+    position:           absolute;
+    z-index:            8;
+    top:                0;
+    left:               25px;
+    font-size:          22px;
+    color:              #000;
+    padding:            5px 15px 8px;
+    background-color:   rgba(255, 255, 255, 0.5);
+    }
+
+#status div{
+    display:            inline-block;
+    text-align:         center;
+    width:              146px;
+    }
+
+#status span.val{
+    display:            block;
+    margin:             0 5px;
+    font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+    font-size:          32px;
+    }
+
+
+#item_progress{
+    position:           absolute;
+    z-index:            8;
+    bottom:             0;
+    right:              203px;
+    width:              35px;
+    height:             0%;
+    background-color:   black;
+    opacity:            0.4;
+    }
+
+
+
+#gasbox{
+    position:           absolute;
+    z-index:            2;
+    top:                4px;
+    right:              -79px;
+    width:              350px;
+    height:             591px;
+    }
+
+
+#high_scores {
+  background:         #000 url(images/high_scores.png) 0 0 no-repeat;
+  }
+
+#high_scores .inner {
+  margin:             165px 0 0 200px;
+  }
+
+#high_scores .log_in_message {
+  bottom:             12px;
+  }
+
+
+/* MESSAGES */
+
+._message span {
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  color:              #FFF;
+  }
+
+.message > .inner {
+  background-color:   rgba(0, 0, 0, 0.5);
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  }
+
+#start_level_message,
+#game_over_message {
+  z-index:            99;
+  }
+
+#start_level_message h2 {
+  font-size:          92px;
+  color:              #0FF;
+  margin-bottom:      20px;
+  }
+#start_level_message .instructions {
+  font-size:          72px;
+  color:              #FFF;
+  margin-bottom:      50px;
+  }
+
+
+#game_over_message {
+  font-size:          72px;
+  color:              #FFF;
+  cursor:             pointer;
+  }
+#game_over_message h2 {
+  font-size:          122px;
+  color:              #0FF;
+  margin-bottom:      20px;
+  }

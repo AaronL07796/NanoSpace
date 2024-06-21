@@ -1,0 +1,272 @@
+*{
+    margin:             0;
+    padding:            0;
+    list-style:         none;
+    }
+
+body{
+    background-color:   #000;
+    text-rendering:     optimizeLegibility;
+    font-family:        'atrament-web-1', 'atrament-web-2', sans-serif;
+    }
+
+input:focus { outline: none; }
+
+body.more_info_visible .hidden_from_splash{
+    visibility:           hidden;
+    }
+
+#container {
+  position:               absolute;
+  width:                  1150px;
+  height:                 600px;
+  left:                   50%;
+  top:                    50%;
+  margin:                 -300px 0 0 -575px;
+  background-color:       #26306F;
+  -border-radius:         25px;
+  -webkit-border-radius:  25px;
+  -moz-border-radius:     25px;
+  }
+
+#more_info {
+  z-index:                999;
+  position:               absolute;
+  width:                  900px;
+  height:                 600px;
+  left:                   50%;
+  top:                    50%;
+  margin:                 -300px 0 0 -450px;
+  border:                 3px solid #00ADEE;
+  }
+
+#overlay {
+  z-index:                999;
+  position:               absolute;
+  width:                  900px;
+  height:                 600px;
+  left:                   50%;
+  top:                    50%;
+  margin:                 -300px 0 0 -450px;
+  }
+
+#amino_acid {
+  z-index:                3;
+  position:               absolute;
+  top:                    20px;
+  left:                   545px;
+  width:                  250px;
+  height:                 68px;
+  border:                 1px solid rgb(61, 80, 204);
+  color:                  #FFF;
+  }
+
+#amino_acid > .inner {
+  margin:                 6px;
+  }
+
+#amino_acid .letter {
+  display:                block;
+  position:               absolute;
+  left:                   10px;
+  top:                    0;
+  font-size:              74px;
+  line-height:            62px;
+  }
+
+#amino_acid .info {
+  display:                block;
+  position:               absolute;
+  left:                   60px;
+  top:                    2px;
+  }
+
+#amino_acid .info .name {
+  font-size:              36px;
+  }
+
+#amino_acid .info .codons {
+  display:                inline-block;
+  margin-top:             3px;
+  font-size:              20px;
+  color:                  #29ABE2;
+  }
+#amino_acid .info .codons span {
+  color:                  #FFF;
+  }
+  
+#wheel{
+  position:               absolute;
+  top:                    11px;
+  left:                   -12px;
+  width:                  571px;
+  height:                 571px;
+  background:             transparent url(images/wheel/background.png) 0 0 no-repeat;
+  }
+
+#wheel .blank{
+  z-index:                2;
+  position:               absolute;
+  top:                    0;
+  left:                   0;
+  width:                  571px;
+  height:                 571px;
+  }
+
+#wheel div{
+  z-index:                1;
+  position:               absolute;
+  top:                    0;
+  left:                   0;
+  width:                  571px;
+  height:                 571px;
+  }
+
+#wheel .letters{
+  background:             transparent url(images/wheel/letters.png) 0 0 no-repeat;
+  }
+
+#wheel .highlighted .chosen{
+  opacity:                0.5;
+  }
+
+#word{
+  position:               absolute;
+  top:                    132px;
+  right:                  25px;
+  }
+
+#word .letter{
+  z-index:                1;
+  display:                inline-block;
+  position:               relative;
+  width:                  70px;
+  height:                 353px;
+  background:             transparent url(images/slot.png) 0 0 no-repeat;
+  }
+
+#word .letter .bases{
+  position:               absolute;
+  left:                   7px;
+  bottom:                 31px;
+  height:                 77px;
+  }
+
+#word .letter .amino_acid{
+  z-index:                3;
+  position:               absolute;
+  display:                block;
+  top:                    7px;
+  left:                   5px;
+  width:                  59px;
+  height:                 115px;
+}
+
+#word .letter input{
+  z-index:                3;
+  position:               absolute;
+  display:                block;
+  top:                    133px;
+  left:                   5px;
+  width:                  59px;
+  height:                 50px;
+  font-family:            "myriad-pro-1","myriad-pro-2", "Myriad Pro", "Myriad", san-serif;
+  font-weight:            bold;
+  text-transform:         uppercase;
+  text-align:             center;
+  color:                  #2F067D;
+  font-size:              37px;
+  background:             transparent url(images/input_background.png) 0 0 no-repeat;
+  }
+
+#word .letter .bases span{
+  display:                inline-block;
+  width:                  17px;
+  height:                 77px;
+  }
+
+#word .letter .bases span.base_A { background: transparent url(images/bases/a.png) 0 0 no-repeat; }
+#word .letter .bases span.base_C { background: transparent url(images/bases/c.png) 0 0 no-repeat; }
+#word .letter .bases span.base_G { background: transparent url(images/bases/g.png) 0 0 no-repeat; }
+#word .letter .bases span.base_U { background: transparent url(images/bases/u.png) 0 0 no-repeat; }
+
+#word .letter.empty .bases { display: none; }
+#word .letter.empty input { display: none; }
+
+#word_selector{
+  z-index:                2;
+  position:               absolute;
+  left:                   -20px;
+  top:                    -40px;
+  bottom:                 0;
+  width:                  110px;
+  height:                 440px;
+  background:             transparent url(images/selector.png) 0 0 no-repeat;
+  }
+
+#invalid{
+  position:               absolute;
+  top:                    41px;
+  right:                  100px;
+  font-family:            "myriad-pro-1","myriad-pro-2", "Myriad Pro", "Myriad", san-serif;
+  text-transform:         uppercase;
+  font-style:             italic;
+  color:                  #E67800;
+  font-size:              28px;
+  line-height:            1.3em;
+  }
+
+#instructions{
+  position:               absolute;
+  bottom:                 24px;
+  left:                   550px;
+  width:                  550px;
+  font-family:            "myriad-pro-1","myriad-pro-2", "Myriad Pro", "Myriad", san-serif;
+  color:                  #FFF;
+  font-size:              15px;
+  line-height:            1.3em;
+  }
+#instructions em{
+  font-style:             normal;
+  margin-right:           10px;
+  font-size:              22px;
+  }
+
+/* MESSAGES */
+
+._message span {
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  color:              #5DC1DE;
+  }
+
+.message > .inner {
+  background-color:   rgba(0, 0, 0, 0.75);
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  }
+
+#level_complete_message {
+  top:                -80px;
+  height:             680px;
+  }
+
+#level_complete_message .good_job {
+  font-size:          182px;
+  color:              #5DC1DE;
+  }
+#level_complete_message .next_word {
+  font-size:          92px;
+  color:              #FFF;
+  margin:             15px 0 50px;
+  }
+
+#game_over_message {
+  top:                -80px;
+  width:              1150px;
+  height:             680px;
+  z-index:            999;
+  font-size:          136px;
+  color:              #5DC1DE;
+  background:         #000 url(images/you_win.png) 0 80px no-repeat;
+  }

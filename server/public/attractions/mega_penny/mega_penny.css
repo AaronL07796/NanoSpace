@@ -1,0 +1,300 @@
+* {
+  margin:             0;
+  padding:            0;
+  }
+
+body {
+  background-color:   #000;
+  color:              #FFF;
+  width:              100%;
+  font-family:        "myriad-pro-1","myriad-pro-2", "Myriad Pro", "Myriad", san-serif;
+  }
+
+#intro_slide,
+#final_slide {
+  z-index:            2;
+  position:           absolute;
+  width:              900px;
+  height:             600px;
+  left:               50%;
+  top:                50%;
+  margin:             -300px 0 0 -450px;
+  overflow:           hidden;
+  background-color:   #EE8158;
+  }
+
+#intro_slide h1,
+#final_slide h1 {
+  color:              #FFF;
+  font-size:          24px;
+  text-align:         center;
+  margin-top:         25px;
+  }
+
+#intro_slide .byline,
+#final_slide .byline {
+  color:              #FFDE65;
+  font-size:          16px;
+  text-align:         center;
+  margin-top:         5px;
+  }
+
+#intro_slide .pennies1,
+#intro_slide .pennies2,
+#final_slide .pennies1,
+#final_slide .pennies2 {
+  position:           absolute;
+  top:                100px;
+  }
+#intro_slide .pennies1, #final_slide .pennies1 {left: 70px;}
+#intro_slide .pennies2, #final_slide .pennies2 {right: 70px;}
+
+#intro_slide .description,
+#final_slide .description{
+  width:              470px;
+  margin:             25px auto 0;
+  color:              #000;
+  line-height:        1.3em;
+  font-size:          16px;
+  }
+
+#intro_slide .description p,
+#final_slide .description p {
+  margin:             10px 0;
+  }
+
+#intro_slide .enter {
+  text-align:         center;
+  margin-top:         15px;
+  }
+#intro_slide .enter a {
+  text-decoration:    none;
+  color:              #FFDE65;
+  font-size:          24px;
+  }
+#intro_slide .enter a:hover {text-decoration: underline;}
+
+#intro_slide .links {
+  position:           absolute;
+  top:                400px;
+  color:              #000;
+  font-size:          14px;
+  }
+#intro_slide .links1 {left: 216px;}
+#intro_slide .links2 {right: 200px;}
+
+#intro_slide .links li {
+  margin:             4px 0;
+  }
+
+#intro_slide .links a {
+  color:              #FFDE65;
+  }
+#intro_slide .links a:hover {text-decoration: underline;}
+
+#final_slide p {
+  text-align:         center;
+  }
+#final_slide h2 {
+  color:              #FFF;
+  font-size:          18px;
+  text-align:         center;
+  margin:             25px 0;
+  }
+
+#final_slide .big_numbers {
+  position:           absolute;
+  top:                200px;
+  left:               0;
+  }
+#final_slide .big_numbers div {
+  clear:              left;
+  }
+#final_slide .big_numbers span {
+  float:              left;
+  display:            block;
+  font-size:          12px;
+  }
+#final_slide .big_numbers .label {
+  color:              #000;
+  width:              350px;
+  text-align:         right;
+  margin-right:       15px;
+  }
+#final_slide .big_numbers .num {
+  color:              #FFF;
+  text-align:         left;
+  }
+  
+#slide {
+  z-index:            1;
+  position:           absolute;
+  width:              900px;
+  height:             600px;
+  left:               50%;
+  top:                50%;
+  margin:             -300px 0 0 -450px;
+  overflow:           hidden;
+  background-color:   #EE8158;
+  }
+
+#slide .penny_img {
+  position:           absolute;
+  bottom:             175px;
+  left:               30px;
+  width:              365px;
+  }
+
+#slide h1 {
+  position:           absolute;
+  top:                35px;
+  font-size:          24px;
+  font-weight:        bold;
+  width:              100%;
+  text-align:         center;
+  }
+
+#slide .info {
+  position:           absolute;
+  top:                120px;
+  left:               430px;
+  width:              445px;
+  }
+
+#slide .info .description {
+  color:              #000;
+  font-size:          18px;
+  line-height:        1.3em;
+  }
+
+#slide .info .table {
+  display:            table;
+  margin-top:         25px;
+  width:              100%;
+  }
+
+#slide .info .table .row {
+  margin:             3px 0;
+  padding-bottom:     3px;
+  border-bottom:      2px solid #AC4C20;
+  }
+
+#slide .info .table .row .name {
+  display:            inline-block;
+  width:              150px;
+  color:              #000;
+  font-size:          18px;
+  font-weight:        bold;
+  }
+
+#slide .info .table .row .value {
+  display:            inline-block;
+  color:              #FFF;
+  font-size:          15px;
+  width:              295px;
+  }
+
+#slide .info .table .row .value em {
+  font-style:         italic;
+  font-size:          12px;
+  }
+
+#slide .qty {
+  position:           absolute;
+  bottom:             90px;
+  left:               30px;
+  }
+
+#slide .qty .num {
+  color:              #000;
+  font-size:          18px;
+  }
+
+#slide .qty .num_text {
+  color:              #FFF;
+  font-size:          14px;
+  line-height:        1.3em;
+  width:              425px;
+  }
+
+.controls .back,
+.controls .next {
+  z-index:            9;
+  position:           absolute;
+  cursor:             pointer;
+  bottom:             25px;
+  }
+.controls .back {
+  left:               30px;
+  width:              91px;
+  height:             39px;
+  background:         transparent url(images/back.png) 0 0 no-repeat;
+  }
+.controls .next {
+  right:              30px;
+  width:              84px;
+  height:             39px;
+  background:         transparent url(images/next.png) 0 0 no-repeat;
+  }
+
+
+
+/* SLIDE-SPECIFIC STYLING */
+
+#slide h1.slide-16,
+#slide h1.slide-17 {
+  top:                20px;
+  }
+
+#slide .info.slide-7 {
+  top:                100px;
+  }
+
+#slide .qty.slide-0,
+#slide .qty.slide-1 {
+  width:              410px;
+  text-align:         center;
+  bottom:             150px;
+  left:               0;
+  }
+
+#slide .qty.slide-7 .num_text {
+  width:               325px;
+  }
+
+#slide .info.slide-8,
+#slide .info.slide-17 {
+  top:                80px;
+  }
+
+#slide .info.slide-8 .description,
+#slide .info.slide-11 .description,
+#slide .info.slide-17 .description {
+  font-size:          16px;
+  }
+
+#slide .qty.slide-8 .num_text {
+  width:               340px;
+  }
+
+#slide .info.slide-9,
+#slide .info.slide-10,
+#slide .info.slide-11,
+#slide .info.slide-13,
+#slide .info.slide-16 {
+  top:                90px;
+  }
+
+#slide .info.slide-17 {
+  top:                75px;
+  }
+
+#slide .qty.slide-9 .num_text,
+#slide .qty.slide-10 .num_text,
+#slide .qty.slide-11 .num_text,
+#slide .qty.slide-14 .num_text,
+#slide .qty.slide-15 .num_text,
+#slide .qty.slide-16 .num_text,
+#slide .qty.slide-17 .num_text{
+  width:               325px;
+  }

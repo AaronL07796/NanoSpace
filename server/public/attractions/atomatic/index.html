@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="../../favicon_32.ico">
+  <title>Atomatic - NanoSpace</title>
+  
+  <meta name="viewport" content="width=1140, maximum-scale=.9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <script type="text/javascript" src="http://use.typekit.com/nzt5rde.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  
+  <link rel="stylesheet" href="../../css/games.css" />
+  <link rel="stylesheet" href="css/global.css" />
+
+  <script src="../../js/jquery.js"></script>
+  <!--[if lt IE 9]><script src="../../js/ie.js"></script><![endif]-->
+  <script src="../../js/global.js"></script>
+  <script src="js/jquery.json-2.2.min.js"></script>
+  <script src="../../js/soundmanager2.js"></script>
+  <script src="../../js/jquery.store.js"></script>
+  <script src="../../js/user.js"></script>
+  <script src="../../js/game.js"></script>
+  <script src="../../js/canvas_to_image.js"></script>
+  <script src="../../js/message.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="../../js/periodic_table.js"></script>
+  <script src="js/molecules.js"></script>
+  <script src="js/global.js"></script>
+</head>
+<body>
+  
+  <div id="header">
+    <a class="back_to_nav" href="../../#arcade">
+      <img src="../../images/back_to_nav_arrow.png" align="left" />
+      NanoSpace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+    <a class="open_instructions" href="javascript:;">?</a>
+  </div>
+  
+  
+  <div id="splash">
+    <img src="images/splash.png" width="900" height="600" />
+  </div>
+  
+  
+  <div id="loading">
+    <span>Loading...</span>
+    <div class="progress_container"><div class="progress"></div></div>
+  </div>
+  
+  
+  <div id="high_scores" class="hidden_from_splash" style="display:none">
+    <div class="inner"></div>
+    <div class="log_in_message">
+      You must be <a id="go_to_login" href="../../#arcade">logged in</a> for your high scores to be submitted.
+    </div>
+  </div>
+  
+  
+  <div id="left_column" class="hidden_from_splash">
+    <a id="retry" href="javascript:;" onClick="Stage.start_level()">Retry Level</a><br />
+    <a id="select_level" href="javascript:;" onClick="Stage.show_level_selector()">Choose Level</a>
+    <a id="high_scores_button" href="javascript:;" onClick="Stage.show_high_scores()">High Scores</a>
+    
+    <div id="points_legend">
+      <h2>Points</h2>
+    </div>
+  </div>
+  
+  <div id="level_selector" class="hidden_from_splash" style="display:none">
+    <div class="inner">
+      <h2>Choose A Level <a class="close">X</a></h2>
+      <div class="levels"></div>
+    </div>
+  </div>
+  
+  <div id="container" class="container hidden_from_splash">
+    <div class="inner">
+      
+      <div id="start_level_message" class="message" style="display:none">
+        <div class="inner">
+          <span class="level">
+            Level <span class="val">00</span>
+          </span>
+          
+          <span class="goal">
+            Your Goal: <span class="val"></span>
+          </span>
+        </div>
+      </div>
+      
+      <div id="level_complete_message" class="message" style="display:none">
+        <div class="inner">
+          <span class="complete">Level Complete!</span>
+        </div>
+      </div>
+      
+      <div id="try_again_message" class="message" style="display:none">
+        <div class="inner">
+          <span class="failed">Level Failed</span>
+          <span class="goal">
+            Goal: <span class="val"></span>
+          </span>
+          
+          <span class="score">
+            Your Score: <span class="val"></span>
+          </span>
+          
+          <span class="try_again">Try Again!</span>
+        </div>
+      </div>
+      
+      <div id="level_num">Level <span>0</span></div>    
+      <div id="required_score">Goal: <span>0</span> pts</div>    
+      <div id="score">Your Score: <span>0</span></div>
+      
+      <canvas id="canvas" width="878" height="581"></canvas>
+      
+      <div id="info">
+        <div id="elements">
+          <img src="images/elements/H.png" /> Hydrogen
+          <img src="images/elements/O.png" /> Oxygen
+          <img src="images/elements/N.png" /> Nitrogen
+          <img src="images/elements/C.png" /> Carbon
+        </div>
+  
+        <div id="ammo"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div style="display:none">
+    <img id="gun_img" src="images/cannon.png" />
+  </div>
+    
+  <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

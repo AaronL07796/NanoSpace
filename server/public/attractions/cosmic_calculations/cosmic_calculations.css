@@ -1,0 +1,228 @@
+body{
+    text-align:         center;
+    }
+
+#stage{
+    border:             2px solid #90D7F2;
+    }
+
+#peripherals{
+    position:           absolute;
+    z-index:            9999;
+    top:                0;
+    left:               0;
+    width:              100%;
+    height:             100%;
+    background:         black url(images/peripherals.jpg) 0 0 no-repeat;
+    cursor:             pointer;
+    }
+
+
+
+/* TOP AREA */
+#top{
+    height:             432px;
+    background:         transparent url(images/top_background.png) 0 100% repeat-x;
+    }
+
+#info{
+    position:           absolute;
+    top:                16px;
+    right:              10px;
+    text-align:         right;
+    text-transform:     uppercase;
+    font-size:          30px;
+    font-weight:        normal;
+    color:              #00ADEE;
+    }
+
+#info div{
+    display:            inline;
+    padding-right:      10px;
+    font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+    color:              #FFF;
+    }
+
+#info #guesses_remaining{
+    color:              #EE1C00;
+    }
+
+#guess_in_exponential{
+    opacity:            0.0;
+    position:           absolute;
+    top:                26px;
+    left:               40px;
+    color:              #00AFED;
+    font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+    }
+#guess_in_exponential #mantissa{
+    position:           absolute;
+    top:                40px;
+    left:               0;
+    font-size:          368px;
+    }
+
+#guess_in_exponential #exponent{
+    position:           absolute;
+    top:                0;
+    left:               220px;
+    font-size:          222px;
+    }
+
+#object_name{
+    position:           absolute;
+    top:                72px;
+    right:              65px;
+    width:              404px;
+    font-size:          50px;
+    }
+
+#guess_in_english{
+    position:           absolute;
+    top:                128px;
+    right:              65px;
+    width:              404px;
+    font-size:          32px;
+    }
+
+#object_image{
+    position:           absolute;
+    top:                200px;
+    right:              65px;
+    width:              404px;
+    height:             200px;
+    line-height:        200px;
+    overflow:           hidden;
+    font-size:          0;
+    }
+
+#object_image img{
+    margin-top:         -800px;
+    vertical-align:     middle;
+    }
+
+.calculator{
+    position:           absolute;
+    bottom:             165px;
+    left:               10px;
+    width:              259px;
+    height:             258px;
+    background-position:0px 0px;
+    background-repeat:   no-repeat;
+    }
+
+.calculator#approval    { background-image: url(images/sprites/approval.png);     }
+.calculator#disapproval { background-image: url(images/sprites/disapproval.png);  }  
+.calculator#higher      { background-image: url(images/sprites/higher.png);       }
+.calculator#lower       { background-image: url(images/sprites/lower.png);        }
+.calculator#talk_1      { background-image: url(images/sprites/talk_1.png);       }
+.calculator#talk_2      { background-image: url(images/sprites/talk_2.png);       }
+.calculator#walk_right  { background-image: url(images/sprites/walk_right.png);
+                          left: -200px;                                           }
+.calculator#walk_left   { background-image: url(images/sprites/walk_left.png);    }
+.calculator#wait        { background-image: url(images/sprites/wait.png);         }     
+
+#speech_bubble{
+    opacity:            0.0;
+    position:           absolute;
+    z-index:            1;
+    bottom:             330px;
+    left:               180px;
+    width:              141px;
+    height:             67px;
+    background-image:   url(images/speech_bubble.png);
+    color:              #00ADEE;
+    font-size:          28px;
+    line-height:        59px;
+    }
+
+
+#high_scores {
+  background:         #000 url(images/high_scores.png) 0 0 no-repeat;
+  }
+
+#high_scores .inner {
+  margin:             170px 0 0 200px;
+  }
+
+#high_scores .log_in_message {
+  bottom:             15px;
+  }
+
+
+/* BOTTOM AREA */
+#bottom{
+    position:           absolute;
+    bottom:             0;
+    left:               0;
+    width:              900px;
+    height:             169px;
+    border-top:         2px solid #90D7F2;
+    background:         transparent url(images/bottom_background.png) 0 0 no-repeat;
+    }
+
+#guess_in_decimal{
+    position:           absolute;
+    opacity:            0.0;
+    top:                32px;
+    left:               53px;
+    width:              792px;
+    height:             44px;
+    overflow:           hidden;
+    font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+    font-size:          30px;
+    line-height:        46px;
+    -webkit-text-stroke:1px transparent;
+    }
+
+#guess_slider{
+    position:           absolute;
+    top:                119px;
+    left:               76px;
+    width:              737px;
+    height:             14px;
+    border:             none;
+    background:         transparent;
+    }
+
+#guess_slider .ui-slider-handle{
+    top:                -23px;
+    margin-left:        -29px;
+    width:              61px;
+    height:             61px;
+    border:             none;
+    background:         transparent url(images/knob.png) 0 0 no-repeat;
+    }
+
+#guess_slider .ui-state-active{
+    cursor:             none;
+    }
+
+/* MESSAGES */
+._message span {
+  color:              #FFD04A;
+  }
+
+.message > .inner {
+  background-color:   rgba(0, 0, 0, 0.25);
+  cursor:             pointer;
+  }
+  
+#game_over_message {
+  cursor:             pointer;
+  }
+
+#game_over_message .game_over,
+#level_completed_message .congrats {
+  display:            block;
+  color:              #FFD04A;
+  text-transform:     uppercase;
+  font-size:          102px;
+  }
+.message .alert {
+  display:            block;
+  color:              #FFF;
+  text-transform:     uppercase;
+  font-size:          62px;
+  margin:             10px;
+  }

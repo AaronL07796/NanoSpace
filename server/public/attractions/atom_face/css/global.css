@@ -1,0 +1,161 @@
+* {
+  margin:             0;
+  padding:            0;
+  }
+
+body {
+  background-color:   #000;
+  overflow:           hidden;
+  width:              100%;
+  }
+
+#container {
+  position:           absolute;
+  width:              900px;
+  height:             600px;
+  left:               50%;
+  top:                50%;
+  margin:             -300px 0 0 -450px;
+  background:         #FFF url(../images/bottom_bar.png) 0 bottom repeat-x;
+  border:             1px solid #CCC;
+  }
+
+#container h1 {
+  position:           absolute;
+  top:                10px;
+  left:               10px;
+  }
+
+#welcome {
+  position:           absolute;
+  z-index:            4;
+  width:              329px;
+  height:             40px;
+  line-height:        40px;
+  bottom:             20px;
+  left:               30px;
+  font-size:          42px;
+  text-transform:     uppercase;
+  color:              #032179;
+  }
+
+#ok_button {
+  position:           absolute;
+  z-index:            4;
+  bottom:             20px;
+  right:              238px;
+  width:              40px;
+  height:             40px;
+  cursor:             pointer;
+  background:         transparent url(../images/ok_button.png) 0 0 no-repeat;
+  }
+#ok_button.click {
+  background:         transparent url(../images/ok_button.png) 0px -40px no-repeat;
+  }
+
+#color_picker {
+  position:           absolute;
+  z-index:            4;
+  bottom:             20px;
+  left:               362px;
+  width:              250px;
+  height:             39px;
+  background:         transparent url(../images/color_picker.png) 0 0 no-repeat;
+  }
+#color_picker > .inner {
+  margin-left:        4px;
+  }
+#color_picker span {
+  display:            block;
+  float:              left;
+  width:              26px;
+  height:             39px;
+  cursor:             pointer;
+  }
+
+#face {
+  position:           absolute;
+  top:                0;
+  left:               0;
+  width:              550px;
+  height:             100%;
+  }
+
+#face img {
+  position:           absolute;
+  top:                50px;
+  left:               70px;
+  }
+
+#tray {
+  position:           absolute;
+  right:              0;
+  width:              350px;
+  height:             100%;
+  }
+
+#tray .tab {
+  position:           absolute;
+  top:                0;
+  right:              0;
+  width:              341px;
+  height:             600px;
+  }
+#eyebrows {background: transparent url(../images/tabs/eyebrows.png) 0 0 no-repeat;}
+#eyes {background: transparent url(../images/tabs/eyes.png) 0 0 no-repeat;}
+#mouths {background: transparent url(../images/tabs/mouths.png) 0 0 no-repeat;}
+#heads {background: transparent url(../images/tabs/heads.png) 0 0 no-repeat;}
+
+#tray .buttons {
+  z-index:            3;
+  position:           absolute;
+  left:               17px;
+  width:              115px;
+  height:             600px;
+  }
+#tray .buttons div {
+  position:           absolute;
+  width:              100%;
+  height:             127px;
+  cursor:             pointer;
+  }
+#tray .buttons .eyebrows {top: 0px;}
+#tray .buttons .eyes {top: 128px;}
+#tray .buttons .mouths {top: 257px;}
+#tray .buttons .heads {top: 386px;}
+
+#tray .tab .parts {
+  position:           absolute;
+  width:              213px;
+  height:             600px;
+  top:                0;
+  right:              0;
+  }
+
+#eyebrows img,
+#eyes img,
+#mouths img {
+  position:           absolute;
+  cursor:             pointer;
+  }
+
+#tray #eyebrows .parts img.small{width: 100px;}
+#tray #eyebrows .parts{top: 15px;}
+
+#tray #eyes .parts img.small{width: 70px;}
+#tray #eyes .parts{top: 15px; right: -8px;}
+
+#tray #mouths .parts img.small{height: 40px;}
+#tray #mouths .parts{top: 35px;}
+
+#tray #heads .parts{top: 8px;}
+#heads .parts div {
+  width:              125px;
+  height:             125px;
+  margin:             15px 10px 15px 38px;
+  cursor:             pointer;
+  }
+#heads .parts div img {
+  width:              100%;
+  height:             100%;
+  }

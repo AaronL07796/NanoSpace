@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="../../favicon_32.ico">
+  <title>Dimension Zone - NanoSpace</title>
+  
+  <meta name="viewport" content="width=1140, maximum-scale=.9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <script type="text/javascript" src="http://use.typekit.com/nzt5rde.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  
+  <link rel="stylesheet" href="../../css/games.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  
+  <script src="../../js/jquery.js"></script>
+  <!--[if lt IE 9]><script src="../../js/ie.js"></script><![endif]-->
+  <script src="../../js/global.js"></script>
+  <script src="../../js/jquery-ui.js"></script>
+  <script src="../../js/soundmanager2.js"></script>
+  <script src="../../js/jquery.store.js"></script>
+  <script src="../../js/user.js"></script>
+  <script src="../../js/periodic_table.js"></script>
+  <script src="../../js/game.js"></script>
+  <script src="../../js/message.js"></script>
+  <script src="js/global.js"></script>
+</head>
+<body>
+  
+  <div id="header">
+    <a class="back_to_nav" href="../../#sizes">
+      <img src="../../images/back_to_nav_arrow.png" align="left" />
+      NanoSpace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+    <a class="open_instructions" href="javascript:;">?</a>
+  </div>
+  
+  
+  <div id="splash">
+    <img src="images/splash.png" width="900" height="600" />
+  </div>
+  
+  
+  <div id="loading">
+    <span>Loading...</span>
+    <div class="progress_container"><div class="progress"></div></div>
+  </div>
+  
+  <div id="container" class="hidden_from_splash">
+    <div id="game_instructions" class="hidden_from_splash">
+      <a class="play" href="javascript:;">Play Scavenger Hunt</a>
+    </div>
+    
+    <div id="score" style="display:none">
+  	  <span class="num_correct"> 0 of 3</span>
+  	  <span class="tries_left_label">TRIES LEFT:</span>
+  	  <span class="tries_left">3</span>
+  	</div>
+    
+    <div class="message start" style="display:none">
+  	  <div class="inner">
+  	    <p class="content">
+  	      OK, Some of the objects are the wrong size...
+  	      <br/>Try to identify which ones!
+  	    </p>
+  	    <div class="buttons">
+  	      <a id="start_game" href="javascript:;">Sure, let's go!</a>
+  	      <a id="cancel_game" href="javascript:;">(cancel)</a>
+  	    </div>
+  	  </div>
+  	</div>
+  	
+  	<div class="message play_again" style="display:none">
+  	  <div class="inner">
+  	    <p class="content">Yes, you win!</p>
+  	    <p class="again_content">Play again?</p>
+  	    <div class="buttons">
+  	      <a class="easier" href="javascript:;">Yes, but make it easier!</a>
+  	      <a class="harder" href="javascript:;">Yes, but make it harder!</a>
+  	      <a class="stop_playing" href="javascript:;">No, I'm done!</a>
+  	    </div>
+  	  </div>
+  	</div>
+    
+		<div class="object_info">
+		  <div class="orf">
+		    <img src="images/orf.gif" />
+		  </div>
+		  <div class="inner"></div>
+		</div>
+		
+		<div id="zoom_dial">
+		  <div class="handle"></div>
+		</div>
+    
+    <div id="viewport"><div class="inner"></div></div>
+    
+    <div id="ruler">
+    	<canvas id="ruler_canvas" width="900" height="75"></canvas>
+    	<div class="labels"></div>
+    </div>
+    
+  </div>
+  
+  <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>
