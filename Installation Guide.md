@@ -29,6 +29,25 @@ to be updated and better formatted when we actually figure out how to install an
 
 7. Setup Passenger
 > https://www.phusionpassenger.com/docs/tutorials/deploy_to_production/deploying_your_app/enterprise/aws/ruby/standalone/
+> Added `<VirtualHost *:80>
+    ServerName 128.113.126.65
 
-8. Setup storage.yml within /var/www/nanospace/server/config/storage.yml
-> currently in progress
+    # Tell Apache and Passenger where your app's 'public' directory is
+    DocumentRoot /var/www/nanospace/server/public
+
+    PassengerRuby /usr/local/bin/ruby
+
+    # Relax Apache security settings
+    <Directory /var/www/nanospace/server/public>
+      Allow from all
+      Options -MultiViews
+      # Uncomment this if you're on Apache > 2.4:
+      Require all granted
+    </Directory>
+</VirtualHost>`
+
+8. Fix issues according to Passenger's error log file
+> /var/log/apache2/error.log
+> 
+Adding active storage according to https://edgeguides.rubyonrails.org/active_storage_overview.html and https://guides.rubyonrails.org/active_storage_overview.html
+`currently in progress`
