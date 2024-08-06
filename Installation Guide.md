@@ -54,6 +54,10 @@ Removed Active Storage usage in Rails, must be removed or used between the updat
 
 `fixed`
 
-Fixing Secret Key in Production error, no secrets.yml file available in config. This is required by Rails 4.
+~~Fixing Secret Key in Production error, no secrets.yml file available in config. This is required by Rails 4.~~ secrets.yml is replaced by credentials.yml.enc and master.key in Rails 7. Follow https://blog.assistancy.be/blog/how-to-store-credentials-in-rails-7/.
+
+`fixed`
+
+9. Now using production.log to fix errors in /var/www/nanospace/server/log/production.log
 
 `currently in progress`
