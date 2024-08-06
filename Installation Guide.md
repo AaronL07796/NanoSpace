@@ -60,4 +60,10 @@ Removed Active Storage usage in Rails, must be removed or used between the updat
 
 9. Now using production.log to fix errors in /var/www/nanospace/server/log/production.log
 
-`currently in progress`
+Error lies within database.yml, changed username and password for mysql to be the root account and its password
+
+`fixed`
+
+10. At this point, LOGIN and SIGN UP should appear as options on the homepage, and the games should be playable. However, signup and login doesn't work.
+
+`Currently in progress`
