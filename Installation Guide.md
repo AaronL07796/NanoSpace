@@ -46,8 +46,14 @@ to be updated and better formatted when we actually figure out how to install an
     </Directory>
 </VirtualHost>`
 
-8. Fix issues according to Passenger's error log file
+8. Fix issues according to Passenger's error log file, more information in error_log.md
 > /var/log/apache2/error.log
 > 
-Adding active storage according to https://edgeguides.rubyonrails.org/active_storage_overview.html and https://guides.rubyonrails.org/active_storage_overview.html
+~~Adding active storage according to https://edgeguides.rubyonrails.org/active_storage_overview.html and https://guides.rubyonrails.org/active_storage_overview.html~~
+Removed Active Storage usage in Rails, must be removed or used between the updates between Rails 5 and Rails 6.
+
+`fixed`
+
+Fixing Secret Key in Production error, no secrets.yml file available in config. This is required by Rails 4.
+
 `currently in progress`
