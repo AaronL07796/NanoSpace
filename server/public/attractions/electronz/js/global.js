@@ -202,13 +202,13 @@ $(function() {
   
               // If the slot has been filled, remove the fired electron
               if(level.filled_electrons[i]) {
-                Game.play_sound('electron_filled')
+                Game.play_sound('Electron_Filled')
                 delete_i.push(j)
                 update_electrons_filled(1, level)
   
               // Otherwise, pop a new electron out
               } else {
-                Game.play_sound('electron_collision')
+                Game.play_sound('Electron_Collision')
                 fired_electron.x = e_x + 2*ATOM.electron_radius
                 fired_electron.y = e_y + 2*ATOM.electron_radius
                 fired_electron.vx = 0.5
@@ -412,10 +412,10 @@ $(function() {
     
     if(key == 38 && SHIP.thruster != 1) { // forward thrust
       SHIP.thruster = 1
-      Game.play_sound('thruster_forward')
+      Game.play_sound('Thruster_Forward')
     } else if(key == 40 && SHIP.thruster != -1) { // backward thrust
       SHIP.thruster = -1
-      Game.play_sound('thruster_backward')
+      Game.play_sound('Thruster_Backward')
     } else if(key == 37) { // counter-clockwise rotation
       SHIP.rotational_direction = -1
     } else if(key == 39) { // clockwise rotation
@@ -431,8 +431,8 @@ $(function() {
     
     if(key == 38 || key == 40) { // thrusters
       SHIP.thruster = false
-      Game.stop_sound('thruster_forward')
-      Game.stop_sound('thruster_backward')
+      Game.stop_sound('Thruster_Forward')
+      Game.stop_sound('Thruster_Backward')
     } else if(key == 37) { // counter-clockwise rotation
       SHIP.rotational_direction = 0
     } else if(key == 39) { // clockwise rotation
@@ -453,7 +453,7 @@ $(function() {
   
   
   var show_level_selector = function() {
-    Game.stop_sound('background')
+    Game.stop_sound('Background')
     stop()
     
     var levels_container = $('#level_selector .levels')
@@ -749,12 +749,12 @@ $(function() {
       url: 'sounds/ship_collision.mp3',
       volume: 20
     }, {
-      id: 'electron_filled',
-      url: 'sounds/electron_filled.mp3',
+      id: 'Electron_Filled',
+      url: 'sounds/Electron_Filled.mp3',
       volume: 20
     }, {
-      id: 'electron_collision',
-      url: 'sounds/electron_collision.mp3',
+      id: 'Electron_Collision',
+      url: 'sounds/Electron_Collision.mp3',
       volume: 20
     }, {
       id: 'shell_broken',
@@ -765,18 +765,18 @@ $(function() {
       url: 'sounds/shell_filled.mp3',
       volume: 20
     }, {
-      id: 'thruster_forward',
-      url: 'sounds/thruster_forward.mp3',
+      id: 'Thruster_Forward',
+      url: 'sounds/Thruster_Forward.mp3',
       loops: 999999,
       volume: 80
     }, {
-      id: 'thruster_backward',
-      url: 'sounds/thruster_backward.mp3',
+      id: 'Thruster_Backward',
+      url: 'sounds/Thruster_Backward.mp3',
       loops: 999999,
       volume: 80
     }, {
-      id: 'background',
-      url: 'sounds/background.mp3',
+      id: 'Background',
+      url: 'sounds/BackGround.mp3',
       stream: true,
       music_muteable: true,
       loops: 999999,
