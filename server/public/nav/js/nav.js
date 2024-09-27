@@ -350,29 +350,52 @@
   }
   
   
-  var convert_fake_images = function() {
+  // var convert_fake_images = function() {
   
+  //   $('.img').each(function() {
+  //     var fake_img = $(this),
+  //     		img = $('<img />').attr('src', fake_img.data('src'))
+
+	// 		if( fake_img.is('a') ) {
+	// 			var link = $('<a />').attr('href', fake_img.attr('href').replace('_area','')).append(img)
+	// 			if( fake_img.attr('target') ) {
+	// 				link.attr('target', fake_img.attr('target'))
+	// 			}
+	// 			img = link
+	// 		}
+
+	// 		img[0].className = fake_img[0].className
+	// 		img.attr('id', fake_img.attr('id'))
+
+	// 		if( fake_img.data('parallax-factor') ) img.data('parallax-factor', fake_img.data('parallax-factor'))
+	// 		if( fake_img.hasClass('hide') ) img.hide()
+	// 		fake_img.replaceWith(img)      
+  //   })
+  
+  // }
+
+  var convert_fake_images = function() {
     $('.img').each(function() {
       var fake_img = $(this),
-      		img = $('<img />').attr('src', fake_img.data('src'))
-
-			if( fake_img.is('a') ) {
-				var link = $('<a />').attr('href', fake_img.attr('href').replace('_area','')).append(img)
-				if( fake_img.attr('target') ) {
-					link.attr('target', fake_img.attr('target'))
-				}
-				img = link
-			}
-
-			img[0].className = fake_img[0].className
-			img.attr('id', fake_img.attr('id'))
-
-			if( fake_img.data('parallax-factor') ) img.data('parallax-factor', fake_img.data('parallax-factor'))
-			if( fake_img.hasClass('hide') ) img.hide()
-			fake_img.replaceWith(img)      
-    })
+          img = $('<img />').attr('src', fake_img.data('src'))
+                            .attr('alt', fake_img.data('alt') || ""); // Add alt attribute
   
-  }
+      if (fake_img.is('a')) {
+        var link = $('<a />').attr('href', fake_img.attr('href').replace('_area','')).append(img);
+        if (fake_img.attr('target')) {
+          link.attr('target', fake_img.attr('target'));
+        }
+        img = link;
+      }
+  
+      img[0].className = fake_img[0].className;
+      img.attr('id', fake_img.attr('id'));
+  
+      if (fake_img.data('parallax-factor')) img.data('parallax-factor', fake_img.data('parallax-factor'));
+      if (fake_img.hasClass('hide')) img.hide();
+      fake_img.replaceWith(img);
+    });
+  };
   
   
   var prepare_and_show_park = function() {
