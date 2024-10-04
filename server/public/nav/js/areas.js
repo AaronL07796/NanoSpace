@@ -97,7 +97,7 @@ $(function() {
       arch_lights = area.find('.arch_lights'),
       arch_frame = 0,
       spotlight = area.find('.spotlight'),
-      legal_links = $('#legal_footer a, .legal a[href*="#"]'),
+      legal_links = $('#legal_popup, .legal a[href*="#"]'),
       legal_sections = area.find('.legal')
 
   var start_playback_333 = function() {
