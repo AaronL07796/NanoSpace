@@ -557,7 +557,7 @@ var Stage = function() {
     $('#points_legend').html('')
     for(var symbol in CompleteMolecules) {
       var m = CompleteMolecules[symbol]
-      $('<div />').html('<img src="images/molecules/'+m.formula+'.png" align="left" />' + m.formula.replace(/(\d+)/, '<sub>$1</sub>', 'g')+' <span>'+m.points+'pts</span>').appendTo($('#points_legend'))
+      $('<div />').html('<img src="images/molecules/'+m.formula+'.png" align="left" alt="" />' + m.formula.replace(/(\d+)/, '<sub>$1</sub>', 'g')+' <span>'+m.points+'pts</span>').appendTo($('#points_legend'))
     }
   }
   
