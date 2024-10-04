@@ -124,7 +124,7 @@ $(function() {
   }
 
   var show_legal_info = function() {
-    var clicked = $('#'+this.href.split('#')[1])
+   var clicked = $('#'+this.href.split('#')[1])
     legal_sections.not(clicked).fadeOut()
     clicked.fadeIn()
     return false
