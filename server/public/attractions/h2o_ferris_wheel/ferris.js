@@ -39,7 +39,7 @@ $(function() {
   var setup = function() {
     $('.img').each(function() {
       var fake_img = $(this),
-          img = $('<img />').attr('src', fake_img.data('src'))
+          img = $('<img />').attr('src', fake_img.data('src')).attr('alt', fake_img.data('alt'))
       fake_img.replaceWith(img)      
     })
 
