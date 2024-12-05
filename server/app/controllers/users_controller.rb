@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @users = User.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html  application.html.erb
       format.xml  { render :xml => @users }
     end
   end

@@ -23,8 +23,7 @@ class User < ActiveRecord::Base
   
   
   def token
-    # [FOR NEW ADMIN] Replace SALT1 & SALT2 with two random salts 
-    Digest::MD5.hexdigest("SALT1|#{self.id}|#{self.name}|SALT2")
+    Digest::MD5.hexdigest("7fa1090cd3d3810900382a1bcf43c4f9|#{self.id}|#{self.name}|364f595f56107a234787099652ba05a2")
   end
   
   
