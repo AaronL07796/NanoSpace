@@ -1,4 +1,5 @@
 var User = function() {
+
   var THIS = {}
   
   var local_storage = new $.store()
@@ -201,6 +202,17 @@ var User = function() {
     params = params || {}
     
     var user_session = {'name': name, 'password': password}
+
+    // Anti-CSRF token
+    console.log("2nd csrf before");
+    var csrftoken = $('meta[name=csrf-token]').attr('content');
+    console.log(csrftoken);
+    $.ajaxSetup({
+        headers:{
+            "X-CSRF-Token": csrftoken
+        }
+    });
+    console.log("2nd csrf after");
     
     $.post('/login', {'user_session': user_session, 'scores': SCORES, 'achievements': ACHIEVEMENTS, 'flags': FLAGS}, function(r) {
       if(!r.user) {

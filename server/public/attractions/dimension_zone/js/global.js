@@ -451,7 +451,7 @@ $(window).load(function() {
     
     var orf_img = $('.object_info .orf img')
     var orf_src = orf_img.attr('src').split('?')[0]
-    orf_img.attr('src', orf_src+'?'+Date.now())
+    orf_img.attr('src', orf_src+'?'+Date.now()).attr('alt', "")
     
     if(selected_obj) {
       shown_img = $(selected_obj.img)
