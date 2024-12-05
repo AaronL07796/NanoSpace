@@ -1,6 +1,5 @@
 class Notifier < ActionMailer::Base
-  # [FOR NEW ADMIN] Change USER@DOMAIN to your preferred email
-  default :from => "USER@DOMAIN"
+  default :from => "nanospace@http://moleculestothemax.com/"
   
   def password_reset(user)
     @user = user

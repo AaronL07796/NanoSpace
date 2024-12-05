@@ -398,6 +398,7 @@
   };
   
   
+  
   var prepare_and_show_park = function() {
 
     convert_fake_images()
@@ -455,7 +456,7 @@
         new_stage = new_area.children('.stage'),
         new_parallax = new_stage.children('.parallax')
         
-    document.title = new_area.data('area-title')
+    //document.title = new_area.data('area-title')
     
     // Fire off events at the beginning of a transition to…
     // …tell the outgoing area to stop the animation
@@ -853,7 +854,7 @@
     new_area.show()
     
     _outside.animate( { opacity: 1 }, 400, 'swing', function() {
-      // Let new area know it can begin it's animations
+1      // Let new area know it can begin it's animations
       new_area.trigger('enter_complete')
     })
   

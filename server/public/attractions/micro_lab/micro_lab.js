@@ -24,7 +24,7 @@ $(function() {
       var h_offset = (i%5) * -180
       var v_offset = Math.floor(i/5) * -180
 
-			$('<li><div /><img src="'+thumbnail_url+'" /></li>')
+			$('<li><div /><img src="'+thumbnail_url+'" alt="sample thumbnail"/></li>')
 			  .data('microscope', microscope)
 			  .data('sample-name', sample.name)
 			  .data('caption', sample.caption)
@@ -146,12 +146,12 @@ var SampleViewer = function() {
 		if(IMG.regular) IMG.regular.remove()
 		
 		// Create images
-		IMG.high_contrast = $('<img />').attr('src', 'images/samples/'+microscope+'/'+SAMPLE+'/high_contrast.jpg')
+		IMG.high_contrast = $('<img />').attr('src', 'images/samples/'+microscope+'/'+SAMPLE+'/high_contrast.jpg').attr('alt', "")
 												.css({width: SAMPLE_SIZE, height: SAMPLE_SIZE})
 												.hide()
 												.appendTo(SAMPLE_CONTAINER)
 		
-		IMG.regular =       $('<img />').attr('src', 'images/samples/'+microscope+'/'+SAMPLE+'/standard.jpg')
+		IMG.regular =       $('<img />').attr('src', 'images/samples/'+microscope+'/'+SAMPLE+'/standard.jpg').attr('alt', "")
 												.css({width: SAMPLE_SIZE, height: SAMPLE_SIZE})
 												.hide()
 												.appendTo(SAMPLE_CONTAINER)
@@ -280,7 +280,7 @@ var convert_fake_images = function() {
       img.id = fake_img.id
       fake_img.replaceWith(img)
     })
-    .attr('src', fake_img.data('src'))
+    .attr('src', fake_img.data('src')).attr('alt', fake_img.data('alt') || "")
   })
 
 }

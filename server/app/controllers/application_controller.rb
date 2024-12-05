@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
+  protect_from_forgery with: :exception
+
+  render js: "alert('Hello Rails');"
 
   private
 
@@ -38,7 +41,6 @@ class ApplicationController < ActionController::Base
     # Let users/update pass through, if the user is editing themselves
     return true if params[:controller] == 'users' and params[:action] == 'update' and params[:id] == 'current'
     
-    # [FOR NEW ADMIN] Change USER and PASSWORD to your own choice
     authenticate_or_request_with_http_basic do |user, password|
       user == 'USER' && password == 'PASSWORD'
     end

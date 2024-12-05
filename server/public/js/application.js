@@ -2,6 +2,10 @@
  * each other, only allowing one to execute at any given moment. This allows
  * one to construct multiple "modes" in the Application, only one of which is
  * active at a time. */
+import Rails from "@rails/ujs";
+Rails.start();
+
+
 function Application (id) {
   this.modes = {}
   this.globals = {}
@@ -18,6 +22,24 @@ function Application (id) {
   this.frame = 0
   this.interval = null
 }
+
+$(document).ready(function() {
+  // Get the CSRF token from the meta tag
+  console.log("before csrf");
+
+  var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+  console.log(csrfToken);
+  
+  // Set up jQuery to include the CSRF token in all AJAX requests
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-Token': csrfToken
+    }
+  });
+
+  console.log("after csrf");
+});
 
 /* Attach an applet to this application. */
 Application.prototype.attach = function (id, constructor) {
@@ -109,6 +131,28 @@ Application.prototype.setGlobal = function (id, value) {
 }
 
 /* Retrieve a global value. */
-Application.prototype.getGlobal = function (id) {
+/*Application.prototype.getGlobal = function (id) {
   return this.globals[id] || null
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+  fetch('/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': token
+    },
+    body: JSON.stringify({
+      user: {
+        name: "test",
+        password: "password",
+        password_confirmation: "password"
+      }
+    })
+  }).then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error("Error:", error));
+});
+
+*/
