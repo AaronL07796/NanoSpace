@@ -225,14 +225,14 @@
       $(".vb_wrap .content").append("<div class='object'></div>"); 
       hrefY = $(link.split('/')).last()[0]
       hrefY = $(hrefY.split('=')).last()[0]
-      $(".vb_wrap .object").append("<iframe src='http://www.youtube.com/embed/"+hrefY+"?autoplay=1&modestbranding=1&showinfo=0&showsearch=0&rel=0' width='"+settings.widthWindow+"' height='"+settings.heightWindow+"' frameborder='0' allowfullscreen></iframe>")
+      $(".vb_wrap .object").append("<iframe src='https://www.youtube.com/embed/"+hrefY+"?autoplay=1&modestbranding=1&showinfo=0&showsearch=0&rel=0' width='"+settings.widthWindow+"' height='"+settings.heightWindow+"' frameborder='0' allowfullscreen></iframe>")
     } 
 	
 	  //Vimeo
 	  function Vimeo (link) {
       $(".vb_wrap .content").append("<div class='object'></div>"); 
       hrefV = $(link.split('/')).last()[0]
-      $(".vb_wrap .object").append("<iframe src='http://player.vimeo.com/video/"+hrefV+"?autoplay=1' width='"+settings.widthWindow+"' height='"+settings.heightWindow+"' frameborder='0'></iframe>")
+      $(".vb_wrap .object").append("<iframe src='https://player.vimeo.com/video/"+hrefV+"?autoplay=1' width='"+settings.widthWindow+"' height='"+settings.heightWindow+"' frameborder='0'></iframe>")
     }
 	
 	  //Player
