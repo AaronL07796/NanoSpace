@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="../../favicon_32.ico">
+    <title>Build 'Em - NanoSpace</title>
+    
+    <meta name="viewport" content="width=1140, maximum-scale=.9"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    
+    <script type="text/javascript" src="http://use.typekit.com/nzt5rde.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    
+    <link rel="stylesheet" href="../../css/games.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    
+    <script src="../../js/jquery.js"></script>
+  	<!--[if lt IE 9]><script src="../../js/ie.js"></script><![endif]-->
+    <script src="../../js/global.js"></script>
+    <script src="../../js/soundmanager2.js"></script>
+    <script src="../../js/jquery.store.js"></script>
+    <script src="../../js/user.js"></script>
+    <script src="../../js/periodic_table.js"></script>
+    <script src="../../js/game.js"></script>
+    <script src="../../js/spin.js"></script>
+    <script src="../../js/molecule.js"></script>
+    <script src="../../js/molecule_library.js"></script>
+    <script src="../../js/canvas_to_image.js"></script>
+    <script src="../../js/message.js"></script>
+    <script src="js/global.js"></script>
+  </head>
+  
+  <body>
+    
+  <div id="header">
+    <a class="back_to_nav" href="../../#arcade">
+      <img src="../../images/back_to_nav_arrow.png" align="left" alt="Back to NanoSpace"/>
+      NanoSpace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+    <a class="open_instructions" href="javascript:;">?</a>
+  </div>
+    
+    
+    <div id="splash">
+      <img src="images/splash.png" width="900" height="600" alt="Use atoms to build the molecules shown in the structural formula. Your percentage of correct atoms shows in the status bar"/>
+    </div>
+    
+    
+    <div id="loading">
+      <span>Loading...</span>
+      <div class="progress_container"><div class="progress"></div></div>
+    </div>
+    
+    
+    <div id="level_selector" class="hidden_from_splash" style="display:none">
+      <div class="inner">
+        <h2>Choose A Molecule <a class="close">X</a></h2>
+        <div class="levels"></div>
+      </div>
+    </div>
+    
+    
+    <div id="more_info" style="display:none">
+      <img src="images/more_info.png" width="900" height="600" alt="Scientists have developed a simplified structural formula, called a skeletal formula. In a skeletal formula, carbon and hydrogen atoms are not shown."/>
+    </div>
+    
+    
+    <div id="container" class="hidden_from_splash">
+      <div class="inner">
+        <span id="change_molecule">Change Molecule</span>
+        
+        <div id="next_molecule">
+          <span class="wrapper">
+            Next Molecule: <span class="title">Biotin</span>!
+            <img src="images/arrow.png" alt="Next Molecule!"/>
+          </span>
+        </div>
+        
+        <div id="molecule_description">
+          <span class="title"></span>
+          <span class="description"></span>
+        </div>
+        
+        <div id="level_message" style="display:none">
+          <div class="inner">
+            <p class="message">Hello there!</p>
+            <a href="javascript:;" class="close">Play</a>
+          </div>
+        </div>
+        
+        <img id="chemical_diagram" alt=""/>
+        <div id="progress_bar"><span></span></div>
+        <canvas id="molecule"></canvas>
+        
+        <canvas id="bins" width="900" height="100"></canvas>
+        <div id="bin_labels"></div>
+        
+        <div id="info">
+          <span class="title">Alcohol</span>
+          <span class="chemical_formula">
+            C<span class="sub">8</span>H<span class="sub">12</span>N<span class="sub">6</span>
+          </span>
+          <span class="percent_complete">0%</span>
+        </div>
+        
+      </div>
+    </div>
+    
+    <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+  
+</html>

@@ -1,0 +1,292 @@
+* {
+  margin:             0;
+  padding:            0;
+  }
+
+body {
+  background-color:   #000;
+  color:              #FFF;
+  width:              100%;
+  font-family:        "myriad-pro-1","myriad-pro-2", "Myriad Pro", "Myriad", san-serif;
+  }
+
+a {
+  color:              #208DF3;
+  text-decoration:    none;
+  }
+
+a:hover {
+  text-decoration:    underline;
+  }
+
+span.button {
+  position:           absolute;
+  cursor:             pointer;
+  }
+
+#container {
+  position:           absolute;
+  width:              900px;
+  height:             600px;
+  left:               50%;
+  top:                50%;
+  margin:             -300px 0 0 -450px;
+  border:             1px solid #464773;
+  }
+
+#container .atom_label {
+  position:           absolute;
+  top:                0;
+  left:               0;
+  width:              177px;
+  height:             71px;
+  line-height:        71px;
+  background:         transparent url(images/atom_label.png) 0 0 no-repeat;
+  color:              #C694D6;
+  font-family:        "atrament-web-1","atrament-web-2",sans-serif;
+  font-weight:        400;
+  font-size:          24px;
+  text-align:         center;
+  text-transform:     uppercase;
+  }
+
+.element_selector {
+  position:           absolute;
+  top:                71px;
+  left:               0;
+  width:              176px;
+  height:             166px;
+  background:         transparent url(images/element_selector.png) 0 0 no-repeat;
+  }
+
+.element_selector > .inner {
+  margin:             4px 0 0 11px;
+  }
+
+.element_selector span {
+  display:            block;
+  float:              left;
+  width:              50px;
+  height:             49px;
+  margin:             1px;
+  cursor:             pointer;
+  }
+
+.phase {
+  z-index:            2;
+  position:           absolute;
+  top:                0;
+  left:               177px;
+  display:            block;
+  width:              600px;
+  height:             70px;
+  }
+
+.phase span {
+  display:            inline-block;
+  position:           absolute;
+  width:              100%;
+  height:             78px;
+  line-height:        78px;
+  text-align:         center;
+  font-size:          72px;
+  color:              #EEE;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  }
+  
+#thermonator_container {
+  position:           absolute;
+  bottom:             0;
+  left:               0;
+  width:              176px;
+  height:             362px;
+  background:         transparent url(images/thermo_gradient.png) 0 0 no-repeat;
+  }
+
+.thermonator{
+    position:           absolute;
+    bottom:             15px;
+    left:               -22px;
+    width:              258px;
+    height:             335px;
+    background-position:0px 0px;
+    background-repeat:  no-repeat;
+    }
+.thermonator#still            { background-image: url(images/sprites/still.png);   }
+.thermonator#condensation     { background-image: url(images/sprites/condensation.png);   }
+.thermonator#crystallization  { background-image: url(images/sprites/crystallization.png);}  
+.thermonator#evaporation      { background-image: url(images/sprites/evaporation.png);    }
+.thermonator#melting          { background-image: url(images/sprites/melting.png);        }
+.thermonator#transformation   { background-image: url(images/sprites/transformation.png); }
+
+.temp_holder {
+  position:           absolute;
+  top:                0;
+  right:              35px;
+  width:              85px;
+  height:             600px;
+  background:         transparent url(images/temp_holder.png) 0 0 no-repeat;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  }
+
+.temp_holder .max_temp,
+.temp_holder .min_temp {
+  position:           absolute;
+  right:              6px;
+  width:              80px;
+  height:             30px;
+  line-height:        30px;
+  color:              #FFF;
+  font-size:          24px;
+  text-align:         center;
+  text-transform:     uppercase;
+  }
+.temp_holder .max_temp {top: 16px;}
+.temp_holder .min_temp {bottom: 66px;}
+
+.temp_holder .temp_indicator {
+  position:           absolute;
+  bottom:             0;
+  right:              10;
+  width:              86px;
+  height:             105px;
+  line-height:        105px;
+  background:         transparent url(images/temp_indicator.png) 0 0 no-repeat;
+  color:              #262261;
+  font-size:          32px;
+  text-align:         center;
+  text-transform:     uppercase;
+  }
+.temp_holder .temp_indicator .button {
+  left:               20px;
+  width:              46px;
+  height:             23px;
+  }
+.temp_holder .temp_indicator .up.button {top: 8px;}
+.temp_holder .temp_indicator .down.button {top: 72px;}
+
+.temp_holder .units {
+  position:           absolute;
+  bottom:             3px;
+  right:              24px;
+  width:              47px;
+  height:             47px;
+  line-height:        47px;
+  color:              #262261;
+  font-size:          31px;
+  text-align:         center;
+  text-transform:     uppercase;
+  cursor:             pointer;
+  }
+
+canvas {
+  position:           absolute;
+  top:                0;
+  left:               177px;
+  display:            block;
+  width:              600px;
+  height:             600px;
+  background-color:   #000;
+  }
+
+#animation_container {
+  position:           absolute;
+  top:                0;
+  left:               176px;
+  width:              604px;
+  height:             600px;
+  background:         transparent url(images/container.png) 0 0 no-repeat;
+  }
+#animation_container .readout {
+  position:           absolute;
+  width:              136px;
+  height:             26px;
+  line-height:        28px;
+  bottom:             16px;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  color:              #262261;
+  font-size:          22px;
+  letter-spacing:     0.2em;
+  text-align:         center;
+  }
+#animation_container .readout.locked {background-color: #FFFF99;}
+#animation_container .freeze.readout {left: 147px;}
+#animation_container .boil.readout {left: 327px;}
+
+#animation_container .button {
+  width:              72px;
+  height:             50px;
+  bottom:             5px;
+  }
+#animation_container .freeze.button {left: 29px;}
+#animation_container .boil.button {left: 505px;}
+
+#temperature_slider {
+    position:           absolute;
+    top:                0;
+    right:              0;
+    width:              35px;
+    height:             600px;
+    background:         transparent url(images/slider_holder.png) 0 0 no-repeat;
+    }
+
+#temperature_slider .holder {
+    position:           absolute;
+    top:                37px;
+    right:              0;
+    width:              100%;
+    height:             454px;
+    cursor:             pointer;
+    }
+
+#temperature_slider .ui-slider-handle {
+    display:            block;
+    position:           absolute;
+    width:              37px;
+    height:             60px;
+    margin-bottom:      -30px;
+    right:              1px;
+    cursor:             pointer;
+    background:         transparent url(images/slider.png) 0 0 no-repeat;
+    }
+
+
+/* MESSAGES */
+
+.message > .inner {
+  background-color:   rgba(0, 0, 0, 0.25);
+  }
+
+#results_message > .inner {
+  padding:            0 0 75px 52px;
+  cursor:             pointer;
+  }
+
+#results_message h2 {
+  display:            block;
+  margin-bottom:      35px;
+  font-size:          72px;
+  }
+
+#results_message div {
+  margin:             15px;
+  font-size:          35px;
+  color:              #FFF;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  }
+
+#results_message span {
+  color:              #0FF;
+  font-size:          38px;
+  margin:             0 5px;
+  }
+
+#results_message .ok {
+  margin-top:         35px;
+  }
+#results_message .ok span {
+  font-size:          72px;
+  }

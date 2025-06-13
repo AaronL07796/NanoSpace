@@ -1,0 +1,333 @@
+html {
+  height:                   100%;
+  overflow:                 hidden;
+  background-color:         #000;
+  -webkit-perspective:      800;
+  }
+
+body {
+  margin:                   0;
+  padding:                  0;
+  color:                    #009DEB;
+  min-height:               740px;
+  }
+  
+#container,
+#level_selector{
+  position:                 absolute;
+  width:                    900px;
+  height:                   600px;
+  left:                     50%;
+  top:                      50%;
+  margin:                   -300px 0 0 -450px;
+  border:                   3px solid #009DEB;
+  -border-radius:           15px;
+  -webkit-border-radius:    15px;
+  -moz-border-radius:       15px;
+  }
+
+#container > .inner {
+  position:                 relative;
+  margin:                   4px;
+  width:                    888px;
+  height:                   588px;
+  border:                   2px solid #0E54ED;
+  -border-radius:           10px;
+  -webkit-border-radius:    10px;
+  -moz-border-radius:       10px;
+  }
+
+#level_selector {
+  z-index:            100;
+  background-color:   black;
+  }
+
+#level_selector > .inner {
+  margin:             0;
+  }
+
+#level_selector h2 {
+  position:           relative;
+  text-align:         center;
+  background-color:   #03165D;
+  border-bottom:      1px solid #208DF3;
+  height:             55px;
+  line-height:        55px;
+  border-top-left-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  -webkit-border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-top-right-radius: 15px;
+  color:              #60BFE0;
+  font-size:          28px;
+  text-transform:     uppercase;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  }
+
+#level_selector .close {
+  position:           absolute;
+  top:                0;
+  right:              22px;
+  font-family:        Helvetica, Arial, san-serif;
+  font-size:          28px;
+  font-weight:        normal;
+  color:              #2156E0;
+  text-decoration:    none;
+  cursor:             pointer;
+  }
+
+#level_selector .levels {
+  margin:             25px auto 0;
+  overflow:           auto;
+  width:              850px;
+  height:             500px;
+  }
+
+#level_selector .levels .level {
+  display:            inline-block;
+  margin:             2px 20px;
+  width:              165px;
+  height:             180px;
+  text-align:         center;
+  font-size:          20px;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  cursor:             pointer;
+  }
+#level_selector .levels .level:hover {
+  opacity:            0.8;
+  color:              #FFF;
+  }
+
+#level_selector .levels .level.locked,
+#level_selector .levels .level.locked:hover {
+  cursor:             normal;
+  opacity:            0.25;
+  color:              #009DEB;
+  }
+
+#level_selector .levels .level img {
+  max-width:          100%;
+  }
+
+#level_selector .levels .level span {
+  display:            block;
+  margin-top:         8px;
+  }
+
+#more_info{
+  z-index:                  10;
+  position:                 absolute;
+  width:                    950px;
+  height:                   650px;
+  left:                     50%;
+  top:                      50%;
+  margin:                   -335px 0 0 -475px;
+  background-color:         #000;
+  text-align:               center;
+  }
+#more_info img{
+  position:                 absolute;
+  display:                  block;
+  top:                      25px;
+  left:                     25px;
+  border:                   3px solid #009DEB;
+  }
+
+#change_molecule {
+  z-index:                  2;
+  position:                 absolute;
+  top:                      -40px;
+  left:                     10px;
+  cursor:                   pointer;
+  font-size:                22px;
+  display:                  none;
+  }
+#change_molecule:hover {
+  text-decoration:          underline;
+  }
+
+#next_molecule {
+  z-index:                  99;
+  position:                 absolute;
+  top:                      12px;
+  left:                     12px;
+  height:                   55px;
+  line-height:              39px;
+  text-align:               center;
+  font-size:                28px;
+  cursor:                   pointer;
+  display:                  none;
+  }
+#next_molecule .wrapper {
+  display:                  inline-block;
+  padding:                  8px 15px;
+  border:                   3px solid #009DEB;
+  -border-radius:           55px;
+  -webkit-border-radius:    55px;
+  -moz-border-radius:       55px;
+  background-color:         #010D38;
+  }
+#next_molecule:hover .wrapper {
+  background-color:         #00258D;
+  }
+#next_molecule img {
+  margin-left:              10px;
+  }
+
+#molecule_description {
+  z-index:                  1;
+  position:                 absolute;
+  width:                    340px;
+  bottom:                   100px;
+  right:                    45px;
+  text-align:               left;
+  font-size:                22px;
+  line-height:              1.3em;
+  opacity:                  0.75;
+  }
+#molecule_description .title {
+  color:                    #FFF;
+  margin-right:             5px;
+  }
+#molecule_description .description {
+  color:                    #009DEB;
+  }
+
+#container #progress_bar {
+  position:                 absolute;
+  top:                      16px;
+  bottom:                   72px;
+  right:                    18px;
+  width:                    16px;
+  border:                   2px solid #0E54ED;
+  -border-radius:           10px;
+  -webkit-border-radius:    10px;
+  -moz-border-radius:       10px;
+  overflow:                 hidden;
+  }
+
+#container #progress_bar span {
+  position:                 absolute;
+  display:                  block;
+  width:                    100%;
+  height:                   0;
+  bottom:                   0;
+  border-top:               2px solid #0E54ED;
+  background-color:         #00258D;
+  border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  }
+
+#molecule {
+  z-index:                  2;
+  }
+
+#bins {
+  z-index:                  1;
+  position:                 absolute;
+  bottom:                   7px;
+  left:                     7px;
+  width:                    900px;
+  height:                   100px;
+  }
+
+#bin_labels {
+  z-index:                  1;
+  position:                 absolute;
+  bottom:                   6px;
+  left:                     18px;
+  width:                    900px;
+  height:                   100px;
+  }
+#bin_labels span {
+  display:                  inline-block;
+  height:                   100px;
+  line-height:              100px;
+  width:                    79px;
+  text-align:               center;
+  color:                    #000;
+  font-size:                20px;
+  font-family:              'league-gothic-1', 'league-gothic-2', sans-serif;
+  }
+
+#info {
+  position:                 absolute;
+  width:                    800px;
+  bottom:                   0;
+  right:                    0;
+  height:                   55px;
+  line-height:              55px;
+  border-top:               2px solid #0E54ED;
+  text-align:               right;
+  font-family:              'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke:      1px transparent;
+  font-size:                30px;
+  color:                    #009DEB;
+  }
+
+#info .title,
+#info .chemical_formula {
+  display:                  inline-block;
+  margin-right:             50px;
+  }
+  
+#info .percent_complete {
+  display:                  inline-block;
+  width:                    58px;
+  text-align:               center;
+  }
+
+#info span.sub {
+  font-size:                70%;
+  padding:                  0 2px 0;
+  }
+
+#container #chemical_diagram {
+  position:                 absolute;
+  top:                      15px;
+  right:                    60px;
+  max-width:                220px;
+  max-height:               220px;
+  }
+
+
+/* MESSAGES */
+
+._message span {
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  color:              #5DC1DE;
+  }
+
+
+/* CUSTOM SCROLLBARS */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #03165D;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #009DEB;
+}
+
+* {
+   scrollbar-arrow-color:#03165D;
+   scrollbar-track-color:#03165D;
+   scrollbar-face-color:#009DEB;
+   scrollbar-shadow-color:#009DEB;
+   scrollbar-highlight-color:#009DEB;
+   scrollbar-3dlight-color:#009DEB;
+   scrollbar-darkshadow-Color:#009DEB;
+  }

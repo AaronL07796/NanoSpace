@@ -1,0 +1,13 @@
+var youtube_videos = {
+
+  // Videos used in the five different areas of the park
+  hall:       'IU1Z6TUDnfA',
+  h2o:        'yioKGbZrteA',
+  sizes:      'qRXNjfJwHHY',
+  dna:        'JBp5nUcd-6w',
+  materials:  'ypYWNQRKCbM',
+
+  // Video used in Carbon Is Incredible
+  carbon_is_incredible: '8RysdfvqoZChEM'
+
+}

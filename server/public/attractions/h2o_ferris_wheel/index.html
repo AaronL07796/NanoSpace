@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="../../favicon_32.ico">
+  <title>H₂O Ferris Wheel - NanoSpace</title>
+  <link rel="stylesheet" href="../../css/games.css">
+  <link rel="stylesheet" href="ferris.css">
+  <script src="http://use.typekit.com/nzt5rde.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+  <div id="header">
+    <a class="back_to_nav" href="../../#h2o">
+      <img src="../../images/back_to_nav_arrow.png" align="left" alt="Back to NanoSpace"/>
+      NanoSpace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+  </div>
+  
+  <div id="splash">
+    <img src="images/splash.jpg" width="900" height="600" alt="H2O Ferris Wheel"/>
+  </div>
+  
+  <div id="loading">
+    <span>Loading...</span>
+    <div class="progress_container"><div class="progress"></div></div>
+  </div>
+
+  <div id="stage" class="hidden_from_splash">
+
+    <div id="rain_container" class="precipitation_container">
+      <div id="rain" class="precipitation"></div>
+    </div>
+
+    <div id="snow_container" class="precipitation_container">
+      <div id="snow" class="precipitation"></div>
+    </div>
+
+    <div id="wave_1" class="wave" data-wave-height="2"></div>
+    <div id="wave_2" class="wave" data-wave-height="4"></div>
+    <div id="wave_3" class="wave" data-wave-height="6"></div>
+
+    <div id="land"></div>
+
+    <div id="wave_4" class="wave" data-wave-height="8"></div>
+
+    <div id="orange_arrows_container">
+      <div id="orange_arrows"></div>
+    </div>
+
+    <div id="evaporation">
+      <div class="arrow_heads"></div>
+      <div class="squiggles"></div>
+    </div>
+
+    <div id="wheel"></div>
+
+    <div id="molecules_container">
+      <div id="water_molecules"></div>
+    </div>
+
+    <div id="wave_5" class="wave" data-wave-height="10"></div>
+
+    <div id="magnifier_1" class="magnifier">
+      <div class="img" data-src="videos/gas.gif" alt="gas"></div>
+      <div></div>
+    </div>
+    <div id="magnifier_2" class="magnifier">
+      <div class="img" data-src="videos/condensation.gif" data-alt="condensation"></div>
+      <div></div>
+    </div>
+    <div id="magnifier_3" class="magnifier">
+      <div class="img" data-src="videos/solid.gif" data-alt="solid"></div>
+      <div></div>
+    </div>
+    <div id="magnifier_4" class="magnifier">
+      <div class="img" data-src="videos/precipitation.gif" data-alt="precipitation"></div>
+      <div></div>
+    </div>
+    <div id="magnifier_5" class="magnifier">
+      <div class="img" data-src="videos/liquid.gif" data-alt="liquid"></div>
+      <div></div>
+    </div>
+    <div id="magnifier_6" class="magnifier">
+      <div class="img" data-src="videos/evaporation.gif" data-alt="evaporation"></div>
+      <div></div>
+    </div>
+
+    <div class="label">Gas</div>
+    <div class="label">Condensation</div>
+    <div class="label">Solid</div>
+    <div class="label">Precipitation</div>
+    <div class="label">Liquid</div>
+    <div class="label">Evaporation</div>
+
+    <img class="click_map" usemap="#magnifier_map" src="images/blank.gif" alt="Click Map for H2O Ferris Wheel"/>
+    <map name="magnifier_map">
+      <area data-mag-num="1" shape="circle" coords="240,190,108" alt="gas"/>
+      <area data-mag-num="2" shape="circle" coords="447,111,108" alt="condensation"/>
+      <area data-mag-num="3" shape="circle" coords="654,191,108" alt="solid"/>
+      <area data-mag-num="4" shape="circle" coords="653,410,108" alt="precipitation"/>
+      <area data-mag-num="5" shape="circle" coords="447,489,108" alt="liquid"/>
+      <area data-mag-num="6" shape="circle" coords="239,410,108" alt="evaporation"/>
+    </map>
+
+  </div>
+
+  <script src="../../js/jquery.js"></script>
+  <!--[if lt IE 9]><script src="../../js/ie.js"></script><![endif]-->
+  <script src="../../js/global.js"></script>
+  <script src="../../js/soundmanager2.js"></script>
+  <script src="../../js/modernizr.js"></script>
+  <script src="../../js/periodic_table.js"></script>
+  <script src="../../js/game.js"></script>
+  <script src="../../js/jquery.easing.js"></script>
+  <script src="../../js/jquery-cssHooks/transform.js"></script>
+  <script src="../../js/jquery-cssHooks/bgpos.js"></script>
+  <script src="../../js/jquery.path.js"></script>
+  <script src="requestTimeout.js"></script>
+  <script src="ferris.js"></script>
+  <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>

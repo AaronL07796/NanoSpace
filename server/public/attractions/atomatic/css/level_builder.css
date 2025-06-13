@@ -1,0 +1,42 @@
+#container {
+  margin-left:        -475px;
+  }
+
+#left_column {
+  margin-left:        -575px;
+  }
+
+#builder {
+  z-index:            999;
+  position:           absolute;
+  height:             600px;
+  left:               50%;
+  top:                50%;
+  margin:             -325px 0 0 440px;
+  }
+
+#builder h2 {
+  margin:             0 0 20px 0;
+  }
+
+#ammo_chooser {
+  margin:             15px 0;
+  }
+
+#ammo_chooser ul {
+  margin:             0;
+  padding:            0;
+  list-style:         none;
+  }
+
+#builder div {
+  margin:             15px 0;
+  }
+
+#ammo {
+	overflow-x: 				auto;
+	}
+
+#ammo img.highlighted {
+	background-color:	 	rgba(255, 255, 255, 0.1);
+	}

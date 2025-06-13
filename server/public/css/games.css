@@ -1,0 +1,413 @@
+@font-face {
+  font-family: 'atrament-web-1';
+  src: url("[insert file path to fonts file]") format('opentype');
+}
+@font-face {
+  font-family: 'league-gothic-2';
+  src: url("[insert file path to fonts file]") format('opentype');
+}
+@font-face {
+  font-family: 'myriad-pro-2';
+  src: url("[insert file path to fonts file]") format('opentype');
+}
+
+*{
+    margin:             0;
+    padding:            0;
+    border:             none;
+    text-decoration:    none;
+    list-style:         none;
+    letter-spacing:     0;
+    }
+
+a{
+    outline:            none;
+    }
+
+img{
+    vertical-align:     bottom;
+    }
+
+html{
+    height:             100%;
+    }
+
+html.wf-loading{
+    visibility:         hidden;
+    }
+
+body{
+    position:           relative;
+    min-width:          900px;
+    height:             100%;
+    min-height:         720px;
+    color:              #FFF;
+    background-color:   #000;
+    font-family:        'atrament-web-1', 'atrament-web-2', sans-serif;
+    line-height:        1;
+    }
+
+body.no_scroll{
+/* NOTE: This breaks soundManager in Firefox, because the Flash player stops updating if it's off the page */
+/*
+    overflow:           hidden;
+*/
+    }
+
+#splash,
+#stage {
+    position:           absolute;
+    top:                50%;
+    left:               50%;
+    margin:             -300px -450px;
+    width:              900px;
+    height:             600px;
+    overflow:           hidden;
+    }
+
+#splash {
+  cursor:             pointer;
+  z-index:            99999;
+  background-color:   black;
+  text-align:         center;
+  }
+
+#splash img {
+  display:            none;
+  z-index:            997;
+  cursor:             pointer;
+  }
+
+#high_scores {
+  z-index:            99999;
+  background-color:   black;
+  position:           absolute;
+  top:                50%;
+  left:               50%;
+  margin:             -300px -450px;
+  width:              900px;
+  height:             600px;
+  overflow:           hidden;
+  cursor:             pointer;
+  font-size:          60px;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  border:             5px solid #000;
+  color:              #FFF;
+  text-align:         left;
+  }
+
+#high_scores .inner {
+  margin:             138px 0 0 138px;
+  }
+
+#high_scores .inner div {
+  height:             75px;
+  }
+
+#high_scores span {
+  display:            inline-block;
+  margin:             0 25px;
+  width:              125px;
+  white-space:        nowrap;
+  overflow:           hidden;
+  text-overflow:      ellipsis;
+  }
+#high_scores span.place {
+  width:              60px;
+  }
+#high_scores span.score {
+  color:              #50AADA;
+  }
+#high_scores span.username {
+  width:              220px;
+  }
+
+#high_scores .log_in_message {
+  position:           absolute;
+  bottom:             55px;
+  text-align:         center;
+  font-size:          28px;
+  width:              100%;
+  color:              #FFF;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  }
+
+#high_scores .log_in_message a {
+  color:              #208DF3;
+  }
+
+.hidden_from_splash {
+  visibility:         hidden;
+  }
+body.revealed .hidden_from_splash {
+  visibility:         visible;
+  }
+
+#loading {
+  display:            none;
+  z-index:            999999;
+  position:           absolute;
+  top:                8px;
+  left:               50%;
+  margin:             0 0 0 -150px;
+  width:              300px;
+  height:             23px;
+  overflow:           hidden;
+  }
+
+#loading span {
+  position:           absolute;
+  display:            block;
+  width:              100%;
+  text-align:         center;
+  line-height:        25px;
+  color:              #03165D;
+  text-transform:     uppercase;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  font-size:          20px;
+  }
+
+#loading .progress_container {
+  width:              100%;
+  height:             100%;
+  background-color:   #03165D;
+  overflow:           hidden;
+  border-radius:         25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius:    25px;
+  }
+
+#loading .progress {
+  width:              0;
+  height:             100%;
+  background-color:   #FFF;
+  }
+
+#header {
+  z-index:            999;
+  position:           absolute;
+  width:              900px;
+  left:               50%;
+  margin:             5px 0 0 -450px;
+  }
+#header a {
+  display:            inline-block;
+  margin:             0 5px;
+  color:              #FFF;
+  font-family:        'atrament-web-1', 'atrament-web-2', sans-serif;
+  font-size:          20px;
+  -webkit-text-stroke:1px transparent;
+  opacity:            0.999;
+  }
+#header a:hover {
+  opacity:            0.75;
+  text-decoration:    none;
+  }
+#header a.back_to_nav {
+  float:              left;
+  }
+#header a.back_to_nav img {
+  margin-right:       5px;
+  display:            inline;
+  float:              left;
+  }
+#header .open_instructions {
+  display:            inline-block;
+  float:              right;
+  font-size:          24px;
+  font-weight:        bold;
+  font-family:        Helvetica, Arial, san-serif;
+  margin:             0 10px 0 0;
+  color:              #FFF;
+  }
+#header .open_instructions:hover {
+  color:              #25AAE1;
+  }
+#header .mute_buttons {
+  float:              right;
+  }
+#header .mute_buttons span {
+  display:            inline-block;
+  float:              right;
+  margin:             -1px 0 0 4px;
+  width:              27px;
+  height:             27px;
+  background:         transparent url(../images/mute.png) 0 -27px no-repeat;
+  }
+#header .mute_buttons.muted a.mute span,
+#header .mute_buttons.muted a.mute_music span,
+#header .mute_buttons.music_muted a.mute_music span {
+  background:         transparent url(../images/mute.png) 0 0 no-repeat;
+  }
+  
+  
+#header .best_buttons {
+  float:              left;
+  }
+#header .best_buttons span {
+  display:            inline-block;
+  float:              left;
+  margin:             -1px 0 0 4px;
+  width:              27px;
+  height:             27px;
+  background:         transparent url(../images/Best.png) 0 -27px no-repeat;
+  }
+#header .best_buttons.muted a.mute span,
+#header .best_buttons.muted a.mute_music span,
+#header .best_buttons.music_muted a.mute_music span {
+  background:         transparent url(../images/mute.png) 0 0 no-repeat;
+  }
+  
+    
+  
+  
+#header .pause_button {
+  display:            block;
+  float:              right;
+  margin:             -2px 10px 0 0;
+  width:              20px;
+  height:             27px;
+  background:         transparent url(../images/pause.png) 0 -27px no-repeat;
+  }
+#header .pause_button.paused {
+  background:         transparent url(../images/pause.png) 0 0 no-repeat;
+  }
+
+._message span {
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  color:              #5DC1DE;
+  }
+
+.message {
+  z-index:            9;
+  position:           absolute;
+  display:            table;
+  width:              100%;
+  height:             100%;
+  text-align:         center;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke:1px transparent;
+  text-shadow:        -3px 3px 0 #000;
+  }
+.message > .inner {
+  display:            table-cell;
+  vertical-align:     middle;
+  }
+
+
+
+/* User achievements */
+
+#user_achievement {
+  z-index: 99999;
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  margin: -200px 0 0 -150px;
+  overflow: hidden;
+  background-color: #182970;
+  border: 3px solid #0E54EE;
+  -webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px;
+	-webkit-box-shadow: 3px 3px 6px #000000; -moz-box-shadow: 3px 3px 6px #000000; box-shadow: 3px 3px 6px #000000; 
+  font-family: 'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  text-align: center;
+  }
+
+#user_achievement > .inner {
+  margin: 15px 25px;
+  }
+
+#user_achievement h2 {
+  font-size: 32px;
+  color: #5FB1FF;
+  font-weight: normal;
+  }
+
+#user_achievement .achievement_message {
+  margin-top: 215px;
+  font-size: 28px;
+  color: #1FFFF2;
+  }
+
+#user_achievement .element_status {
+  margin-top: 25px;
+  font-size: 22px;
+  color: #1FFFF2;
+  }
+
+#user_achievement .element_status span {
+  color: #FFF;
+  }
+
+#user_badge {
+  position: absolute;
+  z-index: 999;
+  width: 150px;
+  height: 188px;
+  left: 76px;
+  top: 60px;
+  font-family: "myriad-pro-1", "myriad-pro-2", "Myriad Pro", "Myriad", san-serif;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: bottom;
+}
+#user_badge.period-1 {
+  background: transparent url(/nav/images/user_badges/1.png) 0 0 no-repeat;
+  color: #1B185F;
+}
+#user_badge.period-2 {
+  background: transparent url(/nav/images/user_badges/2.png) 0 0 no-repeat;
+  color: #0073B6;
+}
+#user_badge.period-3 {
+  background: transparent url(/nav/images/user_badges/3.png) 0 0 no-repeat;
+  color: #1B185F;
+}
+#user_badge.period-4 {
+  background: transparent url(/nav/images/user_badges/4.png) 0 0 no-repeat;
+  color: #811921;
+}
+#user_badge.period-5 {
+  background: transparent url(/nav/images/user_badges/5.png) 0 0 no-repeat;
+  color: #222036;
+}
+#user_badge.period-6 {
+  background: transparent url(/nav/images/user_badges/6.png) 0 0 no-repeat;
+  color: #81451D;
+}
+#user_badge.period-7 {
+  background: transparent url(/nav/images/user_badges/7.png) 0 0 no-repeat;
+  color: #FFFFFF;
+}
+#user_badge .number {
+  position: absolute;
+  font-size: 44px;
+  width: 100%;
+  top: 5px;
+  left: 0;
+}
+#user_badge .symbol {
+  position: absolute;
+  font-size: 56px;
+  width: 100%;
+  bottom: 8px;
+  left: 0;
+}
+#user_badge .face {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  left: 34px;
+}
+#user_badge .face img {
+  position: absolute;
+}
+
+

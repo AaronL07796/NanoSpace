@@ -1,0 +1,498 @@
+/* THE BASIC STATIC LANDSCAPE THINGS */
+#stage{
+    background:         #000 url(images/background.png) 0 0 no-repeat;
+    }
+
+#land{
+    position:           absolute;
+    top:                0;
+    left:               0;
+    width:              100%;
+    height:             100%;
+    background:         transparent url(images/land.png) 0 0 no-repeat;
+    }
+
+
+
+/* THINGS THAT ROTATE! */
+#wheel{
+    opacity:            0.0;
+    position:           absolute;
+    top:                108px;
+    left:               250px;
+    background:         transparent url(images/ferris_wheel.png) 50% 50% no-repeat;
+    width:              401px;
+    height:             401px;
+    }
+
+#orange_arrows_container{
+    opacity:            0.0;
+    position:           absolute;
+    top:                108px;
+    left:               250px;
+    width:              401px;
+    height:             401px;
+    }
+
+#orange_arrows{
+    position:           absolute;
+    top:                0;
+    left:               0;
+    background:         transparent url(images/orange_arrows.png) 50% 50% no-repeat;
+    width:              401px;
+    height:             401px;
+    }
+
+#water_molecules{
+    opacity:            0.0;
+    position:           absolute;
+    top:                310px;
+    left:               450px;
+    -webkit-transform:  scale(0.5);
+    }
+
+#water_molecules div{
+    position:           absolute;
+    top:                0;
+    left:               0;
+    width:              40px;
+    height:             41px;
+    margin:             -20px;
+    background:         transparent url(images/water_molecule.png) 0 0 no-repeat;
+    -webkit-transform:  scale(2.0);
+    }
+
+.csstransitions.cssanimations #orange_arrows_container{
+    -webkit-transition: opacity 800ms ease;
+    -moz-transition:    opacity 800ms ease;
+    transition:         opacity 800ms ease;
+    }
+
+.csstransitions.cssanimations #orange_arrows{
+    -webkit-animation:  clockwise 5.6s linear infinite;
+    -moz-animation:     clockwise 5.6s linear infinite;
+    animation:          clockwise 5.6s linear infinite;
+    }
+
+.csstransitions.cssanimations #wheel{
+    -webkit-transition: opacity 800ms ease;
+    -webkit-animation:  clockwise 40s linear infinite;
+    -moz-transition:    opacity 800ms ease;
+    -moz-animation:     clockwise 40s linear infinite;
+    transition:         opacity 800ms ease;
+    animation:          clockwise 40s linear infinite;
+    }
+
+.csstransitions #molecules_container{
+    -webkit-transition: opacity 800ms ease;
+    -moz-transition:    opacity 800ms ease;
+    transition:         opacity 800ms ease;
+    }
+
+.csstransitions.cssanimations #water_molecules{
+    -webkit-animation:  clockwise-scale-down 40s linear infinite;
+    -moz-animation:     clockwise 40s linear infinite;
+    animation:          clockwise 40s linear infinite;
+    }
+
+.csstransitions.cssanimations #water_molecules div{
+    -webkit-transition: opacity 800ms ease;
+    -webkit-animation:  counter-clockwise-scale-up 40s linear infinite;
+    -moz-transition:    opacity 800ms ease;
+    -moz-animation:     counter 40s linear infinite;
+    transition:         opacity 800ms ease;
+    animation:          counter 40s linear infinite;
+    }
+
+.csstransitions.loaded #water_molecules,
+.csstransitions.loaded #wheel{
+    opacity:            1.0;
+    }
+
+.csstransitions.loaded #stage.active #molecules_container{
+    opacity:            0.3;
+    }
+
+.csstransitions.loaded #stage.active #wheel{
+    opacity:            0.0;
+    }
+
+.csstransitions.loaded #stage.active #orange_arrows_container{
+    opacity:            1.0;
+    }
+
+@-webkit-keyframes clockwise {
+  from{ -webkit-transform: rotate(0deg);    }
+  to{   -webkit-transform: rotate(360deg);  }
+}
+
+@-webkit-keyframes clockwise-scale-down {
+  from{ -webkit-transform: rotate(0deg) scale(0.5);   }
+  to{   -webkit-transform: rotate(360deg) scale(0.5); }
+}
+
+@-webkit-keyframes counter-clockwise-scale-up {
+  from{ -webkit-transform: rotate(360deg) scale(2.0); }
+  to{   -webkit-transform: rotate(0deg) scale(2.0);   }
+}
+
+@-moz-keyframes clockwise {
+  from{ -moz-transform: rotate(0deg);    }
+  to{   -moz-transform: rotate(360deg);  }
+}
+
+@-moz-keyframes counter-clockwise {
+  from{ -moz-transform: rotate(360deg); }
+  to{   -moz-transform: rotate(0deg);   }
+}
+
+@keyframes clockwise {
+  from{ transform: rotate(0deg);    }
+  to{   transform: rotate(360deg);  }
+}
+
+@keyframes counter-clockwise {
+  from{ transform: rotate(360deg); }
+  to{   transform: rotate(0deg);   }
+}
+
+
+
+/* RAIN AND SNOW ANIMATIONS */
+.precipitation_container{
+    position:           absolute;
+    overflow:           hidden;
+    width:              100px;
+    height:             100px;
+    }
+
+.precipitation{
+    position:           absolute;
+    top:                -50px;
+    left:               0;
+    width:              100%;
+    height:             50px;
+    background-position:50% 50%;
+    background-repeat:  no-repeat;
+    }
+
+#rain_container{
+    top:                198px;
+    left:               488px;
+    }
+
+#snow_container{
+    top:                185px;
+    left:               748px;
+    }
+
+#rain{
+    background-image:   url(images/rain.png);
+    }
+
+#snow{
+    background-image:   url(images/snow.png);
+    }
+
+.csstransitions.loaded #stage.active .precipitation{
+    -webkit-animation:  precipitation-falling 1.4s linear infinite;
+    -moz-animation:     precipitation-falling 1.4s linear infinite;
+    animation:          precipitation-falling 1.4s linear infinite;
+    }
+
+@-webkit-keyframes precipitation-falling {
+  from{ top: -50px; }
+  to{   top: 30px;  }
+}
+@-moz-keyframes precipitation-falling {
+  from{ top: -50px; }
+  to{   top: 30px;  }
+}
+@keyframes precipitation-falling {
+  from{ top: -50px; }
+  to{   top: 30px;  }
+}
+
+
+
+/* EVAPORATION SQUIGGLY ARROWS */
+#evaporation{
+    opacity:            0.0;
+    position:           absolute;
+    top:                292px;
+    left:               42px;
+    width:              119px;
+    height:             139px;
+    }
+
+#evaporation .arrow_heads{
+    position:           absolute;
+    top:                0;
+    left:               0;
+    width:              119px;
+    height:             31px;
+    background:         transparent url(images/arrow_heads.png) 0 0 no-repeat;
+    }
+
+#evaporation .squiggles{
+    position:           absolute;
+    top:                29px;
+    left:               5px;
+    width:              110px;
+    height:             113px;
+    background:         transparent url(images/squiggles.png) 0 0 repeat-y;
+    }
+
+.csstransitions.cssanimations #evaporation{
+    -webkit-transition: opacity 800ms ease;
+    -moz-transition:    opacity 800ms ease;
+    transition:         opacity 800ms ease;
+    }
+
+.csstransitions.cssanimations #stage.active #evaporation{
+    opacity:            1.0;
+    }
+
+.csstransitions.cssanimations #stage #evaporation .squiggles{
+    -webkit-animation:  evaporation-squiggles 1.4s linear infinite;
+    -moz-animation:     evaporation-squiggles 1.4s linear infinite;
+    animation:          evaporation-squiggles 1.4s linear infinite;
+    }
+
+@-webkit-keyframes evaporation-squiggles {
+  from{ background-position-y: 0px; }
+  to{   background-position-y: -45px; }
+}
+@-moz-keyframes evaporation-squiggles {
+  from{ background-position: 0px 0px; }
+  to{   background-position: 0px -45px; }
+}
+@keyframes evaporation-squiggles {
+  from{ background-position: 0px 0px; }
+  to{   background-position: 0px -45px; }
+}
+
+
+/* FIVE WAVES - From furtherst & smallest to nearest & largest */
+.wave{
+    position:           absolute;
+    top:                442px;
+    left:               0;
+    width:              100%;
+    height:             158px;
+    }
+
+#wave_1{ background-image: url(images/wave_1.png); }
+#wave_2{ background-image: url(images/wave_2.png); }
+#wave_3{ background-image: url(images/wave_3.png); }
+#wave_4{ background-image: url(images/wave_4.png); }
+#wave_5{ background-image: url(images/wave_5.png); }
+
+.csstransitions.cssanimations.loaded .wave{
+    -webkit-animation-duration:         0.8s;
+    -webkit-animation-timing-function:  linear;
+    -webkit-animation-direction:        alternate;
+    -webkit-animation-iteration-count:  infinite;
+    -moz-animation-duration:         0.8s;
+    -moz-animation-timing-function:  linear;
+    -moz-animation-direction:        alternate;
+    -moz-animation-iteration-count:  infinite;
+    animation-duration:         0.8s;
+    animation-timing-function:  linear;
+    animation-direction:        alternate;
+    animation-iteration-count:  infinite;
+    }
+
+.csstransitions.cssanimations.loaded #wave_1{
+    -webkit-animation-name: wave-1;
+    -webkit-animation-delay: 800ms;
+    -moz-animation-name: wave-1;
+    -moz-animation-delay: 800ms;
+    animation-name: wave-1;
+    animation-delay: 800ms;
+    }
+@-webkit-keyframes wave-1 {
+  from{ margin-top: 3px; }
+  to{   margin-top: 0px;  }
+}
+@-moz-keyframes wave-1 {
+  from{ margin-top: 3px; }
+  to{   margin-top: 0px;  }
+}
+@keyframes wave-1 {
+  from{ margin-top: 3px; }
+  to{   margin-top: 0px;  }
+}
+
+.csstransitions.cssanimations.loaded #wave_2{
+    -webkit-animation-name:  wave-2;
+    -webkit-animation-delay: 600ms;
+    -moz-animation-name:  wave-2;
+    -moz-animation-delay: 600ms;
+    animation-name:  wave-2;
+    animation-delay: 600ms;
+    }
+@-webkit-keyframes wave-2 {
+  from{ margin-top: 5px; }
+  to{   margin-top: 0px;  }
+}
+@-moz-keyframes wave-2 {
+  from{ margin-top: 5px; }
+  to{   margin-top: 0px;  }
+}
+@keyframes wave-2 {
+  from{ margin-top: 5px; }
+  to{   margin-top: 0px;  }
+}
+
+.csstransitions.cssanimations.loaded #wave_3{
+    -webkit-animation-name:  wave-3;
+    -webkit-animation-delay: 400ms;
+    -moz-animation-name:  wave-3;
+    -moz-animation-delay: 400ms;
+    animation-name:  wave-3;
+    animation-delay: 400ms;
+    }
+@-webkit-keyframes wave-3 {
+  from{ margin-top: 7px; }
+  to{   margin-top: 0px;  }
+}
+@-moz-keyframes wave-3 {
+  from{ margin-top: 7px; }
+  to{   margin-top: 0px;  }
+}
+@keyframes wave-3 {
+  from{ margin-top: 7px; }
+  to{   margin-top: 0px;  }
+}
+
+.csstransitions.cssanimations.loaded #wave_4{
+    -webkit-animation-name:  wave-4;
+    -webkit-animation-delay: 200ms;
+    -moz-animation-name:  wave-4;
+    -moz-animation-delay: 200ms;
+    animation-name:  wave-4;
+    animation-delay: 200ms;
+    }
+@-webkit-keyframes wave-4 {
+  from{ margin-top: 9px; }
+  to{   margin-top: 0px;  }
+}
+@-moz-keyframes wave-4 {
+  from{ margin-top: 9px; }
+  to{   margin-top: 0px;  }
+}
+@keyframes wave-4 {
+  from{ margin-top: 9px; }
+  to{   margin-top: 0px;  }
+}
+
+.csstransitions.cssanimations.loaded #wave_5{
+    -webkit-animation-name:  wave-5;
+    -moz-animation-name:  wave-5;
+    animation-name:  wave-5;
+    }
+@-webkit-keyframes wave-5 {
+  from{ margin-top: 11px; }
+  to{   margin-top: 0px;  }
+}
+@-moz-keyframes wave-5 {
+  from{ margin-top: 11px; }
+  to{   margin-top: 0px;  }
+}
+@keyframes wave-5 {
+  from{ margin-top: 11px; }
+  to{   margin-top: 0px;  }
+}
+
+
+
+/* SIX MAGNIFIERS */
+.magnifier{
+    display:            none;
+    position:           absolute;
+    width:              285px;
+    height:             382px;
+    background:         transparent url(images/magnifier_fill.png) 6px 4px no-repeat;
+    -webkit-transform:  translateZ(0);
+    }
+
+.magnifier.active{
+    display:            block;
+    }
+
+.csstransitions.cssanimations .magnifier{
+    display:            block;
+    opacity:            0.0;
+    -webkit-transition: opacity 800ms ease;
+    -moz-transition:    opacity 800ms ease;
+    transition:         opacity 800ms ease;
+    }
+
+.csstransitions.cssanimations .magnifier.active{
+    opacity:            1.0;
+    }
+
+#magnifier_1{ top: 83px;  left: 133px; }
+#magnifier_2{ top: 4px;   left: 340px; }
+#magnifier_3{ top: 83px;  left: 546px; }
+#magnifier_4{ top: 302px; left: 546px; }
+#magnifier_5{ top: 382px; left: 340px; }
+#magnifier_6{ top: 302px; left: 133px; }
+
+.click_map{
+    position:           absolute;
+    top:                0;
+    left:               0;
+    width:              100%;
+    height:             100%;
+    }
+
+.magnifier video{
+    display:            none;
+    }
+
+.magnifier canvas{
+    position:           absolute;
+    top:                0;
+    left:               0;
+    }
+
+.magnifier div{
+    position:           absolute;
+    top:                -2px;
+    left:               1px;
+    width:              285px;
+    height:             382px;
+    background:         transparent url(images/magnifier.png) 0 0 no-repeat;
+    }
+
+
+
+.label{
+    opacity:            0.0;
+    position:           absolute;
+    top:                260px;
+    left:               275px;
+    width:              350px;
+    height:             80px;
+    line-height:        80px;
+    text-align:         center;
+    text-transform:     uppercase;
+    font-weight:        600;
+    font-size:          68px;
+    -webkit-transform:  translateZ(0);
+    }
+
+.csstransitions.cssanimations .label{
+    -webkit-transition: opacity 800ms ease;
+    -moz-transition:    opacity 800ms ease;
+    transition:         opacity 800ms ease;
+    }
+
+.csstransitions.cssanimations .label.active{
+    opacity:            1.0;
+    -webkit-transition-delay: 400ms;
+    -moz-transition-delay: 400ms;
+    transition-delay:   400ms;
+    }

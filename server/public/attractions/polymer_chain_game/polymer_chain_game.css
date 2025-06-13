@@ -1,0 +1,155 @@
+* {
+  margin:             0;
+  padding:            0;
+  }
+
+body {
+  background-color:   #000;
+  color:              #00FFFF;
+  width:              100%;
+  font-family:        "atrament-web-1","atrament-web-2",sans-serif;
+  font-weight:        400;
+  letter-spacing:     .1em;
+  }
+
+a {
+  text-decoration:    none;
+  }
+a:hover {
+  text-decoration:    underline;
+  }
+
+#more_info {
+  z-index:            99;
+  position:           absolute;
+  width:              900px;
+  height:             600px;
+  left:               50%;
+  top:                50%;
+  margin:             -325px 0 0 -450px;
+  overflow:           hidden;
+  border:             2px solid #009DEB;
+  }
+
+#container {
+  position:           absolute;
+  width:              900px;
+  height:             600px;
+  left:               50%;
+  top:                50%;
+  margin:             -325px 0 0 -450px;
+  border:             2px solid #208DF3;
+  overflow:           hidden;
+  }
+
+#canvas {
+  z-index:            4;
+  position:           absolute;
+  width:              100%;
+  height:             100%;
+  }
+
+#info {
+  z-index:            3;
+  position:           absolute;
+  font-size:          36px;
+  color:              #60BFE0;
+  text-transform:     uppercase;
+  width:              100%;
+  height:             56px;
+  line-height:        56px;
+  }
+
+#info div {
+  position:           absolute;
+  }
+
+#info div.time {
+  left:               20px;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  color:              #FFF;
+  }
+#info div.collected {
+  right:               20px;
+  }
+#info div.collected .num {
+  margin-right:        80px;
+  }
+#info div.collected .level {
+  margin-right:        80px;
+  }
+
+#info span.label {
+  opacity:            0.75;
+  }
+
+#info span.val {
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  color:              #FFF;
+  }
+
+
+#high_scores {
+  height:              650px;
+  margin:              -325px 0 0 -450px;
+  background:          #000 url(images/high_scores.png) 0 0 no-repeat;
+  }
+
+
+/* MESSAGES */
+
+._message span {
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  }
+
+.message > .inner {
+  background-color:   rgba(0, 0, 0, 0.5);
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  color:              #20C1DE;
+  }
+
+#start_game_message .level {
+  color:              #FFF;
+  font-size:          47px;
+  margin-bottom:      15px;
+  }
+#start_game_message .instructions {
+  font-size:          72px;
+  margin-bottom:      50px;
+  }
+#start_game_message .instructions span {
+  color:              #FFF;
+  }
+
+
+#next_level_message .val {
+  color:              #FFF;
+  }
+#next_level_message .level_complete {
+  color:              #FFF;
+  font-size:          47px;
+  margin-bottom:      10px;
+  }
+#next_level_message .length {
+  font-size:          72px;
+  margin-bottom:      10px;
+  }
+#next_level_message .needed {
+  font-size:          72px;
+  margin-bottom:      50px;
+  }
+
+#game_over_message {
+  font-size:          172px;
+  color:              #20C1DE;
+  cursor:             pointer;
+  }
+#game_over_message .times_up {
+  margin-bottom:      20px;
+  font-size:          90px;
+  cursor:             pointer;
+  }

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="../../favicon_32.ico">
+  <title>Helix of Fortune - NanoSpace</title>
+  
+  <meta name="viewport" content="width=1140, maximum-scale=.9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <script type="text/javascript" src="http://use.typekit.com/nzt5rde.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  
+  <link rel="stylesheet" href="../../css/games.css" />
+  <link rel="stylesheet" href="helix.css" />
+
+  <script src="../../js/jquery.js"></script>
+  <!--[if lt IE 9]><script src="../../js/ie.js"></script><![endif]-->
+  <script src="../../js/global.js"></script>
+  <script src="../../js/jquery.tmpl.js"></script>
+  <script src="../../js/soundmanager2.js"></script>
+  <script src="../../js/jquery.store.js"></script>
+  <script src="../../js/user.js"></script>
+  <script src="../../js/periodic_table.js"></script>
+  <script src="../../js/game.js"></script>
+  <script src="../../js/message.js"></script>
+  <script src="helix.js"></script>
+</head>
+<body class="more_info_visible">
+  
+  <div id="header">
+    <a class="back_to_nav" href="../../#dna">
+      <img src="../../images/back_to_nav_arrow.png" align="left" />
+      NanoSpace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+    <a class="open_instructions" href="javascript:;">?</a>
+  </div>
+  
+  
+  <div id="splash">
+    <img src="images/splash.png" width="900" height="600" />
+  </div>
+  
+  
+  <div id="more_info" style="display:none">
+    <img src="images/more_info.png" width="900" height="600" />
+  </div>
+  
+  <div id="overlay" style="display:none">
+    <img src="images/overlay.png" width="900" height="600" />
+  </div>
+  
+  <div id="loading">
+    <span>Loading...</span>
+    <div class="progress_container"><div class="progress"></div></div>
+  </div>
+  
+  
+  <div id="container" class="hidden_from_splash">
+    
+    <div id="amino_acid" style="display:none">
+      <div class="inner">
+        <div class="letter">A</div>
+        <div class="info">
+          <div class="name">Something</div>
+          <div class="codons">Codons: <span>CCC, AAA, GGG, UUU</span></div>
+        </div>
+      </div>
+    </div>
+      
+    <div id="level_complete_message" class="message" style="display:none">
+      <div class="inner">
+        <div class="good_job">Good Job!</div>
+        <div class="next_word">Try the next word...</div>
+      </div>
+    </div>
+    
+    <div id="game_over_message" class="message" style="display:none"></div>
+    
+    <div id="wheel">
+      <img class="blank" src="../../nav/images/shared/blank.gif" usemap="#codon_map" />
+      <div class="letters"></div>
+      <div class="highlighted"></div>
+      
+      <map name="codon_map">
+        <area href="javascript:;" data-letter="F" shape="poly" coords="322,103,287,99,285,41,333,46" />
+        <area href="javascript:;" data-letter="L" shape="poly" coords="358,115,322,104,333,47,382,61" />
+        <area href="javascript:;" data-letter="S" shape="poly" coords="417,154,386,128,357,116,380,60,422,83,458,113" />
+        <area href="javascript:;" data-letter="Y" shape="poly" coords="417,154,441,184,489,151,457,113" />
+        <area href="javascript:;" data-letter="Z" shape="poly" coords="458,215,510,194,488,151,441,182" />
+        <area href="javascript:;" data-letter="C" shape="poly" coords="469,250,523,238,511,194,459,215" />
+        <area href="javascript:;" data-letter="J" shape="poly" coords="469,266,528,262,524,238,467,250" />
+        <area href="javascript:;" data-letter="W" shape="poly" coords="472,286,528,287,528,263,469,268" />
+        <area href="javascript:;" data-letter="B" shape="poly" coords="455,355,508,377,524,331,528,287,471,286,467,319" />
+        <area href="javascript:;" data-letter="P" shape="poly" coords="414,413,456,458,487,420,509,378,456,355,438,387" />
+        <area href="javascript:;" data-letter="H" shape="poly" coords="415,415,386,436,421,487,456,458" />
+        <area href="javascript:;" data-letter="Q" shape="poly" coords="379,508,420,487,386,436,354,453" />
+        <area href="javascript:;" data-letter="R" shape="poly" coords="286,467,322,463,355,452,378,508,333,522,287,526" />
+        <area href="javascript:;" data-letter="I" shape="poly" coords="234,460,216,517,248,524,287,527,286,468,257,465" />
+        <area href="javascript:;" data-letter="M" shape="poly" coords="215,453,193,509,217,516,233,461" />
+        <area href="javascript:;" data-letter="T" shape="poly" coords="114,457,148,485,192,506,215,453,182,437,157,414" />
+        <area href="javascript:;" data-letter="N" shape="poly" coords="84,423,115,456,158,413,134,385" />
+        <area href="javascript:;" data-letter="K" shape="poly" coords="63,379,85,421,135,385,117,354" />
+        <area href="javascript:;" data-letter="U" shape="poly" coords="106,321,48,332,62,378,117,354" />
+        <area href="javascript:;" data-letter="O" shape="poly" coords="44,285,49,332,106,320,102,283" />
+        <area href="javascript:;" data-letter="V" shape="poly" coords="62,195,48,237,44,286,103,282,106,249,115,213" />
+        <area href="javascript:;" data-letter="A" shape="poly" coords="115,115,84,149,63,190,117,211,132,182,155,154" />
+        <area href="javascript:;" data-letter="D" shape="poly" coords="152,84,117,112,158,153,183,131" />
+        <area href="javascript:;" data-letter="E" shape="poly" coords="195,60,152,81,185,130,200,121,217,114" />
+        <area href="javascript:;" data-letter="G" shape="poly" coords="284,41,236,45,195,58,216,112,251,101,285,99" />
+      </map>
+    </div>
+    
+    <div id="invalid" style="display:none">
+    Invalid Word!
+    </div>
+
+    <div id="word">
+      <div class="letter selected">
+        <div id="word_selector"></div>
+        <div class="amino_acid"></div>
+        <input type="text" />
+        <div class="bases">
+          <span class="base_G"></span>
+          <span class="base_U"></span>
+          <span class="base_A"></span>
+        </div>
+      </div>
+      
+      <div class="letter empty">
+        <div class="amino_acid"></div>
+        <input type="text" />
+        <div class="bases">
+          <span class="base_G"></span>
+          <span class="base_U"></span>
+          <span class="base_A"></span>
+        </div>
+      </div>
+      
+      <div class="letter empty">
+        <div class="amino_acid"></div>
+        <input type="text" />
+        <div class="bases">
+          <span class="base_G"></span>
+          <span class="base_U"></span>
+          <span class="base_A"></span>
+        </div>
+      </div>
+      
+      <div class="letter empty">
+        <div class="amino_acid"></div>
+        <input type="text" />
+        <div class="bases">
+          <span class="base_G"></span>
+          <span class="base_U"></span>
+          <span class="base_A"></span>
+        </div>
+      </div>
+      
+      <div class="letter empty">
+        <div class="amino_acid"></div>
+        <input type="text" />
+        <div class="bases">
+          <span class="base_G"></span>
+          <span class="base_U"></span>
+          <span class="base_A"></span>
+        </div>
+      </div>
+      
+      <div class="letter empty">
+        <div class="amino_acid"></div>
+        <input type="text" />
+        <div class="bases">
+          <span class="base_G"></span>
+          <span class="base_U"></span>
+          <span class="base_A"></span>
+        </div>
+      </div>
+      
+      <div class="letter empty">
+        <div class="amino_acid"></div>
+        <input type="text" />
+        <div class="bases">
+          <span class="base_G"></span>
+          <span class="base_U"></span>
+          <span class="base_A"></span>
+        </div>
+      </div>
+      
+      <div class="letter empty">
+        <div class="amino_acid"></div>
+        <input type="text" />
+        <div class="bases">
+          <span class="base_G"></span>
+          <span class="base_U"></span>
+          <span class="base_A"></span>
+        </div>
+      </div>
+    </div>
+    
+    <div id="instructions">
+    <em>Figure out the hidden word...</em>
+    Use the available letters along the edge of the Codon Wheel to piece together
+    the correct word and solve the puzzle!
+    </div>
+    
+  </div>
+  
+  
+  <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

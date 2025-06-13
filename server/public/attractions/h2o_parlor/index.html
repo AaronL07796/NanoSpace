@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="../../favicon_32.ico">
+  <title>H₂O Parlor - NanoSpace</title>
+  <link rel="stylesheet" href="../../css/games.css" />
+  <link rel="stylesheet" href="parlor.css" />
+  <script src="http://use.typekit.com/nzt5rde.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+  
+  <div id="header">
+    <a class="back_to_nav" href="../../#h2o">
+      <img src="../../images/back_to_nav_arrow.png" align="left" alt="Back to NanoSpace"/>
+      NanoSpace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+    <a class="open_instructions" href="javascript:;">?</a>
+    <a class="pause_button" href="javascript:;">?</a>
+  </div>
+  
+  
+  <div id="splash">
+    <img src="images/splash.png" width="824" height="530" alt="Serve solids, liquids and gasses to your customers, quickly! Use the H2O machine to make the orders."/>
+  </div>
+  
+  
+  <div id="loading">
+    <span>Loading...</span>
+    <div class="progress_container"><div class="progress"></div></div>
+  </div>
+  
+  
+  <div id="high_scores" class="hidden_from_splash" style="display:none">
+    <div class="inner"></div>
+    <div class="log_in_message">
+      You must be <a id="go_to_login" href="../../#h2o">logged in</a> for your high scores to be submitted.
+    </div>
+  </div>
+  
+  
+  <div id="stage" class="hidden_from_splash">
+    
+    <div id="start_level_message" class="message" style="display:none">
+      <div class="inner">
+        <h2 class="good_job">GOOD JOB!</h2>
+        <div class="instructions">
+          <span class="now">NOW</span>
+          EARN <span class="target">$0.00</span>
+          IN <span class="time">5:00</span>!
+        </div>
+      </div>
+    </div>
+    
+    <div id="game_over_message" class="message" style="display:none">
+      <div class="inner">
+        <h2>GAME OVER!</h2>
+        <div>YOU RAN OUT OF TIME</div>
+      </div>
+    </div>
+  
+    <div id="people"></div>  
+  
+    <div id="overlay"></div>
+  
+    <div id="prepared_items">
+  
+      <img id="snowcone_holder" src="images/snowcone_holder.png" alt="snowcone holder"/>
+      
+      <div id="trash">
+        <img id="trash_lid" src="images/trash_lid.png" alt="trash"/>
+      </div>
+  
+      <img id="holder_front" src="images/holder_front.png" alt=""/>
+  
+    </div>
+  
+    <div id="target_temp_slider"></div>
+    
+    <div id="target_temp">
+      <span id="target_temp_f">100</span> ˚F<span class="sep">/</span><span id="target_temp_c">38</span> ˚C
+    </div>
+  
+    <div id="button"></div>
+  
+    <div id="current_temp"></div>
+    
+    <div id="status_message"></div>
+    
+    <div id="status">
+      <div class="target">
+        Need to earn
+        <span class="val">$0.00</span>
+      </div>
+      
+      <div class="earned">
+        Earned
+        <span class="val">$0.00</span>
+      </div>
+      
+      <div class="time">
+        Time left
+        <span class="val">0:00</span>
+      </div>
+    </div>
+    
+    <div id="item_progress"></div>
+    
+    <canvas id="gasbox" width="350" height="591"></canvas>
+    
+  </div>
+  
+  
+  <script src="jquery.js"></script>
+  <!--[if lt IE 9]><script src="../../js/ie.js"></script><![endif]-->
+  <script src="../../js/global.js"></script>
+  <script src="../../js/jquery-ui.js"></script>
+  <script src="../../js/gasbox.js"></script>
+  <script src="../../js/soundmanager2.js"></script>
+  <script src="../../js/jquery.store.js"></script>
+  <script src="../../js/user.js"></script>
+  <script src="../../js/periodic_table.js"></script>
+  <script src="../../js/game.js"></script>
+  <script src="../../js/message.js"></script>
+  <script src="parlor.js"></script>
+  <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+
+</html>

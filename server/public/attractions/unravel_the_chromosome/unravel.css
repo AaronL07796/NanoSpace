@@ -1,0 +1,73 @@
+#canvas{
+    position:           absolute;
+    top:                0;
+    left:               0;
+    }
+
+.slide .text_container{
+    display:            none;
+    }
+
+.slide.active .text_container{
+    display:            block;
+    }
+
+img{
+    display:            none;
+    }
+
+.text_container{
+    position:           absolute;
+    top:                0;
+    right:              0;
+    width:              298px;
+    height:             100%;
+    overflow:           auto;
+    }
+
+p{
+    display:            none;
+    margin:             20px 18px;
+    color:              #B6C2CC;
+    font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+    font-size:          28px;
+    line-height:        33px;
+    }
+
+p em,
+p a{
+    color:              #FBB03B;
+    text-decoration:    none;
+    }
+
+p a:hover{
+    text-decoration:    underline;
+    }
+
+.text_container p{
+    display:            block;
+    }
+
+.button{
+    display:            block;
+    position:           absolute;
+    top:                524px;
+    width:              79px;
+    height:             66px;
+    -webkit-transition: opacity 300ms ease;
+    cursor:             pointer;
+    }
+
+#prev_button{
+    left:               700px;
+    background:         transparent url(images/previous_slide.png) 0 0 no-repeat;
+    }
+
+#next_button{
+    left:               792px;
+    background:         transparent url(images/next_slide.png) 0 0 no-repeat;
+    }
+
+.button.disabled{
+    opacity:            0.5;
+    }

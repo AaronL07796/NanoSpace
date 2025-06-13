@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="../../favicon_32.ico">
+  <title>MegaPenny - NanoSpace</title>
+  
+  <meta name="viewport" content="width=1140, maximum-scale=.9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <script type="text/javascript" src="http://use.typekit.com/nzt5rde.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  
+  <link rel="stylesheet" href="../../css/games.css" />
+  <link rel="stylesheet" href="mega_penny.css" />
+
+  <script src="../../js/jquery.js"></script>
+  <!--[if lt IE 9]><script src="../../js/ie.js"></script><![endif]-->
+  <script src="../../js/global.js"></script>
+  <script src="../../js/jquery-ui.js"></script>
+  <script src="../../js/soundmanager2.js"></script>
+  <script src="../../js/periodic_table.js"></script>
+  <script src="../../js/game.js"></script>
+  <script src="mega_penny.js"></script>
+  <script src="slides.js"></script>
+</head>
+<body>
+  
+  <div id="header">
+    <a class="back_to_nav" href="../../#sizes">
+      <img src="../../images/back_to_nav_arrow.png" align="left" />
+      NanoSpace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+  </div>
+  
+  
+  <div id="splash">
+    <img src="images/splash.png" width="900" height="600" />
+  </div>
+  
+  
+  <div id="loading">
+    <span>Loading...</span>
+    <div class="progress_container"><div class="progress"></div></div>
+  </div>
+  
+  
+  <div id="intro_slide" class="hidden_from_splash">
+    <h1>The MegaPenny Project</h1>
+    <div class="byline">by kokogiak media</div>
+    
+    <img class="pennies1" src="images/penny_stack.png" />
+    <img class="pennies2" src="images/penny_stack.png" />
+    
+    <div class="description">
+      <p>
+      Visualizing huge numbers can be very difficult. People regularly talk about millions of miles, billions of bytes, or trillions of dollars, yet it's still hard to grasp just how much a "billion" really is. The MegaPenny Project aims to help by taking one small everyday item, the U.S. penny, and building on that to answer the question: "What would a billion (or a trillion) pennies look like?" 
+      </p>
+      <p>
+      All the following pages have tables at the bottom, listing things such as the value of the pennies, size of the pile, weight, and area (if laid flat). All weights and measurements are U.S. standards, not metric.
+      </p>
+      <p>
+      It's best to step through the project from beginning to end, but if you'd like to just jump in, links are available below. 
+      </p>
+    </div>
+    
+    <div class="enter">
+      <a href="javascript:;">Enter the MegaPenny Project</a>
+    </div>
+    
+    <ul class="links links1">
+      <li><a href="javascript:;" data-slide="0">One</a> penny</li>
+      <li><a href="javascript:;" data-slide="1">Sixteen</a> pennies</li>
+      <li><a href="javascript:;" data-slide="2">One Thousand</a> pennies</li>
+      <li><a href="javascript:;" data-slide="3">Fify Thousand</a> pennies</li>
+      <li><a href="javascript:;" data-slide="4">One Hundred Thousand</a> pennies</li>
+      <li><a href="javascript:;" data-slide="5">One Million</a> pennies</li>
+      <li><a href="javascript:;" data-slide="6">Ten Million</a> pennies</li>
+      <li><a href="javascript:;" data-slide="7">One Hundred Million</a> pennies</li>
+      <li><a href="javascript:;" data-slide="8">One Billion</a> pennies</li>
+    </ul>
+    
+    <ul class="links links2">
+      <li><a href="javascript:;" data-slide="9">Ten Billion</a> pennies</li>
+      <li><a href="javascript:;" data-slide="10">One Hundred Billion</a> pennies</li>
+      <li><a href="javascript:;" data-slide="11">Pennies Currently in Circulation</a></li>
+      <li><a href="javascript:;" data-slide="12">One Trillion</a> pennies</li>
+      <li><a href="javascript:;" data-slide="13">One Trillion (Part 2)</a> pennies</li>
+      <li><a href="javascript:;" data-slide="14">Empire State Building</a> pennies</li>
+      <li><a href="javascript:;" data-slide="15">Sears Tower</a> pennies</li>
+      <li><a href="javascript:;" data-slide="16">One Quadrillion</a> pennies</li>
+      <li><a href="javascript:;" data-slide="17">One Quintillion</a> pennies</li>
+    </ul>
+    
+  </div>
+  
+  
+  <div id="slide" class="hidden_from_splash">
+    <h1></h1>
+    
+    <img class="penny_img" src="" />
+    
+    <div class="info">
+      <div class="description"></div>
+      <div class="table"></div>
+    </div>
+    
+    <div class="qty">
+      <div class="num"></div>
+      <div class="num_text"></div>
+    </div>
+    
+    <div class="controls">
+      <span class="back"></span>
+      <span class="next"></span>
+    </div>
+  </div>
+  
+  <div id="final_slide" style="display:none">
+    <h1>The MegaPenny Project</h1>
+    <div class="byline">by kokogiak media</div>
+    
+    <img class="pennies1" src="images/penny_stack.png" />
+    <img class="pennies2" src="images/penny_stack.png" />
+    
+    <div class="description">
+      <p>
+      ...And that was just the beginning! <br/>
+      Here is a table of some very big numbers!
+      </p>
+      
+      <h2>Table of Very Big Numbers</h2>
+      
+      <ul class="big_numbers">
+        <div><span class="label">one</span><span class="num">1</span></div>
+        <div><span class="label">ten</span><span class="num">10</span></div>
+        <div><span class="label">hundred</span><span class="num">100</span></div>
+        <div><span class="label">thousand</span><span class="num">1000</span></div>
+        <div><span class="label">million</span><span class="num">1,000,000</span></div>
+        <div><span class="label">billion</span><span class="num">1,000,000,000</span></div>
+        <div><span class="label">trillion</span><span class="num">1,000,000,000,000</span></div>
+        <div><span class="label">quadrillion</span><span class="num">1,000,000,000,000,000</span></div>
+        <div><span class="label">quintillion</span><span class="num">1,000,000,000,000,000,000</span></div>
+        <div><span class="label">sextillion</span><span class="num">1,000,000,000,000,000,000,000</span></div>
+        <div><span class="label">septillion</span><span class="num">1,000,000,000,000,000,000,000,000</span></div>
+        <div><span class="label">octillion</span><span class="num">1,000,000,000,000,000,000,000,000,000</span></div>
+        <div><span class="label">nonillion</span><span class="num">1,000,000,000,000,000,000,000,000,000,000</span></div>
+        <div><span class="label">decillion</span><span class="num">1,000,000,000,000,000,000,000,000,000,000,000</span></div>
+        <div><span class="label">undecillion</span><span class="num">1,000,000,000,000,000,000,000,000,000,000,000,000</span></div>
+        <div><span class="label">duodecillion</span><span class="num">1,000,000,000,000,000,000,000,000,000,000,000,000,000</span></div>
+        <div><span class="label">tredecillion</span><span class="num">1,000,000,000,000,000,000,000,000,000,000,000,000,000,000</span></div>
+        <div><span class="label">quattuordecillion</span><span class="num">1,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000</span></div>
+        <div><span class="label">quindecillion</span><span class="num">1,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000</span></div>
+      <ul>
+      </ul>
+    </div>
+    
+    <div class="controls">
+      <span class="back"></span>
+    </div>
+  </div>
+    
+  <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

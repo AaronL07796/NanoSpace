@@ -1,0 +1,58 @@
+html {
+  height:                   100%;
+  overflow:                 hidden;
+  background-color:         #000;
+  -webkit-perspective:      800;
+  }
+
+body {
+  margin:                   0;
+  padding:                  0;
+  height:                   1000px;
+  -webkit-transform-style:  preserve-3d;
+  color:                    #FFF;
+  }
+
+#molecule_container {
+  position:                 absolute;
+  -webkit-transform-style:  preserve-3d;
+  }
+
+#molecule {
+  position:                 absolute;
+  width:                    150px;
+  height:                   150px;
+  -webkit-transform-style:  preserve-3d;
+  }
+
+.atom {
+  position: absolute;
+  -webkit-transform-style:  preserve-3d;
+  }
+
+.atom img {
+  opacity:                  1;
+  }
+
+#molecule_selector {
+  position:                 absolute;
+  z-index:                  999;
+  top:                      10px;
+  left:                     10px;
+  padding:                  10px;
+  background-color:         rgba(255, 255, 255, 0.15);
+  -webkit-border-radius:    10px;
+  font-size:                28px;
+  }
+#molecule_selector a{
+  color:                    #FFF;
+  text-decoration:          none;
+  margin-right:             30px;
+  }
+#molecule_selector a.selected{
+  text-decoration:          underline;
+  }
+#molecule_selector a:hover{
+  text-decoration:          underline;
+  }
+  

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="../../favicon_32.ico">
+  <title>Cosmic Calculations - NanoSpace</title>
+  <link rel="stylesheet" href="../../css/jquery-ui/jquery-ui-1.8.7.custom.css">
+  <link rel="stylesheet" href="../../css/games.css">
+  <link rel="stylesheet" href="cosmic_calculations.css">
+  <script src="http://use.typekit.com/nzt5rde.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+  <div id="header">
+    <a class="back_to_nav" href="../../#sizes">
+      <img src="../../images/back_to_nav_arrow.png" align="left" />
+      NanoSpace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+    <a class="open_instructions" href="javascript:;">?</a>
+  </div>
+  
+  <div id="splash">
+    <img src="images/peripherals.png" width="900" height="600" />
+  </div>
+  
+  <div id="loading">
+    <span>Loading...</span>
+    <div class="progress_container"><div class="progress"></div></div>
+  </div>
+  
+  <div id="high_scores" class="hidden_from_splash" style="display:none">
+    <div class="inner"></div>
+    <div class="log_in_message">
+      You must be <a id="go_to_login" href="../../#sizes">logged in</a> for your high scores to be submitted.
+    </div>
+  </div>
+
+  <div id="stage" class="hidden_from_splash">
+    
+    <div id="game_over_message" class="message" style="display:none">
+      <div class="inner">
+        <span class="game_over">Game Over!</span>
+        <span class="alert">Alert Message</span>
+      </div>
+    </div>
+
+    <div id="level_completed_message" class="message" style="display:none">
+      <div class="inner">
+        <span class="congrats">Nice work!</span>
+        <span class="alert">Alert Message</span>
+      </div>
+    </div>
+
+    <div id="info">
+      Gueses <div id="guesses_remaining">4</div>
+      Score <div id="score">0</div>
+    </div>
+
+    <div id="top">
+      <div id="object_name"></div>
+      <div id="guess_in_english" class="guess hidden"></div>
+      <div id="object_image"></div>
+      <div id="guess_in_exponential" class="guess hidden">
+    		<div id="mantissa">10</div>
+    		<div id="exponent"></div>
+      </div>
+			<div id="speech_bubble"></div>
+    </div>
+
+    <div id="bottom">
+      <div id="guess_in_decimal" class="guess hidden">Guess a number of atoms with the slider…</div>
+      <div id="guess_slider"></div>
+    </div>
+
+  </div>
+
+  <script src="../../js/jquery.js"></script>
+  <!--[if lt IE 9]><script src="../../js/ie.js"></script><![endif]-->
+  <script src="../../js/global.js"></script>
+  <script src="../../js/jquery-ui.js"></script>
+  <script src="../../js/soundmanager2.js"></script>
+  <script src="../../js/jquery.store.js"></script>
+  <script src="../../js/jquery.spritely-0.5.js"></script>
+  <script src="../../js/user.js"></script>
+  <script src="../../js/periodic_table.js"></script>
+  <script src="../../js/game.js"></script>
+  <script src="../../js/message.js"></script>
+  <script src="cosmic_calculations.js"></script>
+  <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

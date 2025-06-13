@@ -1,0 +1,333 @@
+#stage{
+    background-image:   url(images/background.jpg);
+    }
+
+#question_box{
+    display:            none;
+    position:           absolute;
+    top:                8px;
+    right:              0;
+    width:              829px;
+    height:             214px;
+    background:         transparent url(images/question_box.png) 0 0 no-repeat;
+    -webkit-transform:  translateZ(0);
+    }
+
+#question{
+    position:           absolute;
+    top:                78px;
+    left:               140px;
+    width:              540px;
+    text-align:         center;
+    font-size:          42px;
+    line-height:        48px;
+    }
+
+#question.two_line{
+    top:                52px;
+    }
+
+#answers {
+    position:           absolute;
+    top:                0;
+    left:               0;
+    width:              900px;
+    height:             473px;
+    overflow:           hidden;
+    }
+
+#answers li{
+    display:            none;
+    position:           absolute;
+    width:              403px;
+    height:             108px;
+    background:         transparent url(images/answer_box.png) 0 0 no-repeat;
+    cursor:             pointer;
+    text-align:         center;
+    font-size:          34px;
+    line-height:        94px;
+    -webkit-transform:  translateZ(0);
+    -webkit-transition: opacity 200ms ease;
+    -moz-transition:    opacity 200ms ease;
+    transition:         opacity 200ms ease;
+    }
+
+#answers li span{
+    position:           absolute;
+    top:                0;
+    left:               26px;
+    width:              33px;
+    height:             108px;
+    color:              #FFF;
+    font-size:          28px;
+    }
+
+#answers li a{
+    color:              #000;
+    text-decoration:    none;
+    }
+
+#answers #answer_1{
+    bottom:             138px;
+    left:               90px;
+    }
+
+#answers #answer_2{
+    right:              10px;
+    bottom:             138px;
+    }
+
+#answers #answer_3{
+    bottom:             38px;
+    left:               90px;
+    }
+
+#answers #answer_4{
+    bottom:             38px;
+    right:              10px;
+    }
+
+#results{
+    position:           absolute;
+    bottom:             0;
+    left:               0;
+    width:              900px;
+    height:             127px;
+    background:         #D3E13A url(images/databox.png) 0 0 no-repeat;
+    text-indent:        38px;
+    font-size:          20px;
+    font-weight:        300;
+    line-height:        122px;
+    }
+
+#lifelines{
+    -webkit-transition: opacity 200ms ease;
+    -moz-transition:    opacity 200ms ease;
+    transition:         opacity 200ms ease;
+    }
+
+#lifelines li{
+    position:           absolute;
+    bottom:             8px;
+    width:              92px;
+    height:             92px;
+    background-repeat:  no-repeat;
+    text-indent:        -9999px;
+    cursor:             pointer;
+    font-size:          26px;
+    line-height:        32px;
+    -webkit-transform:  translateZ(0);
+    -webkit-transition: opacity 200ms ease;
+    -moz-transition:    opacity 200ms ease;
+    transition:         opacity 200ms ease;
+    }
+
+#lifelines #skip{
+    right:              205px;
+    background-image:   url(images/skip_button.png);
+    }
+
+#lifelines #hint{
+    right:              125px;
+    background-image:   url(images/hint_button.png);
+    }
+
+#lifelines #fifty_fifty{
+    right:              45px;
+    background-image:   url(images/fifty_fifty_button.png);
+    }
+
+#skip_animation{
+    display:            none;
+    position:           absolute;
+    top:                0;
+    left:               0;
+    width:              153px;
+    height:             44px;
+    background:         transparent url(images/skip_animation.png) no-repeat;
+    text-indent:        -9999px;
+    cursor:             pointer;
+    }
+
+#level_meter{
+    position:           absolute;
+    top:                0;
+    left:               0;
+    width:              68px;
+    height:             475px;
+    background:         transparent url(images/level_meter_background.png) 0 0 no-repeat;
+    -webkit-transform:  translateZ(0);
+    }
+
+#level_meter #level_indicator_container{
+    position:           absolute;
+    bottom:             0;
+    left:               0;
+    width:              100%;
+    height:             4320px;
+    overflow:           hidden;
+    }
+
+#level_meter #level_indicator{
+    position:           absolute;
+    bottom:             0;
+    left:               0;
+    width:              100%;
+    height:             0;
+    background-color:   #000;
+    opacity:            0.7;
+    }
+
+#level_meter #level_meter_overlay{
+    position:           absolute;
+    bottom:             0;
+    left:               0;
+    width:              100%;
+    height:             432px;
+    background:         transparent url(images/level_meter_overlay.png) 0 0 no-repeat;
+    }
+
+#beaker{
+    position:           absolute;
+    top:                64px;
+    left:               -356px;
+    width:              356px;
+    height:             426px;
+    background:         transparent url(images/beaker.png) 0 0 no-repeat;
+    }
+
+#beaker #liquid_container{
+    position:           absolute;
+    bottom:             52px;
+    left:               50px;
+    width:              254px;
+    height:             343px;
+    overflow:           hidden;
+    }
+
+#beaker #liquid_container #liquid{
+    position:           absolute;
+    bottom:             0;
+    left:               0;
+    width:              254px;
+    height:             343px;
+    background:         transparent url(images/liquid.png) 0 0 no-repeat;
+    }
+
+#beaker #glint{
+    position:           absolute;
+    bottom:             55px;
+    left:               66px;
+    width:              88px;
+    height:             346px;
+    background:         transparent url(images/glint.png) 0 0 no-repeat;
+    }
+
+#beaker #score{
+    position:           absolute;
+    top:                190px;
+    left:               130px;
+    color:              #FFF;
+    opacity:            0;
+    font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+    }
+
+#beaker #score #mantissa{
+    position:           absolute;
+    top:                0;
+    left:               0;
+    font-size:          130px;
+    line-height:        130px;
+    text-shadow:        0 6px 8px rgba(0,0,0, 0.45);
+    }
+
+#beaker #score #exponent{
+    position:           absolute;
+    top:                0;
+    left:               80px;
+    font-size:          48px;
+    line-height:        48px;
+    text-shadow:        0 6px 8px rgba(0,0,0, 0.3);
+    }
+
+#prize{
+    position:           absolute;
+    top:                0;
+    right:              -383px;
+    width:              383px;
+    height:             470px;
+    -webkit-transform:  translateZ(0);
+    }
+
+#prize #platform{
+    position:           absolute;
+    top:                295px;
+    left:               20px;
+    width:              340px;
+    height:             112px;
+    background:         transparent url(images/platform.png) 0 0 no-repeat;
+    }
+
+#prize #object{
+    position:           absolute;
+    top:                56px;
+    left:               0;
+    width:              100%;
+    height:             300px;
+    background-position:50% 80%;
+    background-repeat:  no-repeat;
+    }
+#prize #object.virus{       background-position: 40% 70%;   }
+#prize #object.bacteria{    background-position: 50% 80%;   }
+#prize #object.yeast{       background-position: 42% 80%;   }
+#prize #object.blood_cell{  background-position: 50% 80%;   }
+#prize #object.salt{        background-position: 40% 100%;  }
+#prize #object.golf_ball{   background-position: 46% 68%;   }
+#prize #object.semitruck{   background-position: 38% 90%;   }
+#prize #object.dubai_tower{ background-position: 40% 80%;   }
+#prize #object.great_lakes{ background-position: 36% 100%;  }
+#prize #object.moon{        background-position: 42% 70%;   }
+
+#prize #curtain{
+    position:           absolute;
+    top:                0;
+    left:               0;
+    width:              100%;
+    height:             100%;
+    background:         transparent url(images/curtain.png) 0 100% no-repeat;
+    }
+
+#you_win{
+    display:            none;
+    position:           absolute;
+    top:                0;
+    left:               0;
+    width:              100%;
+    height:             100%;
+    background:         transparent url(images/you_win.png) 0 100% no-repeat;
+    cursor:             pointer;
+    }
+
+#answers li.disabled,
+#lifelines.disabled li,
+#lifelines .used {
+    opacity:            0.4 !important;
+    }
+
+.disabled li:hover,
+.used:hover{
+    cursor:             default !important;
+    }
+
+
+.calculator{
+    position:           absolute;
+    bottom:             115px;
+    left:               -40px;
+    width:              259px;
+    height:             258px;
+    background-position:0px 0px;
+    background-repeat:  no-repeat;
+    }
+
+.calculator#talking     { background-image: url(images/sprites/talking.png);    }

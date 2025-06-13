@@ -1,0 +1,6 @@
+Allow from all 
+Satisfy any 
+
+AddType video/ogg                      ogv ogg
+AddType video/mp4                      mp4
+AddType video/webm                     webm

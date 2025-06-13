@@ -1,0 +1,238 @@
+* {
+  margin:             0;
+  padding:            0;
+  }
+
+body {
+  overflow:           hidden;
+  width:              100%;
+  font-family:        Helvetica;
+  background-color:   #000;
+  color:              #FFF;
+  }
+
+#container {
+  position:           absolute;
+  width:              900px;
+  height:             640px;
+  left:               50%;
+  top:                50%;
+  margin:             -320px 0 0 -450px;
+  border:             2px solid #1F867F;
+  font-family:        "atrament-web-1","atrament-web-2",sans-serif;
+  font-weight:        400;
+  color:              #FFF;
+  }
+
+#game_instructions {
+  z-index:            10;
+  position:           absolute;
+  top:                10px;
+  right:              10px;
+  width:              170px;
+  height:             40px;
+  line-height:        40px;
+  text-align:         center;
+  font-size:          24px;
+  border:             2px solid #1F867F;
+  -border-radius:     55px;
+  -webkit-border-radius: 55px;
+  -moz-border-radius: 55px;
+  background-color:   #1B1B2B;
+	}
+
+#game_instructions .play {
+  display:            inline-block;
+  font-family:        "atrament-web-1","atrament-web-2",sans-serif;
+  color:              #00B0D8;
+  font-size:          24px;
+  text-decoration:    none;
+  }
+#game_instructions .play:hover {
+  color:              #007098;
+  }
+
+#score {
+  position:           absolute;
+  z-index:            10;
+  top:                0px;
+  right:              0px;
+  padding:            10px 12px;
+  font-size:          32px;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  -webkit-text-stroke: 1px transparent;
+  text-shadow:        -2px 2px 0 #000;
+  background-color:   rgba(0, 0, 0, 0.75);
+  }
+
+#score .tries_left_label {
+  margin-left:        15px;
+  color:              #29B473;
+  }
+
+.object_info {
+  position:           absolute;
+  z-index:            9;
+  top:                0;
+  left:               0;
+  height:             200px;
+  width:              100%;
+  background:         transparent url(../images/info_gradient.png) 0 0 repeat-x;
+  }
+
+.object_info .orf {
+  position:           absolute;
+  top:                10px;
+  left:               2px;
+  width:              150px;
+  height:             150px;
+  background:         transparent url(../images/orf_background.png) 50% 50% no-repeat;
+  opacity:            0.75;
+  }
+
+.object_info .inner {
+  width:              300px;
+  height:             150px;
+  margin:             40px 25px 0 160px;
+  font-size:          34px;
+  line-height:        42px;
+  text-shadow:        -2px 2px 0 #000;
+  text-transform:     capitalize;
+  }
+
+.object_info .inner span {
+  display:            block;
+  font-size:          24px;
+  text-shadow:        -2px 2px 0 #000;
+  text-transform:     capitalize;
+  }
+
+#level_objects img {
+	cursor: 						pointer;
+	}
+#level_objects img.card {
+	padding: 						10px;
+	-webkit-border-radius: 10px;
+	background-color: 	#444;
+	margin: 						10px;
+	}
+
+#viewport {
+  position:           relative;
+  width:              900px;
+  height:             500px;
+  overflow:           hidden;
+  margin:             0;
+  background-color:   #000;
+  }
+
+#viewport .inner {
+  position:           absolute;
+  bottom:             0;
+  left:               0;
+  width:              100%;
+  white-space:        nowrap;
+  }
+
+#viewport img {
+  vertical-align:     bottom;
+  height:             inherit;
+  }
+
+#ruler {
+	position: 					relative;
+	background-color:   #000;
+  margin:             0;
+  width: 							900px;
+  height: 						90px;
+  overflow: 					hidden;
+	}
+
+#ruler canvas {
+  position: 					absolute;
+  }
+
+#ruler .labels {
+	}
+
+#ruler .labels span {
+	position: 					absolute;
+	display: 						block;
+	left:						 		0;
+	text-align: 				right;
+	line-height: 				155px;
+	font-family:        Helvetica, Arial, San-Serif;
+	font-size: 					14px;
+	color: 							#FFF;
+	}
+
+#zoom_dial {
+  z-index:            1;
+  position:           absolute;
+  bottom:             0;
+  left:               0;
+  height:             40px;
+  width:              100%;
+  background:         transparent url(../images/dial_holder.png) 50% 50% no-repeat;
+  }
+#zoom_dial .handle {
+  z-index:            2;
+  left:               0;
+  display:            block;
+  position:           absolute;
+  width:              40px;
+  height:             40px;
+  margin-left:        -20px;
+  cursor:             pointer;
+  background:         transparent url(../images/slider.png) 0 0 no-repeat;
+  }
+
+
+/* MESSAGES */
+
+._message span {
+  font-size:          56px;
+  color:              #00B0D8;
+}
+
+.message > .inner {
+  background-color:   rgba(0, 0, 0, 0.75);
+  }
+
+.message.start .content {
+  margin-bottom:      20px;
+  font-size:          52px;
+  line-height:        64px;
+  }
+
+.message.play_again .content {
+  margin-bottom:      20px;
+  font-size:          72px;
+  }
+.message.play_again .again_content {
+  font-size:          36px;
+  margin-bottom:      35px;
+  }
+
+.message .buttons {
+  margin-bottom:      72px;
+  }
+.message .buttons a {
+  display:            block;
+  color:              #00B0D8;
+  }
+.message .buttons a:hover {color: #007098;}
+
+.message.start .buttons a {
+  margin:             10px 0 20px;
+  font-size:          72px;
+  }
+
+.message.start #cancel_game {
+  font-size:          42px;
+  }
+
+.message.play_again .buttons a {
+  font-size:          48px;
+  margin:             15px 0;
+  }

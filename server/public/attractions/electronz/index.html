@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="../../favicon_32.ico">
+  <title>Electronz - NanoSpace</title>
+  
+  <meta name="viewport" content="width=1140, maximum-scale=.9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <script type="text/javascript" src="http://use.typekit.com/nzt5rde.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  
+  <link rel="stylesheet" href="../../css/games.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  
+  <script src="../../js/jquery.js"></script>
+  <!--[if lt IE 9]><script src="../../js/ie.js"></script><![endif]-->
+  <script src="../../js/global.js"></script>
+  <script src="../../js/soundmanager2.js"></script>
+  <script src="../../js/jquery.store.js"></script>
+  <script src="../../js/user.js"></script>
+  <script src="../../js/game.js"></script>
+  <script src="../../js/canvas_to_image.js"></script>
+  <script src="../../js/message.js"></script>
+  <script src="../../js/periodic_table.js"></script>
+  <script src="../../js/splash.js"></script>
+  <script src="js/global.js"></script>
+</head>
+<body>
+  
+  <div id="header">
+    <a class="back_to_nav" href="../../#arcade">
+      <img src="../../images/back_to_nav_arrow.png" align="left" alt="Return to NanoSpace"/>
+      NanoSpace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+    <a class="open_instructions" href="javascript:;">?</a>
+  </div>
+  
+  
+  <div id="splash">
+    <img src="images/splash.png" width="900" height="600" alt="Fire electrons to build the electronic structure of the elements! Avoid electron collisions that will weaken your shields."/>
+  </div>
+  
+  
+  <div id="loading">
+    <span>Loading...</span>
+    <div class="progress_container"><div class="progress"></div></div>
+  </div>
+  
+  
+  <div id="level_selector" class="hidden_from_splash" style="display:none">
+    <div class="inner">
+      <h2>Choose An Element <a class="close">X</a></h2>
+      <div class="levels"></div>
+    </div>
+  </div>
+  
+  
+  <div id="high_scores" class="hidden_from_splash" style="display:none">
+    <div class="inner"></div>
+    <div class="log_in_message">
+      You must be <a id="go_to_login" href="../../#arcade">logged in</a> for your high scores to be submitted.
+    </div>
+  </div>
+  
+  
+  <div id="level_selector_toggle" class="hidden_from_splash">
+    <a href="javascript:;">Choose Element</a>
+  </div>
+  
+  
+  <div id="container" class="hidden_from_splash">
+    
+    <div id="game_over_message" class="message" style="display:none">
+      <div class="inner">
+        GAME OVER!
+      </div>
+    </div>
+    
+    <div id="level_complete_message" class="message" style="display:none">
+      <div class="inner">
+        <div class="element">You completed <span></span>!</div>
+        <div class="score">Your Score: <span></span></div>
+        <div class="next_element">Next element: <span></span>...</div>
+      </div>
+    </div>
+      
+    <canvas id="canvas" width="900" height="550"></canvas>
+    
+    <div id="element">
+      <span class="atomic_number"></span>
+      <span class="symbol"></span>
+      <span class="name"></span>
+    </div>
+    
+    <div id="info">
+      <div id="score">
+        <span class="label">Score</span>
+        <span class="value">0</span>
+      </div>
+      
+      <div id="shields">
+        <span class="label">Shields</span>
+        <span class="value">100%</span>
+      </div>
+      
+      <div id="accuracy">
+        <span class="label">Accuracy</span>
+        <span class="value">0%</span>
+      </div>
+      
+      <div id="time">
+        <span class="label"></span>
+        <span class="value">0</span>
+      </div>
+    </div>
+  
+    <div style="display:none">
+      <img id="ship" src="images/ship.png" alt="Your Ship"/>
+      <img id="ship_thruster" src="images/ship_thruster.png" alt="Your Ship Moving Forwards"/>
+      <img id="ship_thruster_reverse" src="images/ship_thruster_reverse.png" alt="Your Ship Moving Backwards"/>
+    </div>
+  </div>
+    
+  <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="../../favicon_32.ico">
+  <title>Atomatic - NanoSpace</title>
+  
+  <meta name="viewport" content="width=1140, maximum-scale=.9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <script type="text/javascript" src="http://use.typekit.com/nzt5rde.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  
+  <link rel="stylesheet" href="../../css/games.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/level_builder.css" />
+  <script src="../../js/jquery.js"></script>
+  <script src="../../js/jquery-ui.js"></script>
+  <script src="../../js/soundmanager2.js"></script>
+  <script src="../../js/jquery.store.js"></script>
+  <script src="../../js/user.js"></script>
+  <script src="../../js/game.js"></script>
+  <script src="../../js/global.js"></script>
+  <script src="js/jquery.json-2.2.min.js"></script>
+  <script src="../../js/canvas_to_image.js"></script>
+  <script src="../../js/message.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="../../js/periodic_table.js"></script>
+  <script src="js/molecules.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/level_builder.js"></script>
+</head>
+<body>
+
+  <div id="header">
+    <a class="back_to_nav" href="../../#arcade">
+      <img src="../../images/back_to_nav_arrow.png" align="left" />
+      Nanospace
+    </a>
+    <span class="mute_buttons">
+      <a class="mute" href="javascript:;" data-mute="all">
+        <span></span> mute
+      </a>
+      <a class="mute_music" href="javascript:;" data-mute="music">
+        <span></span> mute music
+      </a>
+    </span>
+  </div>
+  
+  
+  <div id="splash">
+    <img src="images/splash.png" width="900" height="600" />
+  </div>
+  
+  
+  <div id="loading">
+    <span>Loading...</span>
+    <div class="progress_container"><div class="progress"></div></div>
+  </div>
+
+
+  <div id="left_column" class="hidden_from_splash">
+    <a id="retry" href="javascript:;" onclick="Stage.start_level()">Retry Level</a>
+    
+    <div id="points_legend">
+      <h2>Points</h2>
+    </div>
+  </div>
+  
+  <div id="builder" class="hidden_from_splash">
+    
+    <h2>Editor</h2>
+    
+    <div id="add_molecule">
+      Add:<br />
+      <select>
+        <option value="">Molecule</option>
+      </select>
+    </div>
+    
+    <div id="ammo_chooser">
+      Add Ammo:<br />
+      <ul></ul>
+    </div>
+    
+  	<div>
+  		Points needed:<br />
+  		<input type="text" id="points_needed" value="0" size="3" />
+  		<a href="javascript:;" id="set_points_needed">Set</a>
+  	</div>
+  	
+  	<div>
+  	  <a id="save_level" href="javascript:;">Save Level</a>
+  	</div>
+  	
+  	<div>
+  	  <a id="restore_level" href="javascript:;">Restore to Saved</a>
+  	</div>
+  	
+  	<div>
+  	  <a id="copy_level" href="javascript:;">Copy Saved Level</a>
+  	</div>
+	  
+	  <div>
+	    <a id="play_level" href="javascript:;">Play Saved Level</a>
+	  </div>
+  </div>
+  
+  <div id="container" class="hidden_from_splash">
+    <div id="completed_molecules"></div>
+    <div id="required_score">Required Score: <span>0</span></div>
+    <div id="score">Score: <span>0</span></div>
+    <div id="message" style="display:none"><span></span></div>
+    
+    <canvas id="canvas" width="900" height="600"></canvas>
+    
+    <div id="info">
+      <div id="elements">
+        <img src="images/elements/H.png" /> Hydrogen
+        <img src="images/elements/O.png" /> Oxygen
+        <img src="images/elements/N.png" /> Nitrogen
+        <img src="images/elements/C.png" /> Carbon
+      </div>
+
+      <div id="ammo"></div>
+    </div>
+  </div>
+  
+  <div style="display:none">
+    <img id="ship" src="images/cannon.png" />
+  </div>
+  
+  <script>
+    var _gaq=[["_setAccount","UA-22786066-1"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+</body>
+</html>
