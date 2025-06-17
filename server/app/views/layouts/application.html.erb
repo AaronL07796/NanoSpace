@@ -16,6 +16,8 @@
   <%= javascript_include_tag ['jquery.min.js', 'rails.js'] %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  # MAKING CHANGES HERE TO TRY FIXING THE CSRF ERROR
+  <meta name="csrf-token" content="<%= csrf_token_form_authenticity_token %>">
   <%= csp_meta_tag %>
 </head>
 
