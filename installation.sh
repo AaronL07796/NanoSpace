@@ -20,7 +20,7 @@ echo "Installing Ruby and RubyGems..."
 sudo apt install -y ruby-full
 
 echo "Installing Rails gem..."
-sudo gem install rails
+sudo gem install rails hike authlogic sqlite3 mysql2 passenger
 
 echo "Navigating to $APP_PATH"
 sudo mkdir -p "$APP_PATH"
