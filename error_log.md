@@ -10,3 +10,11 @@ These were the steps to remedy the errors found in the logs.
 Completed 422 Unprocessable Content in 0ms (ActiveRecord: 0.0ms | Allocations: 213)
 
 ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):`
+
+
+--------------------------
+## New Errors as of July 18, 2025:
+
+avilez@nanotoon:/var/www/nanospace/server$ Connection to nanotoon.cs.rpi.edu closed by remote host.
+Connection to nanotoon.cs.rpi.edu closed.
+client_loop: send disconnect: Broken pipe
