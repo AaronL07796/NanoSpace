@@ -32,3 +32,9 @@ sudo rails new server
 echo "Edit the Gemfile to include: rails, hike, authlogic, sqlite3, mysql2, passenger"
 echo "Then run: bundle install"
 echo "Replace /public and /app folders with your provided versions after bundle install."
+
+echo "After replacing /public and /app, check config/routes.rb and ensure these routes exist:"
+echo "  get 'login', to: 'sessions#new'"
+echo "  post 'login', to: 'sessions#create'"
+echo "  get 'signup', to: 'users#new'"
+echo "  post 'signup', to: 'users#create'"
