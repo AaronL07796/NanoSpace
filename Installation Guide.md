@@ -2,6 +2,8 @@
 
 ## Setup on a new Virtual Machine
 
+### Please Note: This document is only for setting up on a new VM. Please do not run the following steps if website is already configured.
+
 - [ ] Install Apache2 via apt
 
 - [ ] Install sqlite3 and mysql2 via apt
