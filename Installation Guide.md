@@ -14,9 +14,9 @@
 
 - [ ] Edit Gemfile to include `rails, hike, authlogic, sqlite3, mysql2 and passenger`
 
-- [ ] `bundle install` to download gems
+- [x] `bundle install` to download gems
 
-- [ ] Replace generated `/public` and `/app` folders with the one's provided in this folder
+- [x] Replace generated `/public` and `/app` folders with the one's provided in this folder
 
 - [ ] Grep for `[FOR NEW ADMIN]` and make changes as recommended in comments
 
