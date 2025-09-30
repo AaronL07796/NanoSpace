@@ -3,3 +3,9 @@
 - Attempting to fix Database/Passenger
   - Removed config.active_storage.service = :local in attempt to remove active storage from transition from Rails 5-6 in all ruby files in /var/www/nanospace/server/config/environments
   - Commented out line  Rails.application.config.assets.version = "1.0" from /var/www/nanospace/server/config/initializers/assets.rb
+
+
+- Fixing Database?
+  - Found credentials with sudo EDITOR="nano" rails credentails:edit
+  - added "cable:\n << *production" to database.yml
+  - used sudo RAILS_ENV=production rake db:migrate
