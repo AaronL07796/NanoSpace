@@ -1,0 +1,48 @@
+  create_table "achievements", :force => true do |t|
+    t.string   "title"
+    t.integer  "game_id"
+    t.string   "label"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "achievements_users", :id => false, :force => true do |t|
+    t.integer "achievement_id"
+    t.integer "user_id"
+  end
+
+  create_table "games", :force => true do |t|
+    t.string   "title"
+    t.string   "label"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scores", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "misc"
+  end
+
+  create_table "user_flags", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "flag_key"
+    t.string   "flag_value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "user_flags", ["user_id"], :name => "index_user_flags_on_user_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "atom_face"
+  end
