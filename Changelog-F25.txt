@@ -1,0 +1,23 @@
+09/26/2025
+- Attempting to fix Database/Passenger
+  - Removed config.active_storage.service = :local in attempt to remove active storage from transition from Rails 5-6 in all ruby files in /var/www/nanospace/server/config/environments
+  - Commented out line  Rails.application.config.assets.version = "1.0" from /var/www/nanospace/server/config/initializers/assets.rb
+
+09/30/2025
+- Fixing Database/Passenger
+  - Found credentials with sudo EDITOR="nano" rails credentails:edit
+  - added "cable:\n << *production" to database.yml
+    - and queue and cache with the same format in the same file
+  - used sudo RAILS_ENV=production rake db:migrate
+  - evaluate with "sudo /usr/bin/passenger-config validate-install"
+
+  - commented out Passenger Load from /etc/apache2/mods-enabled/passenger.load (the only line in the file) since there's a conflict between it and the load in /etc/apache2/apache.conf
+
+
+10/3/2025
+- Fixed Login/Signup/Game Display issue
+    - Enabled Logged In Routing in /var/www/nanospace/server/config/routes.rb
+        - Added lines 
+            get '/logged_in',     to: 'user_sessions#logged_in'
+            post '/login',        to: 'user_sessions#create'
+            delete '/logout',     to: 'user_sessions#destroy'

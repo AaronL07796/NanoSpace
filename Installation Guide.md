@@ -2,6 +2,8 @@
 
 ## Setup on a new Virtual Machine
 
+### Please Note: This document is only for setting up on a new VM. Please do not run the following steps if website is already configured.
+
 - [ ] Install Apache2 via apt
 
 - [ ] Install sqlite3 and mysql2 via apt
@@ -14,9 +16,9 @@
 
 - [ ] Edit Gemfile to include `rails, hike, authlogic, sqlite3, mysql2 and passenger`
 
-- [x] `bundle install` to download gems
+- [ ] `bundle install` to download gems
 
-- [x] Replace generated `/public` and `/app` folders with the one's provided in this folder
+- [ ] Replace generated `/public` and `/app` folders with the one's provided in this folder
 
 - [ ] Grep for `[FOR NEW ADMIN]` and make changes as recommended in comments
 
@@ -24,11 +26,18 @@
 
 - [ ] Set up an account and production database for mysql2
 
-- [ ] set up Phusion Passenger
+- [ ] Set up Phusion Passenger
 
-- [ ] check old ruby files within the server/apps folder if changed between major versions of Ruby. There may be depricated code which needs to be changed. For example, if setting up off of the original 2013 NanoSpace, all of the before_filters need to be changed to before_actions, since they changed the names of the functions
+- [ ] Add the following to `/config/routes.rb`:
+```ruby
+get '/logged_in',     to: 'user_sessions#logged_in'
+post '/login',        to: 'user_sessions#create'
+delete '/logout',     to: 'user_sessions#destroy'
+```
 
-- [ ] setup database.yml, storage.yml, credentials.yml, master.key and any other files which may have errors. Error logs should be contained within Passenger's error log, the production.log file and on certain webpages such as nanotoon.cs.rpi.edu/logged_in#
+- [ ] Check old ruby files within the server/apps folder if changed between major versions of Ruby. There may be depricated code which needs to be changed. For example, if setting up off of the original 2013 NanoSpace, all of the before_filters need to be changed to before_actions, since they changed the names of the functions
+
+- [ ] Setup database.yml, storage.yml, credentials.yml, master.key and any other files which may have errors. Error logs should be contained within Passenger's error log, the production.log file and on certain webpages such as nanotoon.cs.rpi.edu/logged_in#
 If porting from our new VM, should be able to skip this step unless we have updated between big versions of Ruby or Rails.
 
 - [ ] At this point, everything except for the database to login/signup and save scores should be working once you start up the server.
