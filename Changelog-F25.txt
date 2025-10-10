@@ -10,14 +10,19 @@
     - and queue and cache with the same format in the same file
   - used sudo RAILS_ENV=production rake db:migrate
   - evaluate with "sudo /usr/bin/passenger-config validate-install"
-
   - commented out Passenger Load from /etc/apache2/mods-enabled/passenger.load (the only line in the file) since there's a conflict between it and the load in /etc/apache2/apache.conf
 
-
 10/3/2025
-- Fixed Login/Signup/Game Display issue
+- Nearly Fixed Login/Signup/Game Display issue
     - Enabled Logged In Routing in /var/www/nanospace/server/config/routes.rb
         - Added lines 
             get '/logged_in',     to: 'user_sessions#logged_in'
             post '/login',        to: 'user_sessions#create'
             delete '/logout',     to: 'user_sessions#destroy'
+
+10/10/2025
+- Fixed Login/Signup/Game Display issue
+    - Fixed master.key permission error
+        - Added lines to apache.conf
+            PassengerUserSwitching on
+            PassengerGroup www-data
