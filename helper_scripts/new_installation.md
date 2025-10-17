@@ -1,7 +1,5 @@
 # Deployment Guide for NanoSpace
 
-This guide provides a comprehensive walkthrough for deploying the NanoSpace Rails application on a new Debian-based (like Ubuntu) virtual machine.
-
 ### **Prerequisites**
 
   * A new, clean VM instance.
@@ -25,6 +23,7 @@ First, we will install the primary components sequentially. These commands can b
 
     ```bash
     sudo apt install -y mysql-server libmysqlclient-dev
+    sudo apt install -y sqlite3 libsqlite3-dev
     ```
 
 3.  **Install Ruby**: The programming language and its tools.
@@ -47,12 +46,12 @@ sudo gem install rails
 
 ## \#\# 3. Create the Rails Application
 
-Navigate to `/var/www` and generate the new Rails application.
+Navigate to `/var/www/nanospace/` and generate the new Rails application.
 
-  * **Run from**: `/var/www`
+  * **Run from**: `/var/www/www/nanospace/`
     ```bash
     # Create the Rails app inside a 'server' subdirectory
-    sudo rails new nanospace/server
+    sudo rails new server
     ```
 
 -----
@@ -68,11 +67,13 @@ Edit the `Gemfile` to include all required libraries.
         sudo vim /var/www/nanospace/server/Gemfile
         ```
 
-2.  **Add the required gems**:
+2.  **Add the required gems (if not already in file)**:
 
     ```ruby
+    gem 'rails'
     gem 'hike'
     gem 'authlogic'
+    gem 'sqlite3'
     gem 'mysql2'
     gem 'passenger'
     ```
@@ -93,13 +94,18 @@ Replace the default folders with your project's versions.
 1.  **Replace the folders**:
       * **Run from**: `/var/www/nanospace/server`
         ```bash
-        # (Optional) Back up the originals
-        sudo mv public public_original
-        sudo mv app app_original
-
+        
         # Use scp or another method to copy your project's app and public folders here.
         # After copying, set the correct ownership.
         sudo chown -R www-data:www-data /var/www/nanospace
+
+        # if you want to replace / override the existing app and public first clean the directory
+        # sudo rm -rf public
+        # sudo rm -rf app
+        # Then you can copy over from your local copy of the working copy of the github app and public folders 
+        # from /NanoSpace/server/
+        # scp public USER@nanotoon.cs.rpi.edu:/var/www/nanospace/server/
+        # scp app USER@nanotoon.cs.rpi.edu:/var/www/nanospace/server/
         ```
 
 -----
@@ -277,4 +283,5 @@ Finally, configure SSL to encrypt traffic to your application.
         ```bash
         sudo a2enmod ssl
         sudo systemctl restart apache2
+
         ```
