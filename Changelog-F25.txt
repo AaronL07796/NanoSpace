@@ -26,3 +26,13 @@
         - Added lines to apache.conf
             PassengerUserSwitching on
             PassengerGroup www-data
+
+10/14/2025
+- Experimenting with CSRF token. Added some functions into the html files? Doesn't seem to work.
+
+10/17/2025
+- Error seems to be that HTML files should be under app folder, not public folder, since all public assets are static. Attempting to move over static HTML pages to app folder under views to have Apache2 serve webpage with CSRF token and layouts applied.
+    - !! FIXED !!
+         - importing index.html directory seems to break the home page. working on a fix. accessible under new nanospace folder or https://nanotoon.cs.rpi.edu/nanospace
+    - renamed original nanospace.html in public, since it was getting loaded instead of the index.html.erb file
+    - moving over nanospace_with_alt_text html file similar to index.html
