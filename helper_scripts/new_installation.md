@@ -8,7 +8,7 @@
 
 -----
 
-## \#\# 1. Install System Dependencies
+## 1. Install System Dependencies
 
 First, we will install the primary components sequentially. These commands can be run from any directory.
 
@@ -34,7 +34,7 @@ First, we will install the primary components sequentially. These commands can b
 
 -----
 
-## \#\# 2. Install Ruby on Rails
+##  2. Install Ruby on Rails
 
 Next, install the Rails framework using RubyGems.
 
@@ -44,7 +44,7 @@ sudo gem install rails
 
 -----
 
-## \#\# 3. Create the Rails Application
+##  3. Create the Rails Application
 
 Navigate to `/var/www/nanospace/` and generate the new Rails application.
 
@@ -56,7 +56,7 @@ Navigate to `/var/www/nanospace/` and generate the new Rails application.
 
 -----
 
-## \#\# 4. Configure Application Gems
+##  4. Configure Application Gems
 
 Edit the `Gemfile` to include all required libraries.
 
@@ -87,201 +87,53 @@ Edit the `Gemfile` to include all required libraries.
 
 -----
 
-## \#\# 5. Integrate NanoSpace Project Files
+##  5. Integrate NanoSpace Project Files
 
-Replace the default folders with your project's versions.
+**Replace the default folders with project's:** 
+**Run from**: `/var/www/nanospace/server`
 
-1.  **Replace the folders**:
-      * **Run from**: `/var/www/nanospace/server`
         ```bash
         
-        # Use scp or another method to copy your project's app and public folders here.
-        # After copying, set the correct ownership.
+        # Remove the existing app and public folders
+        sudo rm -rf app
+        sudo rm -rf public
+        
+        # Copy over the new folders from your working copy
+        # Example using scp (replace USER and source paths appropriately)
+        scp -r /path/to/local/app USER@nanotoon.cs.rpi.edu:/var/www/nanospace/server/
+        scp -r /path/to/local/public USER@nanotoon.cs.rpi.edu:/var/www/nanospace/server/
+        
+        # Ensure proper ownership for Apache
         sudo chown -R www-data:www-data /var/www/nanospace
 
-        # if you want to replace / override the existing app and public first clean the directory
-        # sudo rm -rf public
-        # sudo rm -rf app
-        # Then you can copy over from your local copy of the working copy of the github app and public folders 
-        # from /NanoSpace/server/
-        # scp public USER@nanotoon.cs.rpi.edu:/var/www/nanospace/server/
-        # scp app USER@nanotoon.cs.rpi.edu:/var/www/nanospace/server/
         ```
 
 -----
 
-## \#\# 6. Generate Database Migrations
+## 6.  Grep for [FOR NEW ADMIN] and make changes as recommended in comments
 
-Create the migration files that define your database schema.
+## 7.  By this point, the park of NanoSpace should be available upon starting the Apache2 server. However, none of the games or login/signup will work or display, as they require at least a (nonfunctional) database that they can read to be able to start. This may change in the future if our code changes.
 
-1.  **Generate the Main Models**:
+## 8.  Set Up mysql2 Production Database & Account
 
-      * **Run from**: `/var/www/nanospace/server`
-        ```bash
-        rails generate model User name:string crypted_password:string password_salt:string persistence_token:string atom_face:text
-        rails generate model Game title:string label:string
-        rails generate model Achievement title:string game:references label:string
-        rails generate model Score user:references game:references score:integer misc:text
-        rails generate model UserFlag user:references flag_key:string flag_value:string
-        ```
 
-2.  **Create the Join Table Migration**:
+```
+   sudo mysql -u root -p
 
-      * **Run from**: `/var/www/nanospace/server`
-        ```bash
-        rails generate migration CreateJoinTableAchievementUser
-        ```
+   -- Create the production database
+   CREATE DATABASE nanospace_production
+   CHARACTER SET utf8
+   COLLATE utf8_general_ci;
 
-    Now, open the new migration file created in the `db/migrate/` directory and replace its `change` method with this:
+   -- Create a dedicated app user (change username/password!)
+   CREATE USER 'nanospace_prod'@'localhost' IDENTIFIED BY 'CHANGE_ME_SUPER_STRONG_PW';
 
-    ```ruby
-    def change
-      create_join_table :achievements, :users
-    end
-    ```
+   -- Grant privileges to that user on the prod DB
+   GRANT ALL PRIVILEGES ON nanospace_production.* TO 'nanospace_prod'@'localhost';
 
------
+   FLUSH PRIVILEGES;
+   EXIT;
 
-## \#\# 7. Set Up Phusion Passenger & Apache
+```
 
-Configure the Passenger application server to connect Apache to your Rails app.
-
-1.  **Run the Installer**:
-
-      * **Run from**: `/var/www/nanospace/server`
-        ```bash
-        sudo passenger-install-apache2-module
-        ```
-
-    Follow the on-screen instructions, which will require you to edit `/etc/apache2/apache2.conf` to add the `LoadModule` lines it provides.
-
-2.  **Create the Apache Site File**:
-
-      * **File Location**: `/etc/apache2/sites-available/nanospace.conf`
-        ```bash
-        sudo vim /etc/apache2/sites-available/nanospace.conf
-        ```
-
-    Add the following content:
-
-    ```apache
-    <VirtualHost *:80>
-        ServerName your_domain_or_ip.com
-        DocumentRoot /var/www/nanospace/server/public
-
-        <Directory /var/www/nanospace/server/public>
-            Allow from all
-            Options -MultiViews
-            Require all granted
-        </Directory>
-    </VirtualHost>
-    ```
-
-3.  **Enable the Site**:
-
-      * **Run from**: Any directory
-        ```bash
-        sudo a2ensite nanospace.conf
-        sudo systemctl reload apache2
-        ```
-
------
-
-## \#\# 8. Configure and Run the Database
-
-Create the MySQL database, configure Rails to connect to it, and then run the migrations you generated.
-
-1.  **Create the MySQL Database and User**:
-
-      * **Run from**: Any directory
-        ```bash
-        sudo mysql -u root -p
-        ```
-
-    In the MySQL shell, run these commands:
-
-    ```sql
-    CREATE DATABASE nanospace_production CHARACTER SET utf8 COLLATE utf8_general_ci;
-    CREATE USER 'your_mysql_user'@'localhost' IDENTIFIED BY 'a_very_strong_password';
-    GRANT ALL PRIVILEGES ON nanospace_production.* TO 'your_mysql_user'@'localhost';
-    FLUSH PRIVILEGES;
-    EXIT;
-    ```
-
-2.  **Configure `database.yml`**:
-
-      * **File Location**: `/var/www/nanospace/server/config/database.yml`
-        ```bash
-        sudo vim /var/www/nanospace/server/config/database.yml
-        ```
-
-    **Delete all existing content** and replace it with this MySQL configuration. Update the `production` block with your actual username and password.
-
-    ```yaml
-    default: &default
-      adapter: mysql2
-      encoding: utf8mb4
-      pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-      socket: /var/run/mysqld/mysqld.sock
-
-    production:
-      <<: *default
-      database: nanospace_production
-      username: your_mysql_user
-      password: 'a_very_strong_password'
-    ```
-
-3.  **Run the Migrations**:
-
-      * **Run from**: `/var/www/nanospace/server`
-        ```bash
-        RAILS_ENV=production sudo bundle exec rails db:migrate
-        ```
-
------
-
-## \#\# 9. Secure Your Site with HTTPS (Final Step) OPTIONAL
-
-Finally, configure SSL to encrypt traffic to your application.
-
-1.  **Update Apache Site Configuration**:
-
-      * **File Location**: `/etc/apache2/sites-available/nanospace.conf`
-        ```bash
-        sudo vim /etc/apache2/sites-available/nanospace.conf
-        ```
-
-    Replace the entire file contents with the following to force all traffic to HTTPS.
-
-    ```apache
-    # Redirect HTTP to HTTPS
-    <VirtualHost *:80>
-        ServerName your_domain_or_ip.com
-        Redirect permanent / https://your_domain_or_ip.com/
-    </VirtualHost>
-
-    # SSL Configuration for HTTPS
-    <VirtualHost *:443>
-        ServerName your_domain_or_ip.com
-        DocumentRoot /var/www/nanospace/server/public
-
-        SSLEngine on
-        SSLCertificateFile /path/to/your/certificate.crt
-        SSLCertificateKeyFile /path/to/your/private.key
-
-        <Directory /var/www/nanospace/server/public>
-            Allow from all
-            Options -MultiViews
-            Require all granted
-        </Directory>
-    </VirtualHost>
-    ```
-
-2.  **Enable SSL and Restart**:
-
-      * **Run from**: Any directory
-        ```bash
-        sudo a2enmod ssl
-        sudo systemctl restart apache2
-
-        ```
+## 9.   Set up Phusion Passenger 
