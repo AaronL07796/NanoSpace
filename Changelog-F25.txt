@@ -36,3 +36,13 @@
     - (FIXED) importing index.html directory seems to break the home page. working on a fix. accessible under new views/nanospace folder or https://nanotoon.cs.rpi.edu/nanospace
     - renamed original nanospace.html in public, since it was getting loaded instead of the nanospace/index.html.erb file
     - moving over nanospace_with_alt_text html file similar to index.html (now index.html.erb)
+
+
+10/21/2025
+- Moved static index.html and nanospace_with_alt_text.html pages into app folder and made into .html.erb files. Debugged resulting errors from moving over. Reverted changes to nanospace_with_alt_text.html file that tried to fix CSRF tokens.
+
+10/24/2025
+- Bugfixed CSRF tokens. Authlogic needs to be updated because it's using deprecated features.
+  - Edited user_sessions_controllers.rb
+    - added user.to_h in create
+    - fix permit issue in new and create functions of user_sessions_controllers.rb
