@@ -48,3 +48,10 @@
     - commented out old token function
     - added "def user_session_params" with :name and :password
     - fix remaining issues in new and create functions of user_sessions_controllers.rb
+
+10/28/2025
+- Routing errors for authlogic fixed
+- SSL issues regarding deprecated pem file resolved
+- Invalid CSRF token error returning?
+- added new CSRF token thing at top of /public/js/users.js
+  - seems not to have worked. giving error 400 bad request rather than 422 unprocessable content
