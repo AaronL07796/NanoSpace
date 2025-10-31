@@ -55,3 +55,8 @@
 - Invalid CSRF token error returning?
 - added new CSRF token thing at top of /public/js/users.js
   - seems not to have worked. giving error 400 bad request rather than 422 unprocessable content
+
+10/31/2025
+- Added users_params function at bottom of users_controllers.rb
+  - after debugging function, now gives error 500 internal network error instead of error 400 bad request. error log recommends downloading SCrypt for Authlogic
+    - SCrypt seems sufficient as a hashing algorithm, but is not added yet. Probably next on TODO list.
