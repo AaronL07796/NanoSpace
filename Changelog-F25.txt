@@ -60,3 +60,11 @@
 - Added users_params function at bottom of users_controllers.rb
   - after debugging function, now gives error 500 internal network error instead of error 400 bad request. error log recommends downloading SCrypt for Authlogic
     - SCrypt seems sufficient as a hashing algorithm, but is not added yet. Probably next on TODO list.
+
+11/4/2025
+- Added SCrypt to Gemfile, sudo bundle install used to download
+- Added lines to beginning of file /app/models/user.rb
+  - acts_as_authentic do |c|
+        c.crypto_provider = ::Authlogic::CryptoProviders::SCrypt
+    end
+  - additionally added validation lines right under above lines
