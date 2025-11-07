@@ -1,0 +1,8 @@
+Included in this folder on the virtual machine are the following files:
+- database.yml
+- deploy.yml
+- credentials.yml.enc
+- master.key
+
+These files aren't going to be uploaded to GitHub for hopefully obvious reasons. 
+This file serves to document that these files exist, in case something happens to them on the virtual machine.
