@@ -68,3 +68,10 @@
         c.crypto_provider = ::Authlogic::CryptoProviders::SCrypt
     end
   - additionally added validation lines right under above lines
+- with these changes, login/signup seems to work, but requires more testing
+
+11/7/2025
+- Updating GitHub Code with seemingly working login system
+- Begin testing of Login/Signup
+  - Username area does not allow for capital letters. Error "Oops! name should use only letters and numbers."
+    - Fixed in validates of user.rb

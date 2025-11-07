@@ -23,23 +23,23 @@ function Application (id) {
   this.interval = null
 }
 
-$(document).ready(function() {
+//$(document).ready(function() {
   // Get the CSRF token from the meta tag
-  console.log("before csrf");
+//  console.log("before csrf");
 
-  var csrfToken = $('meta[name="csrf-token"]').attr('content');
+//  var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
-  console.log(csrfToken);
+//  console.log(csrfToken);
   
   // Set up jQuery to include the CSRF token in all AJAX requests
-  $.ajaxSetup({
-    headers: {
-      'X-CSRF-Token': csrfToken
-    }
-  });
+//  $.ajaxSetup({
+//    headers: {
+//      'X-CSRF-Token': csrfToken
+//    }
+//  });
 
-  console.log("after csrf");
-});
+//  console.log("after csrf");
+//});
 
 /* Attach an applet to this application. */
 Application.prototype.attach = function (id, constructor) {

@@ -1,8 +1,31 @@
 class User < ActiveRecord::Base
   acts_as_authentic do |c|
     c.login_field = 'name'
-  end
+    c.crypto_provider = ::Authlogic::CryptoProviders::SCrypt
+  end  
   
+  validates :name,
+    format: {
+      with: /\A[A-Za-z0-9]+\z/,
+      message: "should use only letters and numbers."
+    },
+    length: { within: 3..15 },
+    uniqueness: {
+      case_sensitive: false
+    }
+
+  validates :password,
+    confirmation: { if: :require_password? },
+    length: {
+      minimum: 10,
+      if: :require_password?
+    }
+  validates :password_confirmation,
+    length: {
+      minimum: 10,
+      if: :require_password?
+    }
+
   has_and_belongs_to_many :achievements
   has_many :scores
   has_many :user_flags

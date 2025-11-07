@@ -5,23 +5,23 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    @user_session = nil
+#    @user_session = nil
     
     # Are they logging in with a token?
-    if params[:token]
-      token = params[:token].split(',')
-      
-      user = User.find_by_id token[0]
-      
-      if user and token[1] == user.token
-        @user_session = UserSession.new(user)
-      end
+#    if params[:token]
+#      token = params[:token].split(',')
+#      
+#      user = User.find_by_id token[0]
+#      
+#      if user and token[1] == user.token
+#        @user_session = UserSession.new(user.to_h)
+#      end
       
     # Otherwise, are they logging in with a user_session?
-    else
-      @user_session = UserSession.new(params[:user_session])
-      puts @user_session.inspect
-    end
+#    else
+    @user_session = UserSession.new(user_session_params.to_h)
+    puts @user_session.inspect
+#    end
     
     if @user_session && @user_session.save
       
@@ -72,6 +72,14 @@ class UserSessionsController < ApplicationController
     respond_to do |format|
       format.json  { render :json => results }
     end
+  end
+
+  private
+
+  def user_session_params
+
+    params.require(:user_session).permit(:name, :password, :remember_me)
+
   end
 
 end

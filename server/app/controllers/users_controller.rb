@@ -45,7 +45,8 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     flags = params[:user].delete(:flags)
-    @user = User.new(params[:user])
+#   @user = User.new(params[:user])
+    @user = User.new(users_params.to_h)
     
     respond_to do |format|
       if @user.save
@@ -185,6 +186,14 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.json  { render :json => results }
     end
+  end
+
+  private
+
+  def users_params
+
+    params.require(:user).permit(:name, :password, :password_confirmation)
+
   end
     
 end

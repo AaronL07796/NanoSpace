@@ -4,7 +4,21 @@ var User = function() {
   
   var local_storage = new $.store()
   
-  
+  // New code as of 10-28
+  var csrftoken = $('meta[name=csrf-token]').attr('content');
+  if (csrftoken) {
+    $.ajaxSetup({
+      headers:{
+        "X-CSRF-TOKEN": csrftoken
+      }
+    });
+    console.log("CSRF Token set globally for AJAX requests.");
+  } else {
+    console.warn("CSRF meta tag not found.");
+  }
+  // end of new code
+
+    
   var LOGGED_IN = false
   THIS.logged_in = function() {return LOGGED_IN}
 
