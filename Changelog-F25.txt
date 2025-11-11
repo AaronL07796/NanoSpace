@@ -78,3 +78,5 @@
 
 11/11/2025
 - Swapped Vimeo video player in theater of park over to Youtube video player.
+- Edited statically served home page to link to https://nanotoon.cs.rpi.edu/park (served through rails) instead of https://nanotoon.cs.rpi.edu/nanospace_with_alt_text (old and static)
+  - note that park links to app/views/nanospace/park1.html.erb as defined in routes in case this is not clear
