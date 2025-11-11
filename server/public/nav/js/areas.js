@@ -198,123 +198,201 @@ $(function() {
 })
 
 // Animations for #theater_area
+//$(function() {
+//
+//  var area = $('#theater_area'),
+//                      entrance_duration = 1000,
+//                seats,
+//                      curtains_left,
+//                      curtains_right,
+//                      curtains_top,
+//                      lighting_mask,
+//                      people,
+//                      container,
+//      grid,
+//      videos = []
+//
+//      var setup = function() {
+//              seats = area.find('.seats')
+//              curtains_left = area.find('.curtains_left')
+//              curtains_right = area.find('.curtains_right')
+//              curtains_top = area.find('.curtains_top')
+//              lighting_mask = area.find('.lighting_mask')
+//              people = area.find('.people')
+//    container = area.find('.video_container')
+//    grid = area.find('.video_grid')
+//      }
+//
+//  var choose_and_show_people = function() {
+//    var num = Math.ceil( Math.random() * 3 )
+//
+//    curtains_left.css('left', 0)
+//    curtains_right.css('right', 0)
+//    curtains_top.css('top', -25)
+//    lighting_mask.css('opacity', 0)
+//      seats.css('bottom', 0)
+//    people.removeClass('chosen').hide().filter('.people_'+num+', .people_up_'+num).css('bottom', 0).addClass('chosen').show()
+//  }
+//
+//  var request_videos_in_album = function() {
+//    if(videos.length == 0) {
+//      $.ajax({ url: 'http://vimeo.com/api/v2/album/1848167/videos.json',
+//               dataType: 'jsonp',
+//               success: album_response })
+//    }
+//  }
+//
+//  var album_response = function(r) {
+//    for(var i = 0; i < r.length; i++) {
+//      videos.push({
+//        title: r[i].title,
+//        video_id: r[i].id,
+//        thumbnail: r[i].thumbnail_medium
+//      })
+//    }
+//    populate_grid()
+//    play_video(videos[0].video_id)
+//  }
+//  window.album_response = album_response
+//
+//  var entrance_animation = function() {
+//    // console.log('here');
+//    var chosen_people = people.filter('.chosen')
+//
+//    curtains_left.animate({left: -60}, entrance_duration)
+//    curtains_right.animate({right: -60}, entrance_duration)
+//    curtains_top.animate({top: -75}, entrance_duration)
+//    lighting_mask.fadeTo(entrance_duration, 1)
+//      seats.animate({bottom: -45}, entrance_duration)
+//      chosen_people.animate({bottom: -90}, entrance_duration, function() {
+//      area.find('.video_area').stop().css({opacity: 0, zIndex: 8}).fadeTo(500, 1, request_videos_in_album)
+//    })
+//  }
+//
+//  var populate_grid = function() {
+//    for(var i = 0; i < videos.length; i++) {(function(i){
+
+//      var v = videos[i]
+
+//      var cell = $('<div class="cell" />').click(function() { play_video(v.video_id) })
+//      var img = $('<img />').attr('src', v.thumbnail)
+//      var title = $('<div class="video_title" />').text(v.title)
+//
+//      cell.append(img).append(title).appendTo(grid)
+
+//    })(i)}
+//  }
+
+//  var addEvent = function(element, eventName, callback) {
+//    if (element.addEventListener) {
+//      element.addEventListener(eventName, callback, false)
+//    } else {
+//      element.attachEvent('on' + eventName, callback)
+//    }
+//  }
+//
+//  var play_video = function(video_id) {
+//    container.show().html('<iframe id="player_'+video_id+'" src="http://player.vimeo.com/video/'+video_id+'?api=1&amp;player_id=player_'+video_id+'" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>')
+//    var player = $f('player_'+video_id)
+//
+//    player.addEvent('ready', function() {
+//      player.addEvent('finish', function() {
+//        container.hide()
+//      })
+//      player.api('play')
+//      area.trigger('video_playing')
+//    })
+//  }
+
+//  var stop_trailer = function() {
+//    container.empty().hide()//.css({opacity: 0, zIndex: 1})
+//    area.find('.video_area').css({opacity:0, zIndex:1});
+//  }
+
+//      $('#park').bind('images_ready', setup)
+//  area.bind('enter', choose_and_show_people)
+//  area.bind('enter_complete', entrance_animation)
+//  area.bind('exit', stop_trailer)
+
+//})
 $(function() {
 
   var area = $('#theater_area'),
-			entrance_duration = 1000,
-		  seats,
-			curtains_left,
-			curtains_right,
-			curtains_top,
-			lighting_mask,
-			people,
-			container,
-      grid,
-      videos = []
+      entrance_duration = 1000,
+      seats,
+      curtains_left,
+      curtains_right,
+      curtains_top,
+      lighting_mask,
+      people,
+      container,
+      grid;
 
-	var setup = function() {
-		seats = area.find('.seats')
-		curtains_left = area.find('.curtains_left')
-		curtains_right = area.find('.curtains_right')
-		curtains_top = area.find('.curtains_top')
-		lighting_mask = area.find('.lighting_mask')
-		people = area.find('.people')
-    container = area.find('.video_container')
-    grid = area.find('.video_grid')
-	}
+  var setup = function() {
+    seats = area.find('.seats');
+    curtains_left = area.find('.curtains_left');
+    curtains_right = area.find('.curtains_right');
+    curtains_top = area.find('.curtains_top');
+    lighting_mask = area.find('.lighting_mask');
+    people = area.find('.people');
+    container = area.find('.video_container');
+    grid = area.find('.video_grid');
+  };
 
   var choose_and_show_people = function() {
-    var num = Math.ceil( Math.random() * 3 )
+    var num = Math.ceil(Math.random() * 3);
 
-    curtains_left.css('left', 0)
-    curtains_right.css('right', 0)
-    curtains_top.css('top', -25)
-    lighting_mask.css('opacity', 0)
-  	seats.css('bottom', 0)
-    people.removeClass('chosen').hide().filter('.people_'+num+', .people_up_'+num).css('bottom', 0).addClass('chosen').show()
-  }
-
-  var request_videos_in_album = function() {
-    if(videos.length == 0) {
-      $.ajax({ url: 'http://vimeo.com/api/v2/album/1848167/videos.json',
-               dataType: 'jsonp',
-               success: album_response })
-    }
-  }
-
-  var album_response = function(r) {
-    for(var i = 0; i < r.length; i++) {
-      videos.push({
-        title: r[i].title,
-        video_id: r[i].id,
-        thumbnail: r[i].thumbnail_medium
-      })
-    }
-    populate_grid()
-    play_video(videos[0].video_id)
-  }
-  window.album_response = album_response
+    curtains_left.css('left', 0);
+    curtains_right.css('right', 0);
+    curtains_top.css('top', -25);
+    lighting_mask.css('opacity', 0);
+    seats.css('bottom', 0);
+    people.removeClass('chosen').hide()
+      .filter('.people_' + num + ', .people_up_' + num)
+      .css('bottom', 0)
+      .addClass('chosen')
+      .show();
+  };
 
   var entrance_animation = function() {
-    // console.log('here');
-    var chosen_people = people.filter('.chosen')
+    var chosen_people = people.filter('.chosen');
 
-    curtains_left.animate({left: -60}, entrance_duration)
-    curtains_right.animate({right: -60}, entrance_duration)
-    curtains_top.animate({top: -75}, entrance_duration)
-    lighting_mask.fadeTo(entrance_duration, 1)
-  	seats.animate({bottom: -45}, entrance_duration)
-  	chosen_people.animate({bottom: -90}, entrance_duration, function() {
-      area.find('.video_area').stop().css({opacity: 0, zIndex: 8}).fadeTo(500, 1, request_videos_in_album)
-    })
-  }
+    curtains_left.animate({ left: -60 }, entrance_duration);
+    curtains_right.animate({ right: -60 }, entrance_duration);
+    curtains_top.animate({ top: -75 }, entrance_duration);
+    lighting_mask.fadeTo(entrance_duration, 1);
+    seats.animate({ bottom: -45 }, entrance_duration);
+    chosen_people.animate({ bottom: -90 }, entrance_duration, function() {
+      area.find('.video_area').stop().css({ opacity: 0, zIndex: 8 })
+        .fadeTo(500, 1, play_video);
+    });
+  };
 
-  var populate_grid = function() {
-    for(var i = 0; i < videos.length; i++) {(function(i){
-
-      var v = videos[i]
-
-      var cell = $('<div class="cell" />').click(function() { play_video(v.video_id) })
-      var img = $('<img />').attr('src', v.thumbnail)
-      var title = $('<div class="video_title" />').text(v.title)
-
-      cell.append(img).append(title).appendTo(grid)
-
-    })(i)}
-  }
-
-  var addEvent = function(element, eventName, callback) {
-    if (element.addEventListener) {
-      element.addEventListener(eventName, callback, false)
-    } else {
-      element.attachEvent('on' + eventName, callback)
-    }
-  }
-
-  var play_video = function(video_id) {
-    container.show().html('<iframe id="player_'+video_id+'" src="http://player.vimeo.com/video/'+video_id+'?api=1&amp;player_id=player_'+video_id+'" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>')
-    var player = $f('player_'+video_id)
-
-    player.addEvent('ready', function() {
-      player.addEvent('finish', function() {
-        container.hide()
-      })
-      player.api('play')
-      area.trigger('video_playing')
-    })
-  }
+  // Simplified: just play a YouTube video directly
+  var play_video = function() {
+    var youtube_id = 'HbvkOLca4D0'; // your YouTube video ID
+    container.show().html(
+      '<iframe width="640" height="360" ' +
+      'src="https://www.youtube.com/embed/' + youtube_id + '?autoplay=1" ' +
+      'frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>' +
+      '</iframe>'
+    );
+    area.trigger('video_playing');
+  };
 
   var stop_trailer = function() {
-    container.empty().hide()//.css({opacity: 0, zIndex: 1})
-    area.find('.video_area').css({opacity:0, zIndex:1});
-  }
+    container.empty().hide();
+    area.find('.video_area').css({ opacity: 0, zIndex: 1 });
+  };
 
-	$('#park').bind('images_ready', setup)
-  area.bind('enter', choose_and_show_people)
-  area.bind('enter_complete', entrance_animation)
-  area.bind('exit', stop_trailer)
+  // Bind events
+  $('#park').bind('images_ready', setup);
+  area.bind('enter', choose_and_show_people);
+  area.bind('enter_complete', entrance_animation);
+  area.bind('exit', stop_trailer);
 
-})
+});
+
 
 // Animations for #h2o_area
 $(function() {
@@ -322,7 +400,7 @@ $(function() {
   var frame_333 = 0,
       area = $('#h2o_area'),
       stage = area.children('.stage'),
-			diver_src = stage.find('.diver').data('src'),
+                        diver_src = stage.find('.diver').data('src'),
       spotlight = area.find('.spotlight')
 
   var start_playback_333 = function() {
@@ -335,7 +413,7 @@ $(function() {
   }
 
   var restart_diver_animation = function() {
-		stage.find('.diver')[0].src = diver_src + '?' + $.now()
+                stage.find('.diver')[0].src = diver_src + '?' + $.now()
   }
 
   area.bind('enter', restart_diver_animation)

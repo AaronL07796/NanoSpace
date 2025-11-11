@@ -75,3 +75,6 @@
 - Begin testing of Login/Signup
   - Username area does not allow for capital letters. Error "Oops! name should use only letters and numbers."
     - Fixed in validates of user.rb
+
+11/11/2025
+- Swapped Vimeo video player in theater of park over to Youtube video player.
