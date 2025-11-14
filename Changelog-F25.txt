@@ -83,3 +83,10 @@
 - When accessing attractions/atom_face, the route /users/current/save_atom_face? returns 404 even with "resources :users" in routes.rb
   - Using /users/save_atom_face? returns 401, will need to update js to reflect updated route
     - The 401 is likely an issue with the persistence tokens
+
+11/14/2025
+- Added open-source fonts
+  - Monomaniac One
+    - https://fonts.google.com/specimen/Monomaniac+One
+  - Nunito
+    - https://fonts.google.com/specimen/Nunito
