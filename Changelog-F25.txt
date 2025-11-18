@@ -90,3 +90,13 @@
     - https://fonts.google.com/specimen/Monomaniac+One
   - Nunito
     - https://fonts.google.com/specimen/Nunito
+- Changed molecule of the moment font and format
+
+11/18/2025
+- Updated game fonts. Some text sizes/lengths still remain bugged (see Quindecillionaire and Ion Storm)
+  - Maybe find smaller font for instructions? "Z - Fire Protons" and "X - Fire Electrons" seem to overlap in Ion Storm specifically.
+- Updated GitHub repo to contain all code on VM currently
+- Google Analytics readded, this time in /server/app to be consistent with resources served through Rails
+- Removed duplicate Accessibility Statement
+- Looked into MoTM bug where MoTM seems to disappear after clicking and dragging
+  - not fixed yet, only seems to happen occasionally?
