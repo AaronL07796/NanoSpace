@@ -1,14 +1,16 @@
-@font-face {
+@font-face {  
   font-family: 'atrament-web-1';
-  src: url("[insert file path to fonts file]") format('opentype');
+  src: url("MonomaniacOne-Regular.ttf") format('truetype');
 }
+
 @font-face {
   font-family: 'league-gothic-2';
-  src: url("[insert file path to fonts file]") format('opentype');
+  src: url("MonomaniacOne-Regular.ttf") format('truetype');
 }
+
 @font-face {
   font-family: 'myriad-pro-2';
-  src: url("[insert file path to fonts file]") format('opentype');
+  src: url("MonomaniacOne-Regular.ttf") format('truetype');
 }
 
 *{

@@ -360,7 +360,7 @@ $(function() {
       MOLECULE.do_scale(m.scale, 300, -6.5)
       if($.support.opacity) GLOW.clearQueue().animate({opacity: 1}, 500)
       setTimeout(function() {
-        var description = m.chemical_formula.replace(/(\d+)/g, '<sub>$1</sub>') + ' - ' + m.description
+        var description = '<p style="font-size: 25px;">' + m.chemical_formula.replace(/(\d+)/g, '<sub>$1</sub>') + '</p> ' + m.description
         HALL.find('.motm_description .inner').html(description)
         HALL.find('.motm_description').animate({bottom: 15}, 500, function() {
           $('#motm').trigger('motm_enter_complete')

@@ -1,6 +1,8 @@
 ;(function($) {
   var iOS = (navigator.userAgent.match(/(iPad|iPhone|iPod)/i) ? true : false)
   
+  var isTransitioning = false; //new as of 11/17/2025
+
   var loader = $('#loading'),
       progress_bar = $('#loading .loading_progress span'),
       total_images = 0,
@@ -446,7 +448,12 @@
   
   
   var show_area = function() {
-  
+    
+    //if (isTransitioning) {
+    //  return;
+    //}
+    //isTransitioning = true;
+
     var old_area = _areas.filter('.active'),
         old_stage = old_area.children('.stage'),
         old_area_index = _areas.index(old_area),
@@ -515,7 +522,8 @@
 				.css('webkitTransform', 'translate3d(' + new_stage_origin + 'px, 0, 0)')
 				.addClass('transition')
 				.one('webkitTransitionEnd', function() {
-					new_stage.removeClass('transition').trigger('enter_complete')
+					new_stage.removeClass('transition').trigger('enter_complete');
+					isTransitioning = false;
 				})
 			
 			new_attractions.each(function() {
@@ -563,7 +571,8 @@
 					
 			new_area.show()
 			new_stage.addClass('transition').stop(true).css('left', new_stage_origin).animate({left: '50%'}, 400, 'swing', function() {
-				new_stage.trigger('enter_complete').removeClass('transition')
+				new_stage.trigger('enter_complete').removeClass('transition');
+				isTransitioning = false;
 			})
 
 			old_stage.addClass('transition').stop(true).animate({left: old_stage_destination}, 400, 'swing', function() {
@@ -572,7 +581,6 @@
 			})
 
     }
-
     play_sound( 'park_to_park_' + (dir =='right' ? 'r2l' : 'l2r') )
 
   }
@@ -614,7 +622,8 @@
       
       _outside.animate( { opacity: 1 }, 600, 'swing', function() {
         // Let new area know it can begin it's animations
-        new_area.trigger('enter_complete')
+        new_area.trigger('enter_complete');
+	isTransitioning = false;
       })
     } else {
   
@@ -623,7 +632,8 @@
         .show()
         .animate( { opacity: 1 }, 600, 'swing', function() {
           // Let new area know it can begin it's animations
-          new_area.trigger('enter_complete')
+          new_area.trigger('enter_complete');
+	  isTransitioning = false;
         })
 
     }
@@ -805,6 +815,7 @@
         distant.hide()
         $('#motm').fadeIn()
         _hall.trigger('enter_complete')
+	isTransitioning = false;
       })    
     }, fade_out_duration + zoom_duration)
 

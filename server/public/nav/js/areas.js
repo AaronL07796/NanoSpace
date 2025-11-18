@@ -201,27 +201,27 @@ $(function() {
 //$(function() {
 //
 //  var area = $('#theater_area'),
-//                      entrance_duration = 1000,
-//                seats,
-//                      curtains_left,
-//                      curtains_right,
-//                      curtains_top,
-//                      lighting_mask,
-//                      people,
-//                      container,
+//			entrance_duration = 1000,
+//		  seats,
+//			curtains_left,
+//			curtains_right,
+//			curtains_top,
+//			lighting_mask,
+//			people,
+//			container,
 //      grid,
 //      videos = []
 //
-//      var setup = function() {
-//              seats = area.find('.seats')
-//              curtains_left = area.find('.curtains_left')
-//              curtains_right = area.find('.curtains_right')
-//              curtains_top = area.find('.curtains_top')
-//              lighting_mask = area.find('.lighting_mask')
-//              people = area.find('.people')
+//	var setup = function() {
+//		seats = area.find('.seats')
+//		curtains_left = area.find('.curtains_left')
+//		curtains_right = area.find('.curtains_right')
+//		curtains_top = area.find('.curtains_top')
+//		lighting_mask = area.find('.lighting_mask')
+//		people = area.find('.people')
 //    container = area.find('.video_container')
 //    grid = area.find('.video_grid')
-//      }
+//	}
 //
 //  var choose_and_show_people = function() {
 //    var num = Math.ceil( Math.random() * 3 )
@@ -230,7 +230,7 @@ $(function() {
 //    curtains_right.css('right', 0)
 //    curtains_top.css('top', -25)
 //    lighting_mask.css('opacity', 0)
-//      seats.css('bottom', 0)
+//  	seats.css('bottom', 0)
 //    people.removeClass('chosen').hide().filter('.people_'+num+', .people_up_'+num).css('bottom', 0).addClass('chosen').show()
 //  }
 //
@@ -263,8 +263,8 @@ $(function() {
 //    curtains_right.animate({right: -60}, entrance_duration)
 //    curtains_top.animate({top: -75}, entrance_duration)
 //    lighting_mask.fadeTo(entrance_duration, 1)
-//      seats.animate({bottom: -45}, entrance_duration)
-//      chosen_people.animate({bottom: -90}, entrance_duration, function() {
+//  	seats.animate({bottom: -45}, entrance_duration)
+//  	chosen_people.animate({bottom: -90}, entrance_duration, function() {
 //      area.find('.video_area').stop().css({opacity: 0, zIndex: 8}).fadeTo(500, 1, request_videos_in_album)
 //    })
 //  }
@@ -309,7 +309,7 @@ $(function() {
 //    area.find('.video_area').css({opacity:0, zIndex:1});
 //  }
 
-//      $('#park').bind('images_ready', setup)
+//	$('#park').bind('images_ready', setup)
 //  area.bind('enter', choose_and_show_people)
 //  area.bind('enter_complete', entrance_animation)
 //  area.bind('exit', stop_trailer)
@@ -400,7 +400,7 @@ $(function() {
   var frame_333 = 0,
       area = $('#h2o_area'),
       stage = area.children('.stage'),
-                        diver_src = stage.find('.diver').data('src'),
+			diver_src = stage.find('.diver').data('src'),
       spotlight = area.find('.spotlight')
 
   var start_playback_333 = function() {
@@ -413,7 +413,7 @@ $(function() {
   }
 
   var restart_diver_animation = function() {
-                stage.find('.diver')[0].src = diver_src + '?' + $.now()
+		stage.find('.diver')[0].src = diver_src + '?' + $.now()
   }
 
   area.bind('enter', restart_diver_animation)

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :application
-  resources :books
+  resources :users
   resources :nanospace
 
   get '/logged_in',	to: 'user_sessions#logged_in'
