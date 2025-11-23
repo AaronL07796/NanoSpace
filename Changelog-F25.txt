@@ -100,3 +100,11 @@
 - Removed duplicate Accessibility Statement
 - Looked into MoTM bug where MoTM seems to disappear after clicking and dragging
   - not fixed yet, only seems to happen occasionally?
+
+
+11/21/2025
+- Manually killed mysql instances after being unaccessible from /server/public/css and restarted the mysql instances.
+  - This brought back the login page and game functionality which was temporarily broken, presumably because multiple mysql server instances.
+- Removed the typekit code from ion_storm and atomatic to update since not using anymore.
+- Fixed the fonts in ion_storm and atomatic for consistency with the new fonts added to molecule of the moment.
+  - Will need to do this for all games.
