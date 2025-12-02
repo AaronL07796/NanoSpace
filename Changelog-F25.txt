@@ -108,3 +108,7 @@
 - Removed the typekit code from ion_storm and atomatic to update since not using anymore.
 - Fixed the fonts in ion_storm and atomatic for consistency with the new fonts added to molecule of the moment.
   - Will need to do this for all games.
+
+12/02/2025
+- mysql database still erroring out. Error log at /var/log/mysql/error.log shows error [InnoDB] Unable to lock ./ibdata1 error: 11
+  - Crashes MySQL server on restarts. FIX: Killed all mysql zombie processes, killed mysql post-install script and fixed the mysql install using sudo dpkg --configure -a
