@@ -101,14 +101,22 @@
 - Looked into MoTM bug where MoTM seems to disappear after clicking and dragging
   - not fixed yet, only seems to happen occasionally?
 
-
 11/21/2025
-- Manually killed mysql instances after being unaccessible from /server/public/css and restarted the mysql instances.
-  - This brought back the login page and game functionality which was temporarily broken, presumably because multiple mysql server instances.
+- Manually killed MySQL instances after being unaccessible from /server/public/css and restarted the MySQL instances.
+  - This brought back the login page and game functionality which was temporarily broken, presumably because multiple MySQL server instances.
 - Removed the typekit code from ion_storm and atomatic to update since not using anymore.
 - Fixed the fonts in ion_storm and atomatic for consistency with the new fonts added to molecule of the moment.
   - Will need to do this for all games.
 
 12/02/2025
-- mysql database still erroring out. Error log at /var/log/mysql/error.log shows error [InnoDB] Unable to lock ./ibdata1 error: 11
-  - Crashes MySQL server on restarts. FIX: Killed all mysql zombie processes, killed mysql post-install script and fixed the mysql install using sudo dpkg --configure -a
+- MySQL database still erroring out. Error log at /var/log/mysql/error.log shows error "[InnoDB] Unable to lock ./ibdata1 error: 11"
+  - Crashes MySQL server on restart. FIX: Killed all mysql zombie processes, killed mysql post-install script and fixed the mysql install using sudo dpkg --configure -a
+
+12/09/2025
+- MySQL database errors began again after original fix with the same error "[InnoDB] Unable to lock ./ibdata1 error: 11".
+  - Rebooting the server made no difference. Killing the zombie proccesses fixed the issue again.
+    - The command "sudo killall -KILL mysql mysqld_safe mysqld" did not remove all mysqld zombie processes. 
+    - We needed to run "lsof" then manually "kill [proccess id]" the mysqld procceses ran by the mysql user.
+  - Error in removing and reinstalling MySQL
+    - Could not remove MySQL, resulted in error "E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem."
+  - We need to find a permanent fix to this recurring MySQL error.
