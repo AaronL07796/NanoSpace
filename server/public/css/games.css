@@ -5,12 +5,12 @@
 
 @font-face {
   font-family: 'league-gothic-2';
-  src: url("MonomaniacOne-Regular.ttf") format('truetype');
+  src: url("Nunito-VariableFont_wght.ttf") format('truetype');
 }
 
 @font-face {
   font-family: 'myriad-pro-2';
-  src: url("MonomaniacOne-Regular.ttf") format('truetype');
+  src: url("Nunito-VariableFont_wght.ttf") format('truetype');
 }
 
 *{

@@ -87,13 +87,13 @@ a:hover {
 
 #info .positive_key {
   position:           absolute;
-  left:               260px;
+  left:               220px;
   color:              #C60051;
   }
 
 #info .negative_key {
   position:           absolute;
-  right:              260px;
+  right:              220px;
   color:              #0A83CD;
   }
 

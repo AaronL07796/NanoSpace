@@ -37,7 +37,7 @@ a:hover {
 
 #level_selector > .inner {
   margin:             0;
-  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  font-family:        "atrament-web-1","atrament-web-2",sans-serif;
   -webkit-text-stroke: 1px transparent;
   }
 
@@ -187,7 +187,7 @@ a:hover {
   text-align:         center;
   }
 #element span.atomic_number {
-  font-size:          26px;
+  font-size:          30px;
   height:             40px;
   line-height:        50px;
   font-weight:        bold;
@@ -262,7 +262,7 @@ a:hover {
 
 .message > .inner {
   background-color:   rgba(0, 0, 0, 0.75);
-  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
+  font-family:        "atrament-web-1","atrament-web-2",sans-serif;
   -webkit-text-stroke: 1px transparent;
   }
 
@@ -278,6 +278,7 @@ a:hover {
   }
 #level_complete_message span {
   color:              #FFF;
+  font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
   }
 
 #game_over_message {
