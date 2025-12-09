@@ -1,16 +1,3 @@
-@font-face {
-  font-family: 'atrament-web-1';
-  src: url("[insert file path to fonts file]") format('opentype');
-}
-@font-face {
-  font-family: 'league-gothic-2';
-  src: url("[insert file path to fonts file]") format('opentype');
-}
-@font-face {
-  font-family: 'myriad-pro-2';
-  src: url("[insert file path to fonts file]") format('opentype');
-}
-
 .molecularium_nav {
   position: absolute;
   z-index: 99999999;
