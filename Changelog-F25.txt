@@ -120,3 +120,9 @@
   - Error in removing and reinstalling MySQL
     - Could not remove MySQL, resulted in error "E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem."
   - We need to find a permanent fix to this recurring MySQL error.
+
+12/11/2025
+- Worked on the public/nav/nav.css file and webkit-transition issues 
+  - Deleted old code that handled transitions that are no longer supported
+    - Deleted -moz-transition/transform and -ms-transition/transform lines
+  - Updated with moderm transition and webkit-transition applications
