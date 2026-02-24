@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/logged_in',     to: 'user_sessions#logged_in'
   post '/login',        to: 'user_sessions#create'
-  delete '/logout',     to: 'user_sessions#destroy'
+  get '/logout',        to: 'user_sessions#destroy'
   get '/park',  to: 'nanospace#park1'
 
   post '/users', to: 'users#create'

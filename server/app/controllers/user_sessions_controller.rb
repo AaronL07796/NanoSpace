@@ -27,12 +27,16 @@ class UserSessionsController < ApplicationController
       
       # Once the user has logged in, check to see if there is anything to save
       if params[:scores] and not params[:scores].empty?
-        scores = params[:scores].map{|i, score| score}
+        # scores = params[:scores].map{|i, score| score}
+        scores = []
+        params[:scores].each{|i, score| scores << score}
         current_user.save_scores scores
       end
       
       if params[:achievements] and not params[:achievements].empty?
-        achievements = params[:achievements].map{|i, achievement| achievement}
+        # achievements = params[:achievements].map{|i, achievement| achievemen>
+        achievements = []
+        params[:achievements].each{|i, ach| achievements << ach}
         current_user.save_achievements achievements
       end
       
