@@ -40,10 +40,14 @@ class ApplicationController < ActionController::Base
   
   def authentication_check
     # Let users/update pass through, if the user is editing themselves
-    return true if params[:controller] == 'users' and params[:action] == 'update' and params[:id] == 'current'
+    # return true if params[:controller] == 'users' and params[:action] == 'update' and params[:id] == 'current'
     
-    authenticate_or_request_with_http_basic do |user, password|
-      user == 'USER' && password == 'PASSWORD'
-    end
+    # authenticate_or_request_with_http_basic do |user, password|
+    #  user == 'USER' && password == 'PASSWORD'
+    # end
+    
+    return if current_user
+    redirect_to sessions_new_path
+    
   end
 end

@@ -11,10 +11,11 @@ window.requestAnimFrame = (function(){
           };
 })();
 
-
 var Molecule = function(pdb_file, params) {  
   var THIS = {}
   
+  var INPUT_LOCKED = false
+
   var SCREEN = params.container || params.canvas.parent()
   
   var ROTATION_VECTOR_INIT = [0, 0, 0]
@@ -412,6 +413,9 @@ var Molecule = function(pdb_file, params) {
   }
   
   THIS.do_scale = function(scale, duration, offset_y) {
+    INPUT_LOCKED = true
+    IS_DRAGGING = false
+
     duration = duration || 0
     offset_y = offset_y || 0
     update_rotation_init()
@@ -439,6 +443,7 @@ var Molecule = function(pdb_file, params) {
         start_scale_time = new Date().getTime()
         animate_scale()
       }
+    INPUT_LOCKED = false
     }
   }
   
@@ -503,8 +508,12 @@ var Molecule = function(pdb_file, params) {
   var last_angle = 0
   
   var onmousedown = function(e) {
+    if (INPUT_LOCKED) return
     e = e || window.event
     e.preventDefault()
+
+    if (e.button !== 0) return
+
     if(e.originalEvent && e.originalEvent.touches) e = e.originalEvent.touches[0]
     START_X = e.clientX
     START_Y = e.clientY
@@ -514,6 +523,7 @@ var Molecule = function(pdb_file, params) {
   
   var onmouseup = function(e) {
     IS_DRAGGING = false
+    if (INPUT_LOCKED) return
     last_move_time = null
     
     if(angular_velocity_history.length > 0) {
@@ -536,7 +546,7 @@ var Molecule = function(pdb_file, params) {
   }
     
   var onmousemove = function(e) {
-    if(!IS_DRAGGING) return
+    if(!IS_DRAGGING || INPUT_LOCKED) return
     e = e || window.event
     e.preventDefault()
     if(e.originalEvent && e.originalEvent.touches) e = e.originalEvent.touches[0]
@@ -546,6 +556,7 @@ var Molecule = function(pdb_file, params) {
     
     ROTATION_VECTOR = [vector[0] / length, vector[1] / length, vector[2] / length]
     ROTATION_ANGLE = Math.sqrt(Math.pow(vector[0], 2) + Math.pow(vector[1], 2)) / 250   
+    ROTATION_ANGLE = Math.min(ROTATION_ANGLE, Math.PI / 2)
     
     var time = $.now()
     if(last_move_time && last_move_time != time) {
@@ -595,6 +606,11 @@ var Molecule = function(pdb_file, params) {
     $('#motm').bind('touchend', onmouseup)
     $(document).bind('mousemove', onmousemove)
     $('#motm').bind('touchmove', onmousemove)
+
+    //Test 2-24
+    $(window).on('mouseup blur contextmenu', function() {
+        IS_DRAGGING = false
+    })
   }
   
   

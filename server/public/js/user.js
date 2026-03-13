@@ -98,7 +98,7 @@ var User = function() {
     
     ATOM_FACE = face_str
     
-    $.getJSON('/users/current/save_atom_face', {atom_face: ATOM_FACE}, function(r) {
+    $.getJSON('/save_atom_face', {atom_face: ATOM_FACE}, function(r) {
       if(typeof callback == 'function') callback(r)
     })
   }
@@ -298,7 +298,7 @@ var User = function() {
     
     // Query the server if we're logged in
     if(LOGGED_IN) {
-      $.getJSON('/users/current/add_score', {score: score}, function(r) {
+      $.getJSON('/add_score', {score: score}, function(r) {
         if(r.success) SCORES.push(score)
         if(typeof callback == 'function') callback(score)
       })
@@ -315,7 +315,7 @@ var User = function() {
   // Get a user's high score for a particular game
   THIS.my_high_score_for_game = function(game_label, callback) {
     if(LOGGED_IN) {
-      $.getJSON('/users/current/high_score', {label: game_label}, function(r) {
+      $.getJSON('/high_score', {label: game_label}, function(r) {
         if(typeof callback == 'function') callback(r.score, r.misc)
       })
     
@@ -367,7 +367,7 @@ var User = function() {
     
     // Query the server if we're logged in
     if(LOGGED_IN) {
-      $.getJSON('/users/current/unlock_achievement', {achievement: achievement}, function(r) {
+      $.getJSON('/unlock_achievement', {achievement: achievement}, function(r) {
           if(r.success) ACHIEVEMENTS.push(r.achievement)
           if(typeof new_callback == 'function') new_callback(r.achievement)
       })
@@ -390,7 +390,7 @@ var User = function() {
     // Query the server if we're logged in
     if(LOGGED_IN) {
       if(!value) value = ''
-      $.getJSON('/users/current/set_flag', {flag_key: key, flag_value: value}, function(r) {
+      $.getJSON('/set_flag', {flag_key: key, flag_value: value}, function(r) {
           if(r.success) ACHIEVEMENTS.push(r.achievement)
           if(typeof callback == 'function') callback(r.achievement)
       })

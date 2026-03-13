@@ -34,7 +34,7 @@ class UserSessionsController < ApplicationController
       end
       
       if params[:achievements] and not params[:achievements].empty?
-        # achievements = params[:achievements].map{|i, achievement| achievemen>
+        # achievements = params[:achievements].map{|i, achievement| achievement}
         achievements = []
         params[:achievements].each{|i, ach| achievements << ach}
         current_user.save_achievements achievements
