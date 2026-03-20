@@ -56,7 +56,7 @@ var Molecule = function(pdb_file, params) {
     'P': {color: '#912B88', radius: 460},
     'default': {color: '#FFFF00', radius: 380}
   }
-  
+  var LAST_VECTOR = [0, 0, 0]
   
   // Check for Mobile Safari
   var MOBILE_WEBKIT = (navigator && navigator.userAgent && navigator.userAgent.match(/WebKit/))
@@ -391,6 +391,7 @@ var Molecule = function(pdb_file, params) {
   var update_rotation_init = function() {
     var rotation = Spin.get_rotation()
     ROTATION_VECTOR_INIT = rotation.vector
+    LAST_VECTOR = rotation.vector
     ROTATION_ANGLE_INIT = rotation.angle
     ROTATION_ANGLE = 0
   }
@@ -509,10 +510,11 @@ var Molecule = function(pdb_file, params) {
   
   var onmousedown = function(e) {
     if (INPUT_LOCKED) return
+    if (e.button !== 0) return
     e = e || window.event
     e.preventDefault()
 
-    if (e.button !== 0) return
+    
 
     if(e.originalEvent && e.originalEvent.touches) e = e.originalEvent.touches[0]
     START_X = e.clientX
@@ -522,10 +524,12 @@ var Molecule = function(pdb_file, params) {
   }
   
   var onmouseup = function(e) {
+    if (e.button !== 0) return
     IS_DRAGGING = false
     if (INPUT_LOCKED) return
     last_move_time = null
-    
+    if (e.button !== 0) return
+
     if(angular_velocity_history.length > 0) {
       var avg_velocity = 0
       for(var i = 0; i < angular_velocity_history.length; i++) {
@@ -543,17 +547,36 @@ var Molecule = function(pdb_file, params) {
     }
     
     update_rotation_init()
+    //Dump vars to console
+    //console.log({
+    //  IS_DRAGGING,
+    //  INPUT_LOCKED,
+    //  ROTATION_VECTOR,
+    //  ROTATION_ANGLE,
+    //  ANGULAR_VELOCITY,
+    //  TARGET_ANGULAR_VELOCITY,
+    //  START_X,
+    //  START_Y,
+    //  last_move_time,
+    //  angular_velocity_history
+    //})
   }
     
   var onmousemove = function(e) {
-    if(!IS_DRAGGING || INPUT_LOCKED) return
+    if(!IS_DRAGGING || INPUT_LOCKED || e.button !== 0) return
     e = e || window.event
     e.preventDefault()
     if(e.originalEvent && e.originalEvent.touches) e = e.originalEvent.touches[0]
     
     var vector = [START_Y - e.clientY, e.clientX - START_X, 0]
     var length = Math.sqrt(vector[0]*vector[0] + vector[1]*vector[1] + vector[2]*vector[2])
-    
+    //console.log(vector)
+    //console.log(length)
+    //if (length < 1e-6) {
+    //  vector = LAST_VECTOR
+    //  length = Math.sqrt(vector[0]*vector[0] + vector[1]*vector[1] + vector[2]*vector[2])
+    //}
+    if (length < 1e-6) return
     ROTATION_VECTOR = [vector[0] / length, vector[1] / length, vector[2] / length]
     ROTATION_ANGLE = Math.sqrt(Math.pow(vector[0], 2) + Math.pow(vector[1], 2)) / 250   
     ROTATION_ANGLE = Math.min(ROTATION_ANGLE, Math.PI / 2)
@@ -565,7 +588,7 @@ var Molecule = function(pdb_file, params) {
     }
     last_move_time = time
     last_angle = ROTATION_ANGLE
-    
+    LAST_VECTOR = ROTATION_VECTOR
     
     rotate_molecule()
     return false
