@@ -512,7 +512,7 @@ var Molecule = function(pdb_file, params) {
     if (INPUT_LOCKED) return
     if (e.button !== 0) return
     e = e || window.event
-    e.preventDefault()
+    //e.preventDefault()
 
     
 
@@ -565,7 +565,7 @@ var Molecule = function(pdb_file, params) {
   var onmousemove = function(e) {
     if(!IS_DRAGGING || INPUT_LOCKED || e.button !== 0) return
     e = e || window.event
-    e.preventDefault()
+    //e.preventDefault()
     if(e.originalEvent && e.originalEvent.touches) e = e.originalEvent.touches[0]
     
     var vector = [START_Y - e.clientY, e.clientX - START_X, 0]
