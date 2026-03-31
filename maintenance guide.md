@@ -1,10 +1,21 @@
 # NanoSpace Maintenance Guide
 
+## For New Contributors:
+### Access:
+Use ssh to connect to the VM. Access is available at nanotoon.cs.rpi.edu.
+
+### File Access:
+Use Unix command line to navigate to /var/www/nanospace/server once connected. The files under this GitHub repository are all displayed from that directory.
+Notably, there are some files and folders that are on the VM that are not included or modified for public display in this GitHub repository. However, the files that are primarily used are mostly included here.
+
+### Where to start:
+The most important directories to start out with are likely the app directory, containing the HTML/Ruby files, and the public folder, containing most of the JS and CSS files. Also notable is the config folder, containing our database and ruby config. For issues with Apache2, check the /etc/apache2 directory, and for mysql, see /etc/mysql.
+
+
 ## Common Issues That Showed Up
 
 ### MySQL Server Issues
 
-(run from VM server at /var/www/nanospace/server/public)
 #### 1. Check if the service is supposed to be running
 
 ```bash
