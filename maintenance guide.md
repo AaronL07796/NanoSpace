@@ -117,3 +117,7 @@ sudo rm -rf /tmp/tmp.*
 sudo dpkg --configure -a
 sudo systemctl start mysql
 ```
+
+### Disappearing Login/Sign-up on Park Homepage
+
+If the Login/Sign-Up disappears from the homepage AND the games stop loading, the issue is likely a routing or database issue. See early October 2025 changes in /old_logs_guides/Changelog-F25.txt for more details.
