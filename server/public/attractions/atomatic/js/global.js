@@ -449,7 +449,7 @@ var Stage = function() {
       User.set_flag('atomatic_max_level', LEVEL_NUM)
       var delay_time = 3000
       Message.display($('#level_complete_message'), delay_time)
-      User.save_score('atomatic', TOTAL_POINTS, 'Level '+HIGHEST_LEVEL)
+      User.save_score('atomatic', TOTAL_POINTS, HIGHEST_LEVEL)
       
       // Achievements
       if(LEVEL_NUM == 7-1) {

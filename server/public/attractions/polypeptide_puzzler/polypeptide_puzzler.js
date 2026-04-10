@@ -252,7 +252,7 @@ $(function() {
       // Game over!
       Game.play_sound('game_over')
       $('#level_finished .score span').html(SCORE)
-      User.save_score('polypeptide_puzzler', SCORE, 'Level '+(LEVEL+1))
+      User.save_score('polypeptide_puzzler', SCORE, (LEVEL+1))
       LEVEL = 0
       SCORE = 0
     }

@@ -349,7 +349,7 @@ $(window).load(function() {
     
     User.save_atom_face(face, function(r) {
       Game.unlock_achievement('atom_face_made', 'You start as a Hydrogen atom with one electron. Earn more electrons by playing games throughout NanoSpace.', function() {
-        window.location.href = '/'
+        window.location.href = '/park'
       })
     })
   }

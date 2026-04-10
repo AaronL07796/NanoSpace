@@ -150,6 +150,12 @@ $(function() {
       doorways_frame = 0
 
   var choose_and_show_people = function() {
+    // Reset the animations to blank state before the transition to prevent visual bugs
+    neon_frame = 5
+    doorways_frame = 13
+    neon_lights.prop('className', 'neon_lights frame_' + neon_frame)
+    doorways.prop('className', 'doorways frame_' + doorways_frame)
+    // Choose and show the people
     var num_to_show = Math.ceil( Math.random() * 3 )
     var people_to_show = $.shuffle( [1, 2, 3, 4, 5] ).slice( num_to_show * -1 )
     var people = area.find('.people').hide()
@@ -188,12 +194,13 @@ $(function() {
     if($.support.opacity) setTimeout(pulse_lights, 2000)
     start_playback_333()
     start_playback_1000()
+    //setTimeout(start_playback_333, 1000)
+    //setTimeout(start_playback_1000, 1000)
   })
 
   if($.support.opacity) {
     $('#motm').bind('motm_enter', stop_pulsing)
-    $('#motm').bind('motm_exit', pulse_lights)
-  }
+    $('#motm').bind('motm_exit', pulse_lights)  }
 
 })
 

@@ -354,15 +354,19 @@ $(function() {
     }
     
     
-    if($.support.opacity) $('#motm').animate({opacity: 1}, 1000)
-    if($.support.opacity) BACKGROUND_DARK.clearQueue().delay(200).animate({opacity: 1}, 1000)
+    //if($.support.opacity) $('#motm').animate({opacity: 1}, 1000)
+    //if($.support.opacity) BACKGROUND_DARK.clearQueue().delay(200).animate({opacity: 1}, 1000)
+    if($.support.opacity) $('#motm').stop(true,true).animate({opacity: 1}, 1000)
+    if($.support.opacity) BACKGROUND_DARK.stop(true,true).delay(200).animate({opacity: 1}, 1000)
     setTimeout(function() {
-      MOLECULE.do_scale(m.scale, 300, -6.5)
-      if($.support.opacity) GLOW.clearQueue().animate({opacity: 1}, 500)
-      setTimeout(function() {
-        var description = '<p style="font-size: 25px;">' + m.chemical_formula.replace(/(\d+)/g, '<sub>$1</sub>') + '</p> ' + m.description
-        HALL.find('.motm_description .inner').html(description)
-        HALL.find('.motm_description').animate({bottom: 15}, 500, function() {
+    MOLECULE.do_scale(m.scale, 300, -6.5)
+    if($.support.opacity) GLOW.clearQueue().animate({opacity: 1}, 500)
+    if($.support.opacity) GLOW.stop(true,true).animate({opacity: 1}, 500)
+    setTimeout(function() {
+      var description = '<p style="font-size: 25px;">' + m.chemical_formula.replace(/(\d+)/g, '<sub>$1</sub>') + '</p> ' + m.description
+      HALL.find('.motm_description .inner').html(description)
+      //HALL.find('.motm_description').animate({bottom: 15}, 500, function() {
+      HALL.find('.motm_description').stop(true,true).animate({bottom: 15}, 500, function() {
           $('#motm').trigger('motm_enter_complete')
         })
         $(document).keyup(key_handler)
@@ -383,12 +387,18 @@ $(function() {
     
     var m = MOLECULES[MOLECULE_I]
     
-    HALL.find('.motm_description').animate({bottom: -500}, 500, function() {
+    //HALL.find('.motm_description').animate({bottom: -500}, 500, function() {
+    HALL.find('.motm_description').stop(true,true).animate({bottom: -500}, 500, function() {
       MOLECULE.do_scale(m.minimized_scale, 300, 0)
-      if($.support.opacity) GLOW.clearQueue().animate({opacity: 0}, 500)
+      //if($.support.opacity) GLOW.clearQueue().animate({opacity: 0}, 500)
+      //setTimeout(function() {
+      //  if($.support.opacity) $('#motm').animate({opacity: 0.75}, 1000)
+      //  if($.support.opacity) BACKGROUND_DARK.clearQueue().delay(200).animate({opacity: 0}, 1000)
+      //}, 500)
+      if($.support.opacity) GLOW.stop(true,true).animate({opacity: 0}, 500)
       setTimeout(function() {
-        if($.support.opacity) $('#motm').animate({opacity: 0.75}, 1000)
-        if($.support.opacity) BACKGROUND_DARK.clearQueue().delay(200).animate({opacity: 0}, 1000)
+        if($.support.opacity) $('#motm').stop(true,true).animate({opacity: 0.75}, 1000)
+        if($.support.opacity) BACKGROUND_DARK.stop(true,true).delay(200).animate({opacity: 0}, 1000)
       }, 500)
     })
   }

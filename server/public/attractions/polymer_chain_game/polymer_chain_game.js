@@ -262,7 +262,7 @@ $(function() {
       
     } else {
       Game.play_sound('game_over')
-      User.save_score('polymer_chain_game', TOTAL_MERS + LEVEL_I*MER_BONUS, 'Level '+(LEVEL_I+1))
+      User.save_score('polymer_chain_game', TOTAL_MERS + LEVEL_I*MER_BONUS, (LEVEL_I+1))
       Message.display($('#game_over_message'), -1)
     }
   }

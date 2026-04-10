@@ -95,7 +95,7 @@ $( function() {
   var _levels = [
     {
       time: 2*60000,
-      target_earned: 5.00,
+      target_earned: 10.00,
       initial_time_between_orders: 20e3,
       min_time_between_orders: 6e3,
       order_limit: 2,
@@ -103,91 +103,91 @@ $( function() {
       person_state: [
         {name: 'happy', duration: 2.0},
         {name: 'bored', duration: 2.0},
-        {name: 'angry', duration: 2.0}
+        {name: 'angry', duration: 1.0}
       ]
     }, {
-      time: 3*60000,
-      target_earned: 10.00,
+      time: 2*60000,
+      target_earned: 15.00,
       initial_time_between_orders: 20e3,
       min_time_between_orders: 5e3,
       order_limit: 2,
       order_length_limit: 3,
       person_state: [
         {name: 'happy', duration: 2.0},
-        {name: 'bored', duration: 2.0},
-        {name: 'angry', duration: 2.0}
+        {name: 'bored', duration: 1.0},
+        {name: 'angry', duration: 1.0}
       ]
     }, {
-      time: 4*60000,
-      target_earned: 15.00,
+      time: 2*60000,
+      target_earned: 20.00,
       initial_time_between_orders: 20e3,
       min_time_between_orders: 5e3,
       order_limit: 3,
       order_length_limit: 3,
       person_state: [
-        {name: 'happy', duration: 3.0},
-        {name: 'bored', duration: 3.0},
-        {name: 'angry', duration: 3.0}
+        {name: 'happy', duration: 1.0},
+        {name: 'bored', duration: 1.0},
+        {name: 'angry', duration: 1.0}
       ]
     }, {
-      time: 5*60000,
-      target_earned: 25.00,
+      time: 3*60000,
+      target_earned: 30.00,
       initial_time_between_orders: 18e3,
       min_time_between_orders: 4.5e3,
       order_limit: 4,
       order_length_limit: 3,
       person_state: [
-        {name: 'happy', duration: 3.0},
-        {name: 'bored', duration: 3.0},
-        {name: 'angry', duration: 3.0}
+        {name: 'happy', duration: 1.0},
+        {name: 'bored', duration: 1.0},
+        {name: 'angry', duration: 1.0}
       ]
     }, {
-      time: 6*60000,
-      target_earned: 30.00,
+      time: 3*60000,
+      target_earned: 40.00,
       initial_time_between_orders: 16e3,
       min_time_between_orders: 4.25e3,
       order_limit: 5,
       order_length_limit: 3,
       person_state: [
-        {name: 'happy', duration: 2.5},
-        {name: 'bored', duration: 2.5},
-        {name: 'angry', duration: 2.5}
+        {name: 'happy', duration: 0.5},
+        {name: 'bored', duration: 0.5},
+        {name: 'angry', duration: 0.5}
       ]
     }, {
-      time: 7*60000,
-      target_earned: 50.00,
+      time: 4*60000,
+      target_earned: 70.00,
       initial_time_between_orders: 14e3,
       min_time_between_orders: 3.75e3,
       order_limit: 5,
       order_length_limit: 3,
       person_state: [
-        {name: 'happy', duration: 2.0},
-        {name: 'bored', duration: 1.5},
-        {name: 'angry', duration: 2.0}
+        {name: 'happy', duration: 1.0},
+        {name: 'bored', duration: 0.5},
+        {name: 'angry', duration: 0.5}
       ]
     }, {
-      time: 5*60000,
+      time: 4*60000,
       target_earned: 100.00,
       initial_time_between_orders: 12e3,
       min_time_between_orders: 3e3,
       order_limit: 5,
       order_length_limit: 3,
       person_state: [
-        {name: 'happy', duration: 1.5},
+        {name: 'happy', duration: 0.5},
         {name: 'bored', duration: 1.0},
-        {name: 'angry', duration: 1.5}
+        {name: 'angry', duration: 0.5}
       ]
     }, {
-      time: 5*60000,
-      target_earned: 100.00,
+      time: 4*60000,
+      target_earned: 120.00,
       initial_time_between_orders: 10e3,
       min_time_between_orders: 2e3,
       order_limit: 5,
       order_length_limit: 3,
       person_state: [
-        {name: 'happy', duration: 1.5},
+        {name: 'happy', duration: 0.5},
         {name: 'bored', duration: 1.0},
-        {name: 'angry', duration: 1.5}
+        {name: 'angry', duration: 0.5}
       ]
     }
   ]
@@ -328,7 +328,7 @@ $( function() {
     stop()
     clear_orders()
     
-    User.save_score('h2o_parlor', Math.round(_TOTAL_EARNED), '$'+_TOTAL_EARNED.toFixed(2))
+    User.save_score('h2o_parlor', Math.round(_TOTAL_EARNED*100), _level_i)
     
     Message.display($('#game_over_message'), -1)
   }
@@ -1077,7 +1077,7 @@ $( function() {
     
     User.all_high_scores_for_game('h2o_parlor', function(scores) {
       for(var i = 0; i < Math.min(5, scores.length); i++) {
-        var score = $('<div><span class="place">'+(i+1)+'</span><span class="score">'+scores[i].misc+'</span><span class="username">'+scores[i].username+'</span></div>')
+        var score = $('<div><span class="place">'+(i+1)+'</span><span class="score">$'+((scores[i].score/100.0).toFixed(2))+'</span><span class="username">'+scores[i].username+'</span></div>')
         score.appendTo(high_scores_elem)
       }
     })

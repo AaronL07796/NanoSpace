@@ -91,7 +91,7 @@ body.no_scroll{
   height:             600px;
   overflow:           hidden;
   cursor:             pointer;
-  font-size:          60px;
+  font-size:          45px;
   font-family:        'league-gothic-1', 'league-gothic-2', sans-serif;
   -webkit-text-stroke: 1px transparent;
   border:             5px solid #000;
@@ -100,29 +100,32 @@ body.no_scroll{
   }
 
 #high_scores .inner {
-  margin:             138px 0 0 138px;
+  margin:             138px 0 0 90px;
   }
 
 #high_scores .inner div {
-  height:             75px;
+  height:             80px;
   }
 
 #high_scores span {
   display:            inline-block;
-  margin:             0 25px;
-  width:              125px;
+  margin:             0 15px;
+  width:              140px;
   white-space:        nowrap;
   overflow:           hidden;
   text-overflow:      ellipsis;
   }
 #high_scores span.place {
-  width:              60px;
+  width:              40px;
   }
+#high_scores span.level {
+  width:              175px;
+}
 #high_scores span.score {
   color:              #50AADA;
   }
 #high_scores span.username {
-  width:              220px;
+  width:              250px;
   }
 
 #high_scores .log_in_message {
