@@ -99,14 +99,20 @@ class UsersController < ApplicationController
     @user = current_user
     
     results = {:success => false}
+
+    require 'digest/md5'
     
     if params[:score]
-      game = Game.find_by_label params[:score][:label]
-      score = params[:score][:score].to_i
-      misc = params[:score][:misc].to_s
-      if game
-        @user.add_score(game, score, misc)
-        results = {:success => true}
+      hash = Digest::MD5.hexdigest("nano"<<params[:score][:label]<<params[:score][:score]<<params[:score][:misc].to_i.to_s)
+      puts hash
+      if hash == params[:score][:hash]
+        game = Game.find_by_label params[:score][:label]
+        score = params[:score][:score].to_i
+        misc = "Level " << params[:score][:misc].to_i.to_s
+        if game
+          @user.add_score(game, score, misc)
+          results = {:success => true}
+        end
       end
     end
     

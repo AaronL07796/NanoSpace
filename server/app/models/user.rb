@@ -45,9 +45,9 @@ class User < ActiveRecord::Base
   end
   
   
-  def token
-    Digest::MD5.hexdigest("SALT1|#{self.id}|#{self.name}|SALT2")
-  end
+#  def token
+#    Digest::MD5.hexdigest("SALT1|#{self.id}|#{self.name}|SALT2")
+#  end
   
   
   def unlock_achievement(achievement)
