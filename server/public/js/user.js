@@ -358,11 +358,11 @@ var User = function() {
   
   // Set a user flag
   THIS.set_flag  = function(key, value, callback) {
-    FLAGS[key] = value
+    // Return false if key or value are empty or zero
+    if(!key || !value) return false
     
     // Query the server if we're logged in
     if(LOGGED_IN) {
-      if(!value) value = ''
       $.getJSON('/set_flag', {flag_key: key, flag_value: value}, function(r) {
           if(r.success) ACHIEVEMENTS.push(r.achievement)
           if(typeof callback == 'function') callback(r.achievement)
@@ -370,10 +370,11 @@ var User = function() {
     
     // Cache the flags if the user isn't logged in
     } else {
+      FLAGS[key] = value
       local_storage.set('flags', FLAGS)
     }
     
-    return FLAGS
+    return true
   }
   
   

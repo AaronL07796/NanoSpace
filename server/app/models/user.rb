@@ -97,12 +97,10 @@ class User < ActiveRecord::Base
   # Save the given user flags
   def save_flags(flags={})
     return unless flags.is_a? Hash
-    flags.each do |flag_key, flag_value|
-      flag = self.user_flags.find_or_create_by_flag_key(flag_key)
-      if !flag_value || flag_value.empty?
-        flag.destroy
-      else
-        flag.flag_value = flag_value
+    flags.each do |given_flag_key, given_flag_value|
+      if given_flag_value && !given_flag_value.empty?
+        flag = self.user_flags.find_or_create_by(flag_key: given_flag_key)
+        flag.flag_value = given_flag_value
         flag.save
       end
     end
