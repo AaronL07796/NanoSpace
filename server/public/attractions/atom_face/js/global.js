@@ -1,3 +1,11 @@
+// Back button functionality
+// (If referrer not from nanotoon.cs.rpi.edu, then reroute back button to park)
+if (!(document.referrer.match(/^https?:\/\/([^\/]+\.)?nanotoon\.cs\.rpi\.edu(\/|$)/i))) {
+  $('.back_to_nav').prop('href', 'https://nanotoon.cs.rpi.edu/park')
+}
+
+// Atom Face
+
 window._area = 'nav'
 window._attraction = 'atom_face'
 
